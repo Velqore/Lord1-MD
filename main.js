@@ -1,10 +1,10 @@
-//base by Valqore ( Bot Inc.)
-//YouTube: @Valqore
+//base by Velqore ( Bot Inc.)
+//YouTube: @Velqore
 //Instagram: unicorn_13
 //Telegram: t.me/botinc
-//GitHub: @Valqore
+//GitHub: @Velqore
 //WhatsApp: +918130784851
-//want more free bot scripts? subscribe to my youtube channel: https://youtube.com/@Valqore
+//want more free bot scripts? subscribe to my youtube channel: https://youtube.com/@Velqore
 
 require('./settings')
 const makeWASocket = require("@whiskeysockets/baileys").default
@@ -177,7 +177,7 @@ try{
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(color(`< ================================================== >`, 'cyan'))
 	        console.log(color(`\n${themeemoji} YT CHANNEL: `,'magenta'))
-            console.log(color(`${themeemoji} GITHUB: Valqore `,'magenta'))
+            console.log(color(`${themeemoji} GITHUB: Velqore `,'magenta'))
             console.log(color(`${themeemoji} INSTAGRAM: @unicorn_ `,'magenta'))
             console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
