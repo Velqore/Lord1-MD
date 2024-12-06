@@ -2,7 +2,7 @@
 
 <h1 align="center">ꪶ𝗟𝗢𝗥𝗗𝟭 𝗕𝗼𝘁-𝗠𝗗 𝗩11ꫂ<br></h1>
 <p align="center">
-<img src="https://i.ibb.co/7Kt46r4/lordpic.jpg" />
+<video  src="./VelqoreMedia/theme/lordvideo.mp4" control width= "500" />
 </p>
 
 <p align="center">
