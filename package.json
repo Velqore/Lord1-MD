@@ -1,5 +1,5 @@
 {
-    "name": "Lord-Bot-MD1",
+    "name": "Lord1-MD",
     "version": "1.0.0",
     "description": "Whatsapp Bot By Valqore",
     "main": "index.js",
@@ -7,13 +7,13 @@
     "directories": {
         "lib": "lib",
         "src": "src",
-        "media": "ValqoreMedia"
+        "media": "VelqoreMedia"
     },
     "scripts": {
         "code": "node main.js",
         "start": "node index.js"
     },
-    "author": "Valqore",
+    "author": "Velqore",
     "license": "MIT",
     "dependencies": {
         "@whiskeysockets/baileys": "^6.6.0",
