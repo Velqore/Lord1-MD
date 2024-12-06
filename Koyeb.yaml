@@ -9,6 +9,6 @@ build:
   files:
     - package.json
     - package-lock.json
-    - main.js
+    - index.js
     - .env
 plan: web # Ensuring it's a web service, not a worker
