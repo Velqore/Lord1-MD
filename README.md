@@ -1,24 +1,18 @@
  
 
-<h1 align="center">ꪶ𝗖𝗵𝗲𝗲𝗺𝘀 𝗕𝗼𝘁-𝗠𝗗 𝗩11ꫂ<br></h1>
+<h1 align="center">ꪶ𝗟𝗢𝗥𝗗𝟭 𝗕𝗼𝘁-𝗠𝗗 𝗩11ꫂ<br></h1>
 <p align="center">
 <img src="https://i.ibb.co/RC7JWDj/e258b5ae2b1cf8195d33743570dbe498.jpg" />
 </p>
 
 <p align="center">
-Cheems Bot Multi Device is a whatsapp bot developed by <a href="https://github.com/DGXeon" target="_blank">Xeon</a> using <a href="https://github.com/adiwajshing/Baileys" target="_blank">Baileys</a> and <a href="https://github.com/nodejs" target="_blank">Nodejs</a>. Dont forget to give a star bro.
-</p>
-
-<p align="center">
-<a href="https://youtu.be/mu5m6aB6P5k"><img title="Size" src="https://img.shields.io/badge/Tutorial-Video-green"></a>
-</p>
-
+Lord of Bot Multi Device is a whatsapp bot developed by <a href="https://github.com/Valqore" target="_blank">Valqore </a> using <a href="https://github.com/adiwajshing/Baileys" target="_blank">Baileys</a> and <a href="https://github.com/nodejs" target="_blank">Nodejs</a>. Dont forget to give a star bro.
 ------
 
 # ```Bot Info```
 <p align="center">
-<a href="https://github.com/DGXeon/followers"><img title="Followers" src="https://img.shields.io/github/followers/DGXeon?color=red&style=flat-square"></a>
-<a href="https://github.com/DGXeon/CheemsBot-MD11/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/DGXeon/CheemsBot-MD11?color=blue&style=flat-square"></a>
+<a href="https://github.com/Valqore/followers"><img title="Followers" src="https://img.shields.io/github/followers/Valqore?color=red&style=flat-square"></a>
+<a href="https://github.com/Valqore/Lord1-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Valqore/Lord1-MD?color=blue&style=flat-square"></a>
 <a href="https://github.com/DGXeon/CheemsBot-MD11/network/members"><img title="Forks" src="https://img.shields.io/github/forks/DGXeon/CheemsBot-MD11?color=red&style=flat-square"></a>
 <a href="https://github.com/DGXeon/CheemsBot-MD11/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/DGXeon/CheemsBot-MD11?label=Watchers&color=blue&style=flat-square"></a>
 <a href="https://github.com/DGXeon/CheemsBot-MD11"><img title="Open Source" src="https://img.shields.io/badge/Author-Xeon%20Bot%20Inc.-red?v=103"></a>
