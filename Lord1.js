@@ -102,10 +102,10 @@ const {
     getAllPremiumUser,
 } = require('./lib/premiun')
 //data
-let ntnsfw = JSON.parse(fs.readFileSync('./src/data/function/nsfw.json'))
-let bad = JSON.parse(fs.readFileSync('./src/data/function/badword.json'))
-let premium = JSON.parse(fs.readFileSync('./src/data/role/premium.json'))
-const owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
+let ntnsfw = JSON.parse(fs.readFileSync('./Src/data/function/nsfw.json'))
+let bad = JSON.parse(fs.readFileSync('./Src/data/function/badword.json'))
+let premium = JSON.parse(fs.readFileSync('./Src/data/role/premium.json'))
+const owner = JSON.parse(fs.readFileSync('./Src/data/role/owner.json'))
 //media
 const VoiceNoteVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/Velqorevn.json'))
 const StickerVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/Velqoresticker.json'))
@@ -116,15 +116,15 @@ const ZipVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/zip.json'
 const ApkVelqore = JSON.parse(fs.readFileSync('./VelqoreMedia/database/apk.json'))
 
 //bug database
-const { text1 } = require('./src/data/function/XBug/text1')
-const { text2 } = require('./src/data/function/XBug/text2')
-const { text3 } = require('./src/data/function/XBug/text3')
-const { text4 } = require('./src/data/function/XBug/text4')
-const { text5 } = require('./src/data/function/XBug/text5')
+const { text1 } = require('./Src/data/function/XBug/text1')
+const { text2 } = require('./Src/data/function/XBug/text2')
+const { text3 } = require('./Src/data/function/XBug/text3')
+const { text4 } = require('./Src/data/function/XBug/text4')
+const { text5 } = require('./Src/data/function/XBug/text5')
 
-const Velqoreverifieduser = JSON.parse(fs.readFileSync('./src/data/role/user.json'))
+const Velqoreverifieduser = JSON.parse(fs.readFileSync('./Src/data/role/user.json'))
 
-global.db.data = JSON.parse(fs.readFileSync('./src/database.json'))
+global.db.data = JSON.parse(fs.readFileSync('./Src/database.json'))
 if (global.db.data) global.db.data = {
 sticker: {},
 database: {}, 
@@ -239,7 +239,7 @@ module.exports = VelqoreInc = async (VelqoreInc, m, chatUpdate, store) => {
         const isVelqoreMedia = m.mtype
         //user status
         const isUser = Velqoreverifieduser.includes(sender)
-        const VelqoreTheCreator = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const VelqoreTheCreator = [botNumber, owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isPremium= VelqoreTheCreator || checkPremiumUser(m.sender, premium)
         expiredPremiumCheck(VelqoreInc, m, premium)
         
@@ -292,7 +292,7 @@ module.exports = VelqoreInc = async (VelqoreInc, m, chatUpdate, store) => {
                             title: botname,
                             body: ownername,
                             previewType: "PHOTO",
-                            thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                            thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                             sourceUrl: wagc
                         }
                     },
@@ -308,7 +308,7 @@ module.exports = VelqoreInc = async (VelqoreInc, m, chatUpdate, store) => {
                         showAdAttribution: true,
                         title: botname,
                         body: ownername,
-                        thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         sourceUrl: websitex,
                         mediaType: 1,
                         renderLargerThumbnail: true
@@ -381,7 +381,7 @@ module.exports = VelqoreInc = async (VelqoreInc, m, chatUpdate, store) => {
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {}) },message: { "videoMessage": { "title":botname, "h": wm,'seconds': '359996400', 'caption': `${pushname}`, 'jpegThumbnail': thumb}}}
 		const floc = {key : {participant : '0@s.whatsapp.net', ...(m.chat ? { remoteJid: `status@broadcast` } : {}) },message: {locationMessage: {name: wm,jpegThumbnail: thumb}}}
 		const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': ownername, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${ownername},;;;\nFN:${ownername}\nitem1.TEL;waid=918130784851:918130784851\nitem1.X-ABLabel:Mobile\nEND:VCARD`, 'jpegThumbnail': thumb, thumbnail: thumb,sendEphemeral: true}}}
-	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
+	    const fakestatus = {key: {fromMe: false,participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "status@broadcast" } : {})},message: { "imageMessage": {"url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc","mimetype": "image/jpeg","caption": wm,"fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=","fileLength": "28777","height": 1080,"width": 1079,"mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=","fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=","directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69","mediaKeyTimestamp": "1610993486","jpegThumbnail": fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),"scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="}}}
 	    const frpayment = {
 	key: {
 		remoteJid: '0@s.whatsapp.net',
@@ -1198,7 +1198,7 @@ click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
         //user db
         if (isCommand && !isUser) {
 Velqoreverifieduser.push(sender)
-fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Velqoreverifieduser, null, 2))
+fs.writeFileSync('./Src/data/role/user.json', JSON.stringify(Velqoreverifieduser, null, 2))
 }
         
         switch (isCommand) {
@@ -1207,7 +1207,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Velqoreverifieduser
                if (!groupAdmins) return replygcVelqore(mess.admin)
                if (args.length < 1) return replygcVelqore( `Send command ${prefix}addbadword [harsh word]. Example ${prefix}addbadword asshole`)
                bad.push(q)
-               fs.writeFileSync('./src/data/function/badword.json', JSON.stringify(bad))
+               fs.writeFileSync('./Src/data/function/badword.json', JSON.stringify(bad))
                replygcVelqore('Successfully Added Bad Word!')
             break
             case 'delbadword': case 'deldb':
@@ -1215,7 +1215,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Velqoreverifieduser
                if (!groupAdmins) return replygcVelqore(mess.admin)
                if (args.length < 1) return replygcVelqore( `Send commands ${prefix}addbadword [bad word]. Example ${prefix}addbadword asshole`)                 
                bad.splice(q)
-               fs.writeFileSync('./src/data/function/badword.json', JSON.stringify(bad))
+               fs.writeFileSync('./Src/data/function/badword.json', JSON.stringify(bad))
                replygcVelqore('Successfully Deleted Bad Word!')
             break 
             case 'resetuser':
@@ -1323,7 +1323,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Velqoreverifieduser
             case 'sim': {
                 if (!VelqoreTheCreator) return VelqoreStickOwner()
                 let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
-                await fsx.copy(delb, './VelqoreMedia/theme/cheemspic.jpg')
+                await fsx.copy(delb, './VelqoreMedia/theme/lordpic.jpg')
                 fs.unlinkSync(delb)
                 replygcVelqore(mess.done)
             }
@@ -1334,7 +1334,7 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Velqoreverifieduser
             case 'sgm': {
                 if (!VelqoreTheCreator) return VelqoreStickOwner()
                 let delb = await VelqoreInc.downloadAndSaveMediaMessage(quoted)
-                await fsx.copy(delb, './VelqoreMedia/theme/Cheems-bot.mp4')
+                await fsx.copy(delb, './VelqoreMedia/theme/lordvideo.mp4')
                 fs.unlinkSync(delb)
                 replygcVelqore(mess.done)
             }
@@ -1399,18 +1399,18 @@ fs.writeFileSync('./src/data/role/user.json', JSON.stringify(Velqoreverifieduser
                 if (m.mentionedJid.length !== 0) {
                     for (let i = 0; i < m.mentionedJid.length; i++) {
                         premium.splice(getPremiumPosition(m.mentionedJid[i], premium), 1)
-                        fs.writeFileSync("./src/data/role/premium.json", JSON.stringify(premium))
+                        fs.writeFileSync("./Src/data/role/premium.json", JSON.stringify(premium))
                     }
                     replygcVelqore("Delete Success")
                 } else {
                     premium.splice(getPremiumPosition(args[0] + "@s.whatsapp.net", premium), 1)
-                    fs.writeFileSync("./src/data/role/premium.json", JSON.stringify(premium))
+                    fs.writeFileSync("./Src/data/role/premium.json", JSON.stringify(premium))
                     replygcVelqore("Delete Success")
                 }
             break
             case 'listprem': {
                 if (!VelqoreTheCreator) return VelqoreStickOwner()
-                let data = require('./src/data/role/premium.json')
+                let data = require('./Src/data/role/premium.json')
                 let txt = `*------「 LIST PREMIUM 」------*\n\n`
                 for (let x of data) {
                     txt += `Number : ${x.id}\n`
@@ -1431,7 +1431,7 @@ bnnd = q.split("|")[0].replace(/[^0-9]/g, '')
 let ceknye = await VelqoreInc.onWhatsApp(bnnd)
 if (ceknye.length == 0) return replygcVelqore(`Enter A Valid And Registered Number On WhatsApp!!!`)
 owner.push(bnnd)
-fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner))
+fs.writeFileSync('./Src/data/role/owner.json', JSON.stringify(owner))
 replygcVelqore(`Number ${bnnd} Has Become An Owner!!!`)
 break
 case 'delowner':
@@ -1440,7 +1440,7 @@ if (!args[0]) return replygcVelqore(`Use ${prefix+command} nomor\nExample ${pref
 ya = q.split("|")[0].replace(/[^0-9]/g, '')
 unp = owner.indexOf(ya)
 owner.splice(unp, 1)
-fs.writeFileSync('./src/data/role/owner.json', JSON.stringify(owner))
+fs.writeFileSync('./Src/data/role/owner.json', JSON.stringify(owner))
 replygcVelqore(`The Numbrr ${ya} Has been deleted from owner list by the owner!!!`)
 break
 case 'listowner': {
@@ -1867,7 +1867,7 @@ case 'block': case 'ban': {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: `Sent in ${i.length} Group`,
-                                thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                                thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -1923,7 +1923,7 @@ if (!isAdmins && !VelqoreTheCreator) return VelqoreStickAdmin()
 if (args[0] === "on") {
 if (AntiNsfw) return replygcVelqore('Already activated')
 ntnsfw.push(from)
-fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
+fs.writeFileSync('./Src/data/function/nsfw.json', JSON.stringify(ntnsfw))
 replygcVelqore('Success in turning on nsfw in this group')
 var groupe = await VelqoreInc.groupMetadata(from)
 var members = groupe['participants']
@@ -1936,7 +1936,7 @@ VelqoreInc.sendMessage(from, {text: `\`\`\`「 ⚠️Warning⚠️ 」\`\`\`\n\n
 if (!AntiNsfw) return replygcVelqore('Already deactivated')
 let off = ntnsfw.indexOf(from)
 ntnsfw.splice(off, 1)
-fs.writeFileSync('./src/data/function/nsfw.json', JSON.stringify(ntnsfw))
+fs.writeFileSync('./Src/data/function/nsfw.json', JSON.stringify(ntnsfw))
 replygcVelqore('Success in turning off nsfw in this group')
 } else {
   await replygcVelqore(`Please Type The Option\n\nExample: ${prefix + command} on\nExample: ${prefix + command} off\n\non to enable\noff to disable`)
@@ -2889,7 +2889,7 @@ break
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                            thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
                             sourceUrl: wagc,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -2927,7 +2927,7 @@ break
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                                thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -2943,7 +2943,7 @@ break
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                                thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -2964,7 +2964,7 @@ break
                             showAdAttribution: true,
                             title: botname,
                             body: ownername,
-                            thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+                            thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
                             sourceUrl: wagc,
                             mediaType: 1,
                             renderLargerThumbnail: true
@@ -2990,7 +2990,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./VelqoreMedia/theme/cheemspic.jpg"),
+"thumbnail": fs.readFileSync("./VelqoreMedia/theme/lordpic.jpg"),
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -3813,7 +3813,7 @@ View list of Messages With ${prefix}listmsg`)
             }
             break
             case 'listmsg': {
-                let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
+                let msgs = JSON.parse(fs.readFileSync('./Src/database.json'))
 	        let seplit = Object.entries(global.db.data.database).map(([nama, isi]) => { return { nama, ...isi } })
 		let teks = ' DATABASE LIST \n\n'
 		for (let i of seplit) {
@@ -4599,192 +4599,192 @@ case 'ringtone': {
 	    break
 case 'tiktokgirl':
 await VelqoreStickWait()
-var asupan = JSON.parse(fs.readFileSync('./src/media/tiktokvids/tiktokgirl.json'))
+var asupan = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/tiktokgirl.json'))
 var hasil = pickRandom(asupan)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokghea':
 await VelqoreStickWait()
-var gheayubi = JSON.parse(fs.readFileSync('./src/media/tiktokvids/gheayubi.json'))
+var gheayubi = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/gheayubi.json'))
 var hasil = pickRandom(gheayubi)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokbocil':
 await VelqoreStickWait()
-var bocil = JSON.parse(fs.readFileSync('./src/media/tiktokvids/bocil.json'))
+var bocil = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/bocil.json'))
 var hasil = pickRandom(bocil)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoknukhty':
 await VelqoreStickWait()
-var ukhty = JSON.parse(fs.readFileSync('./src/media/tiktokvids/ukhty.json'))
+var ukhty = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/ukhty.json'))
 var hasil = pickRandom(ukhty)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoksantuy':
 await VelqoreStickWait()
-var santuy = JSON.parse(fs.readFileSync('./src/media/tiktokvids/santuy.json'))
+var santuy = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/santuy.json'))
 var hasil = pickRandom(santuy)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokkayes':
 await VelqoreStickWait()
-var kayes = JSON.parse(fs.readFileSync('./src/media/tiktokvids/kayes.json'))
+var kayes = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/kayes.json'))
 var hasil = pickRandom(kayes)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktokpanrika':
 await VelqoreStickWait()
-var rikagusriani = JSON.parse(fs.readFileSync('./src/media/tiktokvids/panrika.json'))
+var rikagusriani = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/panrika.json'))
 var hasil = pickRandom(rikagusriani)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'tiktoknotnot':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokvids/notnot.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokvids/notnot.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, video: { url: hasil.url }}, { quoted: m })
 break
 case 'chinese':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/china.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/china.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'hijab':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/hijab.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/hijab.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'indo':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/indonesia.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/indonesia.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'japanese':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/japan.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/japan.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'korean':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/korea.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/korea.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'malay':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/malaysia.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/malaysia.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'randomgirl':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/random.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'randomboy':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/random2.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/random2.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'thai':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/thailand.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/thailand.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'vietnamese':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/tiktokpics/vietnam.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/tiktokpics/vietnam.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'aesthetic':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/aesthetic.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/aesthetic.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'antiwork':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/antiwork.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/antiwork.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'blackpink':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/blackpink.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/blackpink.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'bike':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/bike.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/bike.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'boneka':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/boneka.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/boneka.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'cosplay':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/cosplay.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/cosplay.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'cat':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/cat.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/cat.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'doggo':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/doggo.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/doggo.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'justina':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/justina.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/justina.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'kayes':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/kayes.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/kayes.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'kpop':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/kpop.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/kpop.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'notnot':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/notnot.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/notnot.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'car':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/car.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/car.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'couplepp': case 'ppcouple': {
-let anu = require('./src/media/randompics/ppcouple.json')
+let anu = require('./Src/media/randompics/ppcouple.json')
 let random = anu[Math.floor(Math.random() * anu.length)]
 VelqoreInc.sendMessage(from, { image: { url: random.male }, caption: `Couple pp for male` }, { quoted: m })
 VelqoreInc.sendMessage(from, { image: { url: random.female }, caption: `Couple pp for female` }, { quoted: m })
@@ -4792,49 +4792,49 @@ VelqoreInc.sendMessage(from, { image: { url: random.female }, caption: `Couple p
 break
 case 'profilepic':  case 'profilepicture':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/profile.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/profile.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'pubg':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/pubg.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/pubg.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'rose':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/rose.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/rose.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ryujin':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ryujin.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/ryujin.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ulzzangboy':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ulzzangboy.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/ulzzangboy.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'ulzzanggirl':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/ulzzanggirl.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/ulzzanggirl.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'wallml': case 'wallpaperml':case 'mobilelegend':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/wallml.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/wallml.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
 case 'wallpaperphone': case 'wallphone':
 await VelqoreStickWait()
-var notnot = JSON.parse(fs.readFileSync('./src/media/randompics/wallhp.json'))
+var notnot = JSON.parse(fs.readFileSync('./Src/media/randompics/wallhp.json'))
 var hasil = pickRandom(notnot)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: hasil.url } }, { quoted: m })
 break
@@ -4867,54 +4867,7 @@ const reply = `
     return replygcVelqore(`*${q}* isn't a valid text`)
     }
     break
-                case 'can': {
-            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} i dance?`)
-            	let bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
-                let keh = bisa[Math.floor(Math.random() * bisa.length)]
-                let jawab = `*Can ${text}*\nAnswer : ${keh}`
-            await replygcVelqore(jawab)
-            }
-            break
-            case 'is': {
-            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} she virgin?`)
-            	let apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
-                let kah = apa[Math.floor(Math.random() * apa.length)]
-                let jawab = `*Is ${text}*\nAnswer : ${kah}`                
-            await replygcVelqore(jawab)
-            }
-            break
-            case 'when': {
-            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} will i get married?`)
-            	let kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow']
-                let koh = kapan[Math.floor(Math.random() * kapan.length)]
-                let jawab = `*${command} ${text}*\nAnswer : ${koh}`                
-            await replygcVelqore(jawab)
-            }
-            break
-case 'what': {
-            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} is your name?`)
-            	let lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
-                let kah = lel[Math.floor(Math.random() * lel.length)]
-                let jawab = `*What ${text}*\nAnswer : ${kah}`                
-            await replygcVelqore(jawab)
-            }
-            break
-case 'where': {
-if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} is your name?`)
-            	let wherelol = [`In the mountain`, `On mars`, `On moon`,`In the jungle`,`I dont know ask your mom`,`It could be somewhere`]
-                let kah = wherelol[Math.floor(Math.random() * wherelol.length)]
-                let jawab = `*Whwre ${text}*\nAnswer : ${kah}`              
-            await replygcVelqore(jawab)
-            }
-            break
-case 'how': {
-            	if (!text) return replygcVelqore(`Ask question\n\nExample : ${prefix + command} to date girl?`)
-            	let gimana = [`Ummm...`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah😴, don't wanna answer`,`Ohhh I See:(`,`The Patient, Boss:(`,`Really dude 🙄`]
-                let kah = gimana[Math.floor(Math.random() * gimana.length)]
-                let jawab = `*How ${text}*\nAnswer : ${kah}`                
-            await replygcVelqore(jawab)
-            }
-            break
+          
 case 'rate': {
             	if (!text) return replygcVelqore(`Example : ${prefix + command} my profile`)
             	let ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
@@ -4959,7 +4912,7 @@ isForwarded: true,
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/cheemspic.jpg`),
+"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/lordpic.jpg`),
 "sourceUrl": `${wagc}`}}},
 { quoted: m})        
             }
@@ -4983,7 +4936,7 @@ isForwarded: true,
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/cheemspic.jpg`),
+"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/lordpic.jpg`),
 "sourceUrl": `${wagc}`}}},
 { quoted: m})        
             }
@@ -5173,7 +5126,7 @@ mentionedJid:[Velqoreshimts],
 "containsAutoReply": true,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/cheemspic.jpg`),
+"thumbnail": fs.readFileSync(`./VelqoreMedia/theme/lordpic.jpg`),
 "sourceUrl": `${wagc}`
 }
 }
@@ -5819,7 +5772,7 @@ break
 case 'milf':
 if (!m.isGroup) return VelqoreStickGroup()
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/milf.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/milf.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break 
@@ -5836,7 +5789,7 @@ case 'blowjob':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/blowjob.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/blowjob.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5844,7 +5797,7 @@ case 'cuckold':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/cuckold.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/cuckold.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5852,7 +5805,7 @@ case 'eba':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/eba.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/eba.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5860,7 +5813,7 @@ case 'gangbang':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/gangbang.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/gangbang.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5868,7 +5821,7 @@ case 'nsfwloli':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/nsfwloli.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/nsfwloli.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5876,7 +5829,7 @@ case 'pussy':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/pussy.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/pussy.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5884,7 +5837,7 @@ case 'yuri':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/yuri.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/yuri.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5892,7 +5845,7 @@ case 'zettai':
 if (!m.isGroup) return VelqoreStickGroup()
 	if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/zettai.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/zettai.json'))
 var Velqoreyresult = pickRandom(ahegaonsfw)
 VelqoreInc.sendMessage(m.chat, { caption: mess.success, image: { url: Velqoreyresult.url } }, { quoted: m })
 break
@@ -5910,7 +5863,7 @@ case 'gifhentai':
 if (!m.isGroup) return VelqoreStickGroup()
 if (!AntiNsfw) return replygcVelqore(mess.nsfw)
 await VelqoreStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./src/media/nsfw/gifs.json'))
+var ahegaonsfw = JSON.parse(fs.readFileSync('./Src/media/nsfw/gifs.json'))
 var Velqoreyresultx = pickRandom(ahegaonsfw)
     await VelqoreInc.sendMessage(m.chat,{video:Velqoreyresultx, gifPlayback:true },{quoted:m}).catch(err => {
     })
@@ -6712,7 +6665,7 @@ case 'blur':
 └─────────────────┈ ⳹`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -6725,7 +6678,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6736,14 +6689,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -6789,7 +6742,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6800,14 +6753,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -6823,7 +6776,7 @@ break
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${allmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -6836,7 +6789,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6847,14 +6800,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -6900,7 +6853,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6911,14 +6864,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -6934,7 +6887,7 @@ break
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ownermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -6947,7 +6900,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -6958,14 +6911,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7011,7 +6964,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7022,14 +6975,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7045,7 +6998,7 @@ case 'othermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${othermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7058,7 +7011,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7069,14 +7022,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7122,7 +7075,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7133,14 +7086,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7156,7 +7109,7 @@ case 'downloadmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${downloadmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7169,7 +7122,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7180,14 +7133,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7233,7 +7186,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7244,14 +7197,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7267,7 +7220,7 @@ case 'groupmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${groupmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7280,7 +7233,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7291,14 +7244,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7344,7 +7297,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7355,14 +7308,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7378,7 +7331,7 @@ case 'funmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${funmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7391,7 +7344,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7402,14 +7355,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7455,7 +7408,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7466,14 +7419,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7489,7 +7442,7 @@ case 'stalkermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stalkermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7502,7 +7455,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7513,14 +7466,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7566,7 +7519,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7577,14 +7530,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7600,7 +7553,7 @@ case 'randomphotomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randphotomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7613,7 +7566,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7624,14 +7577,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7677,7 +7630,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7688,14 +7641,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7711,7 +7664,7 @@ case 'randomvideomenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${randvideomenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7724,7 +7677,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7735,14 +7688,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7788,7 +7741,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7799,14 +7752,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7822,7 +7775,7 @@ case 'photooxymenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${photooxymenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7835,7 +7788,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7846,14 +7799,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -7899,7 +7852,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7910,14 +7863,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -7933,7 +7886,7 @@ case 'ephoto360menu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${ephoto360menu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -7946,7 +7899,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -7957,14 +7910,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8010,7 +7963,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8021,14 +7974,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -8044,7 +7997,7 @@ case 'makermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${makermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -8057,7 +8010,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8068,14 +8021,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8121,7 +8074,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8132,14 +8085,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -8155,7 +8108,7 @@ case 'nsfwmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${nsfwmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -8168,7 +8121,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8179,14 +8132,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8232,7 +8185,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8243,14 +8196,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -8266,7 +8219,7 @@ case 'animemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${animemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -8279,7 +8232,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8290,14 +8243,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8343,7 +8296,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8354,14 +8307,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -8377,7 +8330,7 @@ case 'stickermenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${stickermenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -8390,7 +8343,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8401,14 +8354,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8454,7 +8407,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8465,14 +8418,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -8488,7 +8441,7 @@ case 'databasemenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${databasemenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -8501,7 +8454,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8512,14 +8465,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8565,7 +8518,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8576,14 +8529,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -8599,7 +8552,7 @@ case 'aimenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${aimenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -8612,7 +8565,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8623,14 +8576,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8676,7 +8629,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8687,14 +8640,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
@@ -8710,7 +8663,7 @@ case 'bugmenu': {
 let xmenu_oh = `Hi ${pushname}${readmore}\n\n${bugmenu(prefix, hituet)}`
 if (typemenu === 'v1') {
                     VelqoreInc.sendMessage(m.chat, {
-                        image: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                        image: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
@@ -8723,7 +8676,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8734,14 +8687,14 @@ if (typemenu === 'v1') {
                     })
                 }   if (typemenu === 'v3') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh
                     }, {
                         quoted: m
                     })
                 } else if (typemenu === 'v4') {
                     VelqoreInc.sendMessage(m.chat, {
-                        video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'),
+                        video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'),
                         caption: xmenu_oh,
                         gifPlayback: true
                     }, {
@@ -8787,7 +8740,7 @@ if (typemenu === 'v1') {
                                 showAdAttribution: true,
                                 title: botname,
                                 body: ownername,
-                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/cheemspic.jpg'),
+                                thumbnail: fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg'),
                                 sourceUrl: wagc,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
@@ -8798,14 +8751,14 @@ if (typemenu === 'v1') {
                     })
                 } else if (typemenu === 'v8') {
                 	VelqoreInc.sendMessage(m.chat, {
-      video: fs.readFileSync('./VelqoreMedia/theme/Cheems-bot.mp4'), 
+      video: fs.readFileSync('./VelqoreMedia/theme/lordvideo.mp4'), 
       gifPlayback: true,
       caption: xmenu_oh,
       contextInfo: {
       externalAdReply: {
       title: botname,
       body: ownername,
-      thumbnailUrl: 'https://i.ibb.co/Wppj16p/cheemspic.jpg',
+      thumbnailUrl: 'https://i.ibb.co/7Kt46r4/lordpic.jpg',
       sourceUrl: ``,
       mediaType: 1,
       renderLargerThumbnail: true
