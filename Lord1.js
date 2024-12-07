@@ -233,7 +233,7 @@ module.exports = VelqoreInc = async (VelqoreInc, m, chatUpdate, store) => {
         const isVelqoreMedia = m.mtype
         //user status
         const isUser = Velqoreverifieduser.includes(sender)
-        const VelqoreTheCreator = [botNumber, owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const VelqoreTheCreator = [botNumber, ....owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isPremium= VelqoreTheCreator || checkPremiumUser(m.sender, premium)
         expiredPremiumCheck(VelqoreInc, m, premium)
         
