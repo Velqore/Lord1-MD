@@ -35,7 +35,7 @@ const store = makeInMemoryStore({
     })
 })
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
-global.db = new Low(new JSONFile(`src/database.json`))
+global.db = new Low(new JSONFile(`Src/database.json`))
 
 global.DATABASE = global.db
 global.loadDatabase = async function loadDatabase() {
@@ -68,7 +68,7 @@ nocache('../main.js', module => console.log(color('[ CHANGE ]', 'green'), color(
 
 //------------------------------------------------------
 let phoneNumber = "918130784851"
-let owner = JSON.parse(fs.readFileSync('./src/data/role/owner.json'))
+let owner = JSON.parse(fs.readFileSync('./Src/data/role/owner.json'))
 
 const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
 const useMobile = process.argv.includes("--mobile")
