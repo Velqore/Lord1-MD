@@ -25,15 +25,19 @@ Lord of Bot Multi Device is a whatsapp bot developed by <a href="https://github.
 
 -------
 ## `THEMES OF THE BOT`
-
+<h1 align="center">AIZEN-SAMA<br></h1>
 <p align='center'>
-<img src= "https://i.ibb.co/8bTDHV1/109be168-f85b-4b88-afa9-22e2906f31b5.jpg" control width = "200" />
-☥ 𝗔𝗜𝗭𝗘𝗡-𝗦𝗔𝗠𝗔
+<img src= "https://i.ibb.co/8bTDHV1/109be168-f85b-4b88-afa9-22e2906f31b5.jpg" control width = "500" />
 </p>
-<p align='center'> 
-<img src= "https://i.ibb.co/8bTDHV1/109be168-f85b-4b88-afa9-22e2906f31b5.jpg" control width = "200" />
- 𖣐 𝗞𝗜𝗦𝗨𝗞𝗘 𝗨𝗥𝗔𝗛𝗔𝗥𝗔 
+<h1 align="center">URAHARA KISUKE<br></h1>
+<p align='center'>
+<img src= "https://i.pinimg.com/1200x/92/1f/89/921f8944e9aa2b2f264e73c9cd650575.jpg" control width = "500" />
 </p>
+<h1 align="center">KUROSAKI ICHIGO<br></h1>
+<p align='center'>
+<img src= "https://i.pinimg.com/1200x/b0/b0/62/b0b062e8e6616ae2ef9ac4cab3217205.jpg" control width = "500" />
+</p>
+
 
 ## `For Termux & Panel User, Download This👇`
 - [`Click Here`](https://shrinkme.pro/y07LYARu)
