@@ -1,6 +1,6 @@
-//base by Velqore
+//base by Valqore
 //re-upload? recode? copy code? give credit ya :)
-//GitHub: @Velqore
+//GitHub: @Valqore
 //WhatsApp: +918130784851
 
 const fs = require('fs')
@@ -10,34 +10,35 @@ const chalk = require('chalk')
 global.sessionid ='ur session id'
 
 //owmner v card
-global.ytname = "YT: Velqore" //ur yt chanel name
-global.socialm = "GitHub: Velqore" //ur github or insta name
+global.ytname = "YT: Valqore" //ur yt chanel name
+global.socialm = "GitHub: Valqore" //ur github or insta name
 global.location = "India, Mizoram, Aizawl" //ur location
 
 //new
-global.botname = 'lord Bot MD V11' //ur bot name
-global.ownernumber = '918130784851' //ur owner number
-global.ownername = ' ༺ 𝑉𝒆𝒍𝒒𝒐𝒓𝒆 ༻' //ur owner name
+global.botname =process.env.Bot_Name || 'Sosuke Aizen', //ur bot name
+global.ownernumber = process.env.Owner_number || '918130784851', //ur owner number
+global.ownername = process.env.Owner_Name || ' ༺ 𝑉alqore ༻' ,//ur owner name
 global.websitex = "https://linktr.ee/Nexus_21"
 global.wagc = "....."
-global.themeemoji = '🪀'
+global.themeemoji = process.env.themeemoji || '🪀',
 global.wm = "Valqore Bot Inc."
-global.botscript = 'https://github.com/Velqore/lord1-MD' //script link
-global.packname = "Sticker By"
-global.author = " Velqore\n\n+918130784851"
-global.creator = "918130784851@s.whatsapp.net"
-global.xprefix = '.'
+global.botscript = 'https://github.com/Valqore/lordBot-MD11', //script link
+global.packname = process.env.packname || "Sticker By",
+global.author = process.env.author || 'Valqore\n\n',
+global.creator = process.env.creator || "918130784851"
+global.xprefix = process.env.Owner_Name || '$'
 global.premium = ["918130784851"] // Premium User
 global.hituet = 0
+global.theme = process.env.theme || "Aizen", // choose any theme from Aizen, Ichigo, Urahara
 
 //bot sett
 global.typemenu = 'v8' // menu type 'v1' => 'v8'
 global.typereply = 'v2' // reply type 'v1' => 'v3'
-global.autoblocknumber = '92' //set autoblock country code
+global.autoblocknumber = process.env.autoblocknumber || '92' , //set autoblock country code
 global.antiforeignnumber = '91' //set anti foreign number country code
-global.welcome = false //welcome/left in groups
-global.anticall = false //bot blocks user when called
-global.autoswview = false //auto status/story view
+global.welcome = process.env.welcome || false //welcome/left in groups
+global.anticall = process.env.anticall || false //bot blocks user when called
+global.autoswview = process.env.autosview || false //auto status/story view
 global.adminevent = false //show promote/demote message
 global.groupevent = false //show update messages in group chat
 //msg
@@ -49,7 +50,7 @@ global.mess = {
     success: '𝑌𝑒 𝑙𝑒 𝑝𝑎𝑘𝑎𝑑.. 𝑜𝑟 𝑘𝑢𝑐ℎ??'
 }
 //thumbnail
-global.thumb = fs.readFileSync('./VelqoreMedia/theme/lordpic.jpg')
+global.thumb = fs.readFileSync(`./ValqoreMedia/theme/${theme}/lordpic.jpg`)
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
