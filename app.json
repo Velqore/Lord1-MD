@@ -4,7 +4,57 @@
   "repository": "https://github.com/Valqore/Lordbot-md1",
   "logo": "https://pbs.twimg.com/media/FO7fojOakAAyYgt?format=jpg&name=900x900",
   "keywords": ["nodejs", "bot", "whatsapp bot", "valqore","whatsapp automation", "multi device"],
-  "buildpacks": [
+  "env": {
+         "Bot_Name": {
+             "description": "Enter your desired bot\"s name (Eg:- Aizen-sama)",
+             "required": true
+         },
+         "Owner_number": {
+             "description": "Enter the number of owner (Eg:- 918130784851)",
+             "required": true
+         },
+         "Owner_Name": {
+             "description": "Enter the owners name (Eg:- Velqore)",
+             "required": true
+         }, 
+         "themeemoji": {
+             "description": "Enter the emoji you want as your theme (Eg:- ✨)",
+             "required": false
+         },
+         "prefix": {
+             "description": "Enter the prefix you want to use (Eg:- $)",
+             "required": false
+        },
+         "packname": {
+             "description": "Enter the sticker pack name (Eg:- Velqore)",
+             "required": false
+         },
+         "author": {
+             "description": "Enter the author name of the sticker pack (Eg:- Velqore)",
+             "required": false
+         },
+         "theme": {
+             "description": "Enter the theme you want(Eg:- Aizen/Urahara/Ichigo )",
+             "required": true
+         },
+         "autoblocknumber": {
+             "description": "Enter the number country code you want to block (Eg:- 92/94)",
+             "required": false
+         },
+         "welcome": {
+             "description": "Enter the owners name (Eg:- true/false)",
+             "required": false
+         },
+         "anticall": {
+             "description": "Enter the you want to block all the calls?? (Eg:- true/false)",
+             "required": false
+         },
+         "autosview": {
+             "description": "Enter you on the auto status view or not (Eg:- true/false)",
+             "required": false
+         }, 
+
+   "buildpacks": [
     {
       "url": "heroku/nodejs"
     },
