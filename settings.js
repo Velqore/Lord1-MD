@@ -6,8 +6,6 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-//session
-global.sessionid ='ur session id'
 
 //owmner v card
 global.ytname = "YT: Valqore" //ur yt chanel name
@@ -25,8 +23,8 @@ global.wm = "Valqore Bot Inc."
 global.botscript = 'https://github.com/Valqore/lordBot-MD11', //script link
 global.packname = process.env.packname || "Sticker By",
 global.author = process.env.author || 'Valqore\n\n',
-global.creator = process.env.creator || "918130784851"
-global.xprefix = process.env.Owner_Name || '$'
+global.creator = "918130784851"
+global.xprefix = process.env.prefix || '$'
 global.premium = ["918130784851"] // Premium User
 global.hituet = 0
 global.theme = process.env.theme || "Aizen", // choose any theme from Aizen, Ichigo, Urahara
